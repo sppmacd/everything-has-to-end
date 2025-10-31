@@ -1,9 +1,53 @@
-[gd_scene load_steps=5 format=3 uid="uid://d3vm4dg0841ls"]
+[gd_scene load_steps=9 format=4 uid="uid://d3vm4dg0841ls"]
 
 [ext_resource type="PackedScene" path="res://levels/level.tscn" id="1_p1d34"]
 [ext_resource type="PackedScene" uid="uid://4rhntp45r3y4" path="res://entities/stairs.tscn" id="2_p1d34"]
-[ext_resource type="PackedScene" uid="uid://dk4o170ti12em" path="res://entities/tiles/stone1.tscn" id="3_qyb5k"]
-[ext_resource type="PackedScene" uid="uid://bqrahd0x0bd7y" path="res://entities/tiles/bricks1.tscn" id="4_py88r"]
+[ext_resource type="Texture2D" uid="uid://dqnqxpmjx1ahj" path="res://assets/tiles.png" id="3_g1dg4"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qyb5k"]
+texture = ExtResource("3_g1dg4")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+11:0/0 = 0
+12:0/0 = 0
+13:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+10:1/0 = 0
+11:1/0 = 0
+12:1/0 = 0
+13:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_py88r"]
+tile_size = Vector2i(32, 32)
+sources/0 = SubResource("TileSetAtlasSource_qyb5k")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g1dg4"]
+size = Vector2(1440, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s1bpp"]
+size = Vector2(32, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qyb5k"]
+size = Vector2(5, 42)
 
 [node name="Level" instance=ExtResource("1_p1d34")]
 
@@ -13,806 +57,132 @@ position = Vector2(569, 63)
 [node name="Floor0" type="Node2D" parent="." index="1"]
 
 [node name="Stairs_up" parent="Floor0" index="0" instance=ExtResource("2_p1d34")]
-position = Vector2(-287, 120)
+position = Vector2(-287, 128)
 
 [node name="Target" type="Marker2D" parent="Floor0/Stairs_up" index="2"]
 position = Vector2(-11, -177)
 
-[node name="FloorTiles" type="Node2D" parent="Floor0" index="1"]
-
-[node name="Tile" parent="Floor0/FloorTiles" index="0" instance=ExtResource("3_qyb5k")]
-position = Vector2(-317, 137)
-
-[node name="Tile2" parent="Floor0/FloorTiles" index="1" instance=ExtResource("3_qyb5k")]
-position = Vector2(-285, 137)
-
-[node name="Tile3" parent="Floor0/FloorTiles" index="2" instance=ExtResource("3_qyb5k")]
-position = Vector2(-253, 137)
-
-[node name="Tile4" parent="Floor0/FloorTiles" index="3" instance=ExtResource("3_qyb5k")]
-position = Vector2(-381, 137)
-
-[node name="Tile5" parent="Floor0/FloorTiles" index="4" instance=ExtResource("3_qyb5k")]
-position = Vector2(-349, 137)
-
-[node name="Tile6" parent="Floor0/FloorTiles" index="5" instance=ExtResource("3_qyb5k")]
-position = Vector2(-157, 137)
-
-[node name="Tile7" parent="Floor0/FloorTiles" index="6" instance=ExtResource("3_qyb5k")]
-position = Vector2(-125, 137)
-
-[node name="Tile8" parent="Floor0/FloorTiles" index="7" instance=ExtResource("3_qyb5k")]
-position = Vector2(-93, 137)
-
-[node name="Tile9" parent="Floor0/FloorTiles" index="8" instance=ExtResource("3_qyb5k")]
-position = Vector2(-221, 137)
-
-[node name="Tile10" parent="Floor0/FloorTiles" index="9" instance=ExtResource("3_qyb5k")]
-position = Vector2(-189, 137)
-
-[node name="Tile11" parent="Floor0/FloorTiles" index="10" instance=ExtResource("3_qyb5k")]
-position = Vector2(3, 137)
-
-[node name="Tile12" parent="Floor0/FloorTiles" index="11" instance=ExtResource("3_qyb5k")]
-position = Vector2(35, 137)
-
-[node name="Tile13" parent="Floor0/FloorTiles" index="12" instance=ExtResource("3_qyb5k")]
-position = Vector2(67, 137)
-
-[node name="Tile14" parent="Floor0/FloorTiles" index="13" instance=ExtResource("3_qyb5k")]
-position = Vector2(-61, 137)
-
-[node name="Tile15" parent="Floor0/FloorTiles" index="14" instance=ExtResource("3_qyb5k")]
-position = Vector2(-29, 137)
-
-[node name="Tile16" parent="Floor0/FloorTiles" index="15" instance=ExtResource("3_qyb5k")]
-position = Vector2(163, 137)
-
-[node name="Tile17" parent="Floor0/FloorTiles" index="16" instance=ExtResource("3_qyb5k")]
-position = Vector2(195, 137)
-
-[node name="Tile18" parent="Floor0/FloorTiles" index="17" instance=ExtResource("3_qyb5k")]
-position = Vector2(227, 137)
-
-[node name="Tile19" parent="Floor0/FloorTiles" index="18" instance=ExtResource("3_qyb5k")]
-position = Vector2(99, 137)
-
-[node name="Tile20" parent="Floor0/FloorTiles" index="19" instance=ExtResource("3_qyb5k")]
-position = Vector2(131, 137)
-
-[node name="Tile21" parent="Floor0/FloorTiles" index="20" instance=ExtResource("3_qyb5k")]
-position = Vector2(323, 137)
-
-[node name="Tile22" parent="Floor0/FloorTiles" index="21" instance=ExtResource("3_qyb5k")]
-position = Vector2(355, 137)
-
-[node name="Tile23" parent="Floor0/FloorTiles" index="22" instance=ExtResource("3_qyb5k")]
-position = Vector2(387, 137)
-
-[node name="Tile24" parent="Floor0/FloorTiles" index="23" instance=ExtResource("3_qyb5k")]
-position = Vector2(259, 137)
-
-[node name="Tile25" parent="Floor0/FloorTiles" index="24" instance=ExtResource("3_qyb5k")]
-position = Vector2(291, 137)
-
-[node name="Tile26" parent="Floor0/FloorTiles" index="25" instance=ExtResource("3_qyb5k")]
-position = Vector2(483, 137)
-
-[node name="Tile27" parent="Floor0/FloorTiles" index="26" instance=ExtResource("3_qyb5k")]
-position = Vector2(515, 137)
-
-[node name="Tile28" parent="Floor0/FloorTiles" index="27" instance=ExtResource("3_qyb5k")]
-position = Vector2(547, 137)
-
-[node name="Tile29" parent="Floor0/FloorTiles" index="28" instance=ExtResource("3_qyb5k")]
-position = Vector2(419, 137)
-
-[node name="Tile30" parent="Floor0/FloorTiles" index="29" instance=ExtResource("3_qyb5k")]
-position = Vector2(451, 137)
-
-[node name="Tile31" parent="Floor0/FloorTiles" index="30" instance=ExtResource("3_qyb5k")]
-position = Vector2(-797, 137)
-
-[node name="Tile32" parent="Floor0/FloorTiles" index="31" instance=ExtResource("3_qyb5k")]
-position = Vector2(-765, 137)
-
-[node name="Tile33" parent="Floor0/FloorTiles" index="32" instance=ExtResource("3_qyb5k")]
-position = Vector2(-733, 137)
-
-[node name="Tile34" parent="Floor0/FloorTiles" index="33" instance=ExtResource("3_qyb5k")]
-position = Vector2(-861, 137)
-
-[node name="Tile35" parent="Floor0/FloorTiles" index="34" instance=ExtResource("3_qyb5k")]
-position = Vector2(-829, 137)
-
-[node name="Tile36" parent="Floor0/FloorTiles" index="35" instance=ExtResource("3_qyb5k")]
-position = Vector2(-637, 137)
-
-[node name="Tile37" parent="Floor0/FloorTiles" index="36" instance=ExtResource("3_qyb5k")]
-position = Vector2(-605, 137)
-
-[node name="Tile38" parent="Floor0/FloorTiles" index="37" instance=ExtResource("3_qyb5k")]
-position = Vector2(-573, 137)
-
-[node name="Tile39" parent="Floor0/FloorTiles" index="38" instance=ExtResource("3_qyb5k")]
-position = Vector2(-701, 137)
-
-[node name="Tile40" parent="Floor0/FloorTiles" index="39" instance=ExtResource("3_qyb5k")]
-position = Vector2(-669, 137)
-
-[node name="Tile41" parent="Floor0/FloorTiles" index="40" instance=ExtResource("3_qyb5k")]
-position = Vector2(-477, 137)
-
-[node name="Tile42" parent="Floor0/FloorTiles" index="41" instance=ExtResource("3_qyb5k")]
-position = Vector2(-445, 137)
-
-[node name="Tile43" parent="Floor0/FloorTiles" index="42" instance=ExtResource("3_qyb5k")]
-position = Vector2(-413, 137)
-
-[node name="Tile44" parent="Floor0/FloorTiles" index="43" instance=ExtResource("3_qyb5k")]
-position = Vector2(-541, 137)
-
-[node name="Tile45" parent="Floor0/FloorTiles" index="44" instance=ExtResource("3_qyb5k")]
-position = Vector2(-509, 137)
-
-[node name="Tile46" parent="Floor0/FloorTiles" index="45" instance=ExtResource("3_qyb5k")]
-position = Vector2(643, 137)
-
-[node name="Tile47" parent="Floor0/FloorTiles" index="46" instance=ExtResource("3_qyb5k")]
-position = Vector2(675, 137)
-
-[node name="Tile48" parent="Floor0/FloorTiles" index="47" instance=ExtResource("3_qyb5k")]
-position = Vector2(707, 137)
-
-[node name="Tile49" parent="Floor0/FloorTiles" index="48" instance=ExtResource("3_qyb5k")]
-position = Vector2(579, 137)
-
-[node name="Tile50" parent="Floor0/FloorTiles" index="49" instance=ExtResource("3_qyb5k")]
-position = Vector2(611, 137)
-
-[node name="Tile51" parent="Floor0/FloorTiles" index="50" instance=ExtResource("3_qyb5k")]
-position = Vector2(803, 137)
-
-[node name="Tile52" parent="Floor0/FloorTiles" index="51" instance=ExtResource("3_qyb5k")]
-position = Vector2(835, 137)
-
-[node name="Tile53" parent="Floor0/FloorTiles" index="52" instance=ExtResource("3_qyb5k")]
-position = Vector2(867, 137)
-
-[node name="Tile54" parent="Floor0/FloorTiles" index="53" instance=ExtResource("3_qyb5k")]
-position = Vector2(739, 137)
-
-[node name="Tile55" parent="Floor0/FloorTiles" index="54" instance=ExtResource("3_qyb5k")]
-position = Vector2(771, 137)
-
-[node name="WallTiles" type="Node2D" parent="Floor0" index="2"]
-
-[node name="Bricks1" parent="Floor0/WallTiles" index="0" instance=ExtResource("4_py88r")]
-position = Vector2(-861, 105)
-
-[node name="Bricks2" parent="Floor0/WallTiles" index="1" instance=ExtResource("4_py88r")]
-position = Vector2(-861, 73)
-
-[node name="Bricks3" parent="Floor0/WallTiles" index="2" instance=ExtResource("4_py88r")]
-position = Vector2(-861, 41)
-
-[node name="Bricks4" parent="Floor0/WallTiles" index="3" instance=ExtResource("4_py88r")]
-position = Vector2(-861, 9)
-
-[node name="Bricks5" parent="Floor0/WallTiles" index="4" instance=ExtResource("4_py88r")]
-position = Vector2(867, 105)
-
-[node name="Bricks6" parent="Floor0/WallTiles" index="5" instance=ExtResource("4_py88r")]
-position = Vector2(867, 73)
-
-[node name="Bricks7" parent="Floor0/WallTiles" index="6" instance=ExtResource("4_py88r")]
-position = Vector2(867, 41)
-
-[node name="Bricks8" parent="Floor0/WallTiles" index="7" instance=ExtResource("4_py88r")]
-position = Vector2(867, 9)
+[node name="TileMapLayer" type="TileMapLayer" parent="Floor0" index="1"]
+texture_filter = 1
+tile_map_data = PackedByteArray("AADt/wQAAAACAAAAAADu/wQAAAACAAAAAADv/wQAAAACAAAAAADw/wQAAAACAAAAAADx/wQAAAACAAAAAADy/wQAAAACAAAAAADz/wQAAAACAAAAAAD0/wQAAAACAAAAAAD1/wQAAAAAAAAAAAD2/wQAAAAAAAAAAAD3/wQAAAAAAAAAAAD4/wQAAAAAAAAAAAD5/wQAAAACAAAAAAD6/wQAAAACAAAAAAD7/wQAAAACAAAAAAD8/wQAAAACAAAAAAD9/wQAAAACAAAAAAD+/wQAAAACAAAAAAD//wQAAAACAAAAAAAAAAQAAAACAAAAAAABAAQAAAACAAAAAAACAAQAAAACAAAAAAADAAQAAAACAAAAAAAEAAQAAAACAAAAAAAFAAQAAAACAAAAAAAGAAQAAAACAAAAAAAHAAQAAAACAAAAAAAIAAQAAAACAAAAAAAJAAQAAAACAAAAAAAKAAQAAAACAAAAAAALAAQAAAACAAAAAAAMAAQAAAACAAAAAAANAAQAAAACAAAAAAAOAAQAAAACAAAAAAAPAAQAAAACAAAAAAAQAAQAAAACAAAAAAARAAQAAAACAAAAAAASAAQAAAACAAAAAAATAAQAAAACAAAAAAAUAAQAAAACAAAAAAAVAAQAAAACAAAAAAAWAAQAAAACAAAAAAAXAAQAAAACAAAAAAAYAAQAAAACAAAAAAAZAAQAAAACAAAAAAAZAAMAAAABAAAAAAAZAAIAAAABAAAAAAAZAAEAAAABAAAAAAAZAAAAAAABAAAAAADt/wMAAAABAAAAAADt/wIAAAABAAAAAADt/wEAAAABAAAAAADt/wAAAAABAAAAAADz/wMAAAAGAAAAAADz/wIAAAAEAAAAAADz/wEAAAAFAAAAAADz/wAAAAADAAAAAAD+/wAAAAADAAAAAAD+/wEAAAAFAAAAAAD+/wIAAAAEAAAAAAD+/wMAAAAGAAAAAAAIAAAAAAADAAAAAAAIAAEAAAAFAAAAAAAIAAIAAAAEAAAAAAAIAAMAAAAGAAAAAAASAAAAAAADAAAAAAASAAEAAAAFAAAAAAASAAIAAAAEAAAAAAASAAMAAAAGAAAAAAA=")
+tile_set = SubResource("TileSet_py88r")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Floor0/TileMapLayer" index="0"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor0/TileMapLayer/StaticBody2D" index="0"]
+position = Vector2(112, 144)
+shape = SubResource("RectangleShape2D_g1dg4")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Floor0/TileMapLayer/StaticBody2D" index="1"]
+position = Vector2(-592, 64)
+shape = SubResource("RectangleShape2D_s1bpp")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Floor0/TileMapLayer/StaticBody2D" index="2"]
+position = Vector2(816, 64)
+shape = SubResource("RectangleShape2D_s1bpp")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Floor0/TileMapLayer/StaticBody2D" index="3"]
+position = Vector2(271.5, 21)
+shape = SubResource("RectangleShape2D_qyb5k")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Floor0/TileMapLayer/StaticBody2D" index="4"]
+position = Vector2(591.5, 21)
+shape = SubResource("RectangleShape2D_qyb5k")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Floor0/TileMapLayer/StaticBody2D" index="5"]
+position = Vector2(-48.5, 21)
+shape = SubResource("RectangleShape2D_qyb5k")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Floor0/TileMapLayer/StaticBody2D" index="6"]
+position = Vector2(-400.5, 21)
+shape = SubResource("RectangleShape2D_qyb5k")
 
 [node name="Floor1" type="Node2D" parent="." index="2"]
 position = Vector2(0, -271)
 
 [node name="Stairs_up" parent="Floor1" index="0" instance=ExtResource("2_p1d34")]
-position = Vector2(621, 234)
+position = Vector2(622, 239)
 
 [node name="Target" type="Marker2D" parent="Floor1/Stairs_up" index="2"]
 position = Vector2(1, -196)
 
-[node name="FloorTiles" type="Node2D" parent="Floor1" index="1"]
-
-[node name="Tile" parent="Floor1/FloorTiles" index="0" instance=ExtResource("3_qyb5k")]
-position = Vector2(-317, 248)
-
-[node name="Tile2" parent="Floor1/FloorTiles" index="1" instance=ExtResource("3_qyb5k")]
-position = Vector2(-285, 248)
-
-[node name="Tile3" parent="Floor1/FloorTiles" index="2" instance=ExtResource("3_qyb5k")]
-position = Vector2(-253, 248)
-
-[node name="Tile4" parent="Floor1/FloorTiles" index="3" instance=ExtResource("3_qyb5k")]
-position = Vector2(-381, 248)
-
-[node name="Tile5" parent="Floor1/FloorTiles" index="4" instance=ExtResource("3_qyb5k")]
-position = Vector2(-349, 248)
-
-[node name="Tile6" parent="Floor1/FloorTiles" index="5" instance=ExtResource("3_qyb5k")]
-position = Vector2(-157, 248)
-
-[node name="Tile7" parent="Floor1/FloorTiles" index="6" instance=ExtResource("3_qyb5k")]
-position = Vector2(-125, 248)
-
-[node name="Tile8" parent="Floor1/FloorTiles" index="7" instance=ExtResource("3_qyb5k")]
-position = Vector2(-93, 248)
-
-[node name="Tile9" parent="Floor1/FloorTiles" index="8" instance=ExtResource("3_qyb5k")]
-position = Vector2(-221, 248)
-
-[node name="Tile10" parent="Floor1/FloorTiles" index="9" instance=ExtResource("3_qyb5k")]
-position = Vector2(-189, 248)
-
-[node name="Tile11" parent="Floor1/FloorTiles" index="10" instance=ExtResource("3_qyb5k")]
-position = Vector2(3, 248)
-
-[node name="Tile12" parent="Floor1/FloorTiles" index="11" instance=ExtResource("3_qyb5k")]
-position = Vector2(35, 248)
-
-[node name="Tile13" parent="Floor1/FloorTiles" index="12" instance=ExtResource("3_qyb5k")]
-position = Vector2(67, 248)
-
-[node name="Tile14" parent="Floor1/FloorTiles" index="13" instance=ExtResource("3_qyb5k")]
-position = Vector2(-61, 248)
-
-[node name="Tile15" parent="Floor1/FloorTiles" index="14" instance=ExtResource("3_qyb5k")]
-position = Vector2(-29, 248)
-
-[node name="Tile16" parent="Floor1/FloorTiles" index="15" instance=ExtResource("3_qyb5k")]
-position = Vector2(163, 248)
-
-[node name="Tile17" parent="Floor1/FloorTiles" index="16" instance=ExtResource("3_qyb5k")]
-position = Vector2(195, 248)
-
-[node name="Tile18" parent="Floor1/FloorTiles" index="17" instance=ExtResource("3_qyb5k")]
-position = Vector2(227, 248)
-
-[node name="Tile19" parent="Floor1/FloorTiles" index="18" instance=ExtResource("3_qyb5k")]
-position = Vector2(99, 248)
-
-[node name="Tile20" parent="Floor1/FloorTiles" index="19" instance=ExtResource("3_qyb5k")]
-position = Vector2(131, 248)
-
-[node name="Tile21" parent="Floor1/FloorTiles" index="20" instance=ExtResource("3_qyb5k")]
-position = Vector2(323, 248)
-
-[node name="Tile22" parent="Floor1/FloorTiles" index="21" instance=ExtResource("3_qyb5k")]
-position = Vector2(355, 248)
-
-[node name="Tile23" parent="Floor1/FloorTiles" index="22" instance=ExtResource("3_qyb5k")]
-position = Vector2(387, 248)
-
-[node name="Tile24" parent="Floor1/FloorTiles" index="23" instance=ExtResource("3_qyb5k")]
-position = Vector2(259, 248)
-
-[node name="Tile25" parent="Floor1/FloorTiles" index="24" instance=ExtResource("3_qyb5k")]
-position = Vector2(291, 248)
-
-[node name="Tile26" parent="Floor1/FloorTiles" index="25" instance=ExtResource("3_qyb5k")]
-position = Vector2(483, 248)
-
-[node name="Tile27" parent="Floor1/FloorTiles" index="26" instance=ExtResource("3_qyb5k")]
-position = Vector2(515, 248)
-
-[node name="Tile28" parent="Floor1/FloorTiles" index="27" instance=ExtResource("3_qyb5k")]
-position = Vector2(547, 248)
-
-[node name="Tile29" parent="Floor1/FloorTiles" index="28" instance=ExtResource("3_qyb5k")]
-position = Vector2(419, 248)
-
-[node name="Tile30" parent="Floor1/FloorTiles" index="29" instance=ExtResource("3_qyb5k")]
-position = Vector2(451, 248)
-
-[node name="Tile31" parent="Floor1/FloorTiles" index="30" instance=ExtResource("3_qyb5k")]
-position = Vector2(-797, 248)
-
-[node name="Tile32" parent="Floor1/FloorTiles" index="31" instance=ExtResource("3_qyb5k")]
-position = Vector2(-765, 248)
-
-[node name="Tile33" parent="Floor1/FloorTiles" index="32" instance=ExtResource("3_qyb5k")]
-position = Vector2(-733, 248)
-
-[node name="Tile34" parent="Floor1/FloorTiles" index="33" instance=ExtResource("3_qyb5k")]
-position = Vector2(-861, 248)
-
-[node name="Tile35" parent="Floor1/FloorTiles" index="34" instance=ExtResource("3_qyb5k")]
-position = Vector2(-829, 248)
-
-[node name="Tile36" parent="Floor1/FloorTiles" index="35" instance=ExtResource("3_qyb5k")]
-position = Vector2(-637, 248)
-
-[node name="Tile37" parent="Floor1/FloorTiles" index="36" instance=ExtResource("3_qyb5k")]
-position = Vector2(-605, 248)
-
-[node name="Tile38" parent="Floor1/FloorTiles" index="37" instance=ExtResource("3_qyb5k")]
-position = Vector2(-573, 248)
-
-[node name="Tile39" parent="Floor1/FloorTiles" index="38" instance=ExtResource("3_qyb5k")]
-position = Vector2(-701, 248)
-
-[node name="Tile40" parent="Floor1/FloorTiles" index="39" instance=ExtResource("3_qyb5k")]
-position = Vector2(-669, 248)
-
-[node name="Tile41" parent="Floor1/FloorTiles" index="40" instance=ExtResource("3_qyb5k")]
-position = Vector2(-477, 248)
-
-[node name="Tile42" parent="Floor1/FloorTiles" index="41" instance=ExtResource("3_qyb5k")]
-position = Vector2(-445, 248)
-
-[node name="Tile43" parent="Floor1/FloorTiles" index="42" instance=ExtResource("3_qyb5k")]
-position = Vector2(-413, 248)
-
-[node name="Tile44" parent="Floor1/FloorTiles" index="43" instance=ExtResource("3_qyb5k")]
-position = Vector2(-541, 248)
-
-[node name="Tile45" parent="Floor1/FloorTiles" index="44" instance=ExtResource("3_qyb5k")]
-position = Vector2(-509, 248)
-
-[node name="Tile46" parent="Floor1/FloorTiles" index="45" instance=ExtResource("3_qyb5k")]
-position = Vector2(643, 248)
-
-[node name="Tile47" parent="Floor1/FloorTiles" index="46" instance=ExtResource("3_qyb5k")]
-position = Vector2(675, 248)
-
-[node name="Tile48" parent="Floor1/FloorTiles" index="47" instance=ExtResource("3_qyb5k")]
-position = Vector2(707, 248)
-
-[node name="Tile49" parent="Floor1/FloorTiles" index="48" instance=ExtResource("3_qyb5k")]
-position = Vector2(579, 248)
-
-[node name="Tile50" parent="Floor1/FloorTiles" index="49" instance=ExtResource("3_qyb5k")]
-position = Vector2(611, 248)
-
-[node name="Tile51" parent="Floor1/FloorTiles" index="50" instance=ExtResource("3_qyb5k")]
-position = Vector2(803, 248)
-
-[node name="Tile52" parent="Floor1/FloorTiles" index="51" instance=ExtResource("3_qyb5k")]
-position = Vector2(835, 248)
-
-[node name="Tile53" parent="Floor1/FloorTiles" index="52" instance=ExtResource("3_qyb5k")]
-position = Vector2(867, 248)
-
-[node name="Tile54" parent="Floor1/FloorTiles" index="53" instance=ExtResource("3_qyb5k")]
-position = Vector2(739, 248)
-
-[node name="Tile55" parent="Floor1/FloorTiles" index="54" instance=ExtResource("3_qyb5k")]
-position = Vector2(771, 248)
-
-[node name="WallTiles" type="Node2D" parent="Floor1" index="2"]
-
-[node name="Bricks1" parent="Floor1/WallTiles" index="0" instance=ExtResource("4_py88r")]
-position = Vector2(-861, 216)
-
-[node name="Bricks2" parent="Floor1/WallTiles" index="1" instance=ExtResource("4_py88r")]
-position = Vector2(-861, 184)
-
-[node name="Bricks3" parent="Floor1/WallTiles" index="2" instance=ExtResource("4_py88r")]
-position = Vector2(-861, 152)
-
-[node name="Bricks4" parent="Floor1/WallTiles" index="3" instance=ExtResource("4_py88r")]
-position = Vector2(-861, 120)
-
-[node name="Bricks5" parent="Floor1/WallTiles" index="4" instance=ExtResource("4_py88r")]
-position = Vector2(867, 216)
-
-[node name="Bricks6" parent="Floor1/WallTiles" index="5" instance=ExtResource("4_py88r")]
-position = Vector2(867, 184)
-
-[node name="Bricks7" parent="Floor1/WallTiles" index="6" instance=ExtResource("4_py88r")]
-position = Vector2(867, 152)
-
-[node name="Bricks8" parent="Floor1/WallTiles" index="7" instance=ExtResource("4_py88r")]
-position = Vector2(867, 120)
+[node name="TileMapLayer" type="TileMapLayer" parent="Floor1" index="1"]
+texture_filter = 1
+position = Vector2(0, 111)
+tile_map_data = PackedByteArray("AADt/wQAAAACAAAAAADu/wQAAAACAAAAAADv/wQAAAACAAAAAADw/wQAAAACAAAAAADx/wQAAAACAAAAAADy/wQAAAACAAAAAADz/wQAAAACAAAAAAD0/wQAAAACAAAAAAD1/wQAAAACAAAAAAD2/wQAAAACAAAAAAD3/wQAAAACAAAAAAD4/wQAAAACAAAAAAD5/wQAAAACAAAAAAD6/wQAAAACAAAAAAD7/wQAAAACAAAAAAD8/wQAAAACAAAAAAD9/wQAAAACAAAAAAD+/wQAAAACAAAAAAD//wQAAAACAAAAAAAAAAQAAAACAAAAAAABAAQAAAACAAAAAAACAAQAAAACAAAAAAADAAQAAAACAAAAAAAEAAQAAAACAAAAAAAFAAQAAAACAAAAAAAGAAQAAAACAAAAAAAHAAQAAAACAAAAAAAIAAQAAAACAAAAAAAJAAQAAAACAAAAAAAKAAQAAAACAAAAAAALAAQAAAACAAAAAAAMAAQAAAACAAAAAAANAAQAAAACAAAAAAAOAAQAAAACAAAAAAAPAAQAAAACAAAAAAAQAAQAAAACAAAAAAARAAQAAAACAAAAAAASAAQAAAACAAAAAAATAAQAAAACAAAAAAAUAAQAAAACAAAAAAAVAAQAAAACAAAAAAAWAAQAAAACAAAAAAAXAAQAAAACAAAAAAAYAAQAAAACAAAAAAAZAAQAAAACAAAAAAAZAAMAAAABAAAAAAAZAAIAAAABAAAAAAAZAAEAAAABAAAAAAAZAAAAAAABAAAAAADt/wMAAAABAAAAAADt/wIAAAABAAAAAADt/wEAAAABAAAAAADt/wAAAAABAAAAAAA=")
+tile_set = SubResource("TileSet_py88r")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Floor1/TileMapLayer" index="0"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor1/TileMapLayer/StaticBody2D" index="0"]
+position = Vector2(112, 144)
+shape = SubResource("RectangleShape2D_g1dg4")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Floor1/TileMapLayer/StaticBody2D" index="1"]
+position = Vector2(-592, 64)
+shape = SubResource("RectangleShape2D_s1bpp")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Floor1/TileMapLayer/StaticBody2D" index="2"]
+position = Vector2(816, 64)
+shape = SubResource("RectangleShape2D_s1bpp")
 
 [node name="Floor2" type="Node2D" parent="." index="3"]
 position = Vector2(0, -533)
 
 [node name="Stairs_up" parent="Floor2" index="0" instance=ExtResource("2_p1d34")]
-position = Vector2(-314, 334)
+position = Vector2(-318, 341)
 
 [node name="Target" type="Marker2D" parent="Floor2/Stairs_up" index="2"]
 position = Vector2(-9, -193)
 
-[node name="FloorTiles" type="Node2D" parent="Floor2" index="1"]
-
-[node name="Tile" parent="Floor2/FloorTiles" index="0" instance=ExtResource("3_qyb5k")]
-position = Vector2(-317, 350)
-
-[node name="Tile2" parent="Floor2/FloorTiles" index="1" instance=ExtResource("3_qyb5k")]
-position = Vector2(-285, 350)
-
-[node name="Tile3" parent="Floor2/FloorTiles" index="2" instance=ExtResource("3_qyb5k")]
-position = Vector2(-253, 350)
-
-[node name="Tile4" parent="Floor2/FloorTiles" index="3" instance=ExtResource("3_qyb5k")]
-position = Vector2(-381, 350)
-
-[node name="Tile5" parent="Floor2/FloorTiles" index="4" instance=ExtResource("3_qyb5k")]
-position = Vector2(-349, 350)
-
-[node name="Tile6" parent="Floor2/FloorTiles" index="5" instance=ExtResource("3_qyb5k")]
-position = Vector2(-157, 350)
-
-[node name="Tile7" parent="Floor2/FloorTiles" index="6" instance=ExtResource("3_qyb5k")]
-position = Vector2(-125, 350)
-
-[node name="Tile8" parent="Floor2/FloorTiles" index="7" instance=ExtResource("3_qyb5k")]
-position = Vector2(-93, 350)
-
-[node name="Tile9" parent="Floor2/FloorTiles" index="8" instance=ExtResource("3_qyb5k")]
-position = Vector2(-221, 350)
-
-[node name="Tile10" parent="Floor2/FloorTiles" index="9" instance=ExtResource("3_qyb5k")]
-position = Vector2(-189, 350)
-
-[node name="Tile11" parent="Floor2/FloorTiles" index="10" instance=ExtResource("3_qyb5k")]
-position = Vector2(3, 350)
-
-[node name="Tile12" parent="Floor2/FloorTiles" index="11" instance=ExtResource("3_qyb5k")]
-position = Vector2(35, 350)
-
-[node name="Tile13" parent="Floor2/FloorTiles" index="12" instance=ExtResource("3_qyb5k")]
-position = Vector2(67, 350)
-
-[node name="Tile14" parent="Floor2/FloorTiles" index="13" instance=ExtResource("3_qyb5k")]
-position = Vector2(-61, 350)
-
-[node name="Tile15" parent="Floor2/FloorTiles" index="14" instance=ExtResource("3_qyb5k")]
-position = Vector2(-29, 350)
-
-[node name="Tile16" parent="Floor2/FloorTiles" index="15" instance=ExtResource("3_qyb5k")]
-position = Vector2(163, 350)
-
-[node name="Tile17" parent="Floor2/FloorTiles" index="16" instance=ExtResource("3_qyb5k")]
-position = Vector2(195, 350)
-
-[node name="Tile18" parent="Floor2/FloorTiles" index="17" instance=ExtResource("3_qyb5k")]
-position = Vector2(227, 350)
-
-[node name="Tile19" parent="Floor2/FloorTiles" index="18" instance=ExtResource("3_qyb5k")]
-position = Vector2(99, 350)
-
-[node name="Tile20" parent="Floor2/FloorTiles" index="19" instance=ExtResource("3_qyb5k")]
-position = Vector2(131, 350)
-
-[node name="Tile21" parent="Floor2/FloorTiles" index="20" instance=ExtResource("3_qyb5k")]
-position = Vector2(323, 350)
-
-[node name="Tile22" parent="Floor2/FloorTiles" index="21" instance=ExtResource("3_qyb5k")]
-position = Vector2(355, 350)
-
-[node name="Tile23" parent="Floor2/FloorTiles" index="22" instance=ExtResource("3_qyb5k")]
-position = Vector2(387, 350)
-
-[node name="Tile24" parent="Floor2/FloorTiles" index="23" instance=ExtResource("3_qyb5k")]
-position = Vector2(259, 350)
-
-[node name="Tile25" parent="Floor2/FloorTiles" index="24" instance=ExtResource("3_qyb5k")]
-position = Vector2(291, 350)
-
-[node name="Tile26" parent="Floor2/FloorTiles" index="25" instance=ExtResource("3_qyb5k")]
-position = Vector2(483, 350)
-
-[node name="Tile27" parent="Floor2/FloorTiles" index="26" instance=ExtResource("3_qyb5k")]
-position = Vector2(515, 350)
-
-[node name="Tile28" parent="Floor2/FloorTiles" index="27" instance=ExtResource("3_qyb5k")]
-position = Vector2(547, 350)
-
-[node name="Tile29" parent="Floor2/FloorTiles" index="28" instance=ExtResource("3_qyb5k")]
-position = Vector2(419, 350)
-
-[node name="Tile30" parent="Floor2/FloorTiles" index="29" instance=ExtResource("3_qyb5k")]
-position = Vector2(451, 350)
-
-[node name="Tile31" parent="Floor2/FloorTiles" index="30" instance=ExtResource("3_qyb5k")]
-position = Vector2(-797, 350)
-
-[node name="Tile32" parent="Floor2/FloorTiles" index="31" instance=ExtResource("3_qyb5k")]
-position = Vector2(-765, 350)
-
-[node name="Tile33" parent="Floor2/FloorTiles" index="32" instance=ExtResource("3_qyb5k")]
-position = Vector2(-733, 350)
-
-[node name="Tile34" parent="Floor2/FloorTiles" index="33" instance=ExtResource("3_qyb5k")]
-position = Vector2(-861, 350)
-
-[node name="Tile35" parent="Floor2/FloorTiles" index="34" instance=ExtResource("3_qyb5k")]
-position = Vector2(-829, 350)
-
-[node name="Tile36" parent="Floor2/FloorTiles" index="35" instance=ExtResource("3_qyb5k")]
-position = Vector2(-637, 350)
-
-[node name="Tile37" parent="Floor2/FloorTiles" index="36" instance=ExtResource("3_qyb5k")]
-position = Vector2(-605, 350)
-
-[node name="Tile38" parent="Floor2/FloorTiles" index="37" instance=ExtResource("3_qyb5k")]
-position = Vector2(-573, 350)
-
-[node name="Tile39" parent="Floor2/FloorTiles" index="38" instance=ExtResource("3_qyb5k")]
-position = Vector2(-701, 350)
-
-[node name="Tile40" parent="Floor2/FloorTiles" index="39" instance=ExtResource("3_qyb5k")]
-position = Vector2(-669, 350)
-
-[node name="Tile41" parent="Floor2/FloorTiles" index="40" instance=ExtResource("3_qyb5k")]
-position = Vector2(-477, 350)
-
-[node name="Tile42" parent="Floor2/FloorTiles" index="41" instance=ExtResource("3_qyb5k")]
-position = Vector2(-445, 350)
-
-[node name="Tile43" parent="Floor2/FloorTiles" index="42" instance=ExtResource("3_qyb5k")]
-position = Vector2(-413, 350)
-
-[node name="Tile44" parent="Floor2/FloorTiles" index="43" instance=ExtResource("3_qyb5k")]
-position = Vector2(-541, 350)
-
-[node name="Tile45" parent="Floor2/FloorTiles" index="44" instance=ExtResource("3_qyb5k")]
-position = Vector2(-509, 350)
-
-[node name="Tile46" parent="Floor2/FloorTiles" index="45" instance=ExtResource("3_qyb5k")]
-position = Vector2(643, 350)
-
-[node name="Tile47" parent="Floor2/FloorTiles" index="46" instance=ExtResource("3_qyb5k")]
-position = Vector2(675, 350)
-
-[node name="Tile48" parent="Floor2/FloorTiles" index="47" instance=ExtResource("3_qyb5k")]
-position = Vector2(707, 350)
-
-[node name="Tile49" parent="Floor2/FloorTiles" index="48" instance=ExtResource("3_qyb5k")]
-position = Vector2(579, 350)
-
-[node name="Tile50" parent="Floor2/FloorTiles" index="49" instance=ExtResource("3_qyb5k")]
-position = Vector2(611, 350)
-
-[node name="Tile51" parent="Floor2/FloorTiles" index="50" instance=ExtResource("3_qyb5k")]
-position = Vector2(803, 350)
-
-[node name="Tile52" parent="Floor2/FloorTiles" index="51" instance=ExtResource("3_qyb5k")]
-position = Vector2(835, 350)
-
-[node name="Tile53" parent="Floor2/FloorTiles" index="52" instance=ExtResource("3_qyb5k")]
-position = Vector2(867, 350)
-
-[node name="Tile54" parent="Floor2/FloorTiles" index="53" instance=ExtResource("3_qyb5k")]
-position = Vector2(739, 350)
-
-[node name="Tile55" parent="Floor2/FloorTiles" index="54" instance=ExtResource("3_qyb5k")]
-position = Vector2(771, 350)
-
-[node name="WallTiles" type="Node2D" parent="Floor2" index="2"]
-
-[node name="Bricks1" parent="Floor2/WallTiles" index="0" instance=ExtResource("4_py88r")]
-position = Vector2(-861, 318)
-
-[node name="Bricks2" parent="Floor2/WallTiles" index="1" instance=ExtResource("4_py88r")]
-position = Vector2(-861, 286)
-
-[node name="Bricks3" parent="Floor2/WallTiles" index="2" instance=ExtResource("4_py88r")]
-position = Vector2(-861, 254)
-
-[node name="Bricks4" parent="Floor2/WallTiles" index="3" instance=ExtResource("4_py88r")]
-position = Vector2(-861, 222)
-
-[node name="Bricks5" parent="Floor2/WallTiles" index="4" instance=ExtResource("4_py88r")]
-position = Vector2(867, 318)
-
-[node name="Bricks6" parent="Floor2/WallTiles" index="5" instance=ExtResource("4_py88r")]
-position = Vector2(867, 286)
-
-[node name="Bricks7" parent="Floor2/WallTiles" index="6" instance=ExtResource("4_py88r")]
-position = Vector2(867, 254)
-
-[node name="Bricks8" parent="Floor2/WallTiles" index="7" instance=ExtResource("4_py88r")]
-position = Vector2(867, 222)
+[node name="TileMapLayer" type="TileMapLayer" parent="Floor2" index="1"]
+texture_filter = 1
+position = Vector2(0, 213)
+tile_map_data = PackedByteArray("AADt/wQAAAACAAAAAADu/wQAAAACAAAAAADv/wQAAAACAAAAAADw/wQAAAACAAAAAADx/wQAAAACAAAAAADy/wQAAAACAAAAAADz/wQAAAACAAAAAAD0/wQAAAACAAAAAAD1/wQAAAACAAAAAAD2/wQAAAACAAAAAAD3/wQAAAACAAAAAAD4/wQAAAACAAAAAAD5/wQAAAACAAAAAAD6/wQAAAACAAAAAAD7/wQAAAACAAAAAAD8/wQAAAACAAAAAAD9/wQAAAACAAAAAAD+/wQAAAACAAAAAAD//wQAAAACAAAAAAAAAAQAAAACAAAAAAABAAQAAAACAAAAAAACAAQAAAACAAAAAAADAAQAAAACAAAAAAAEAAQAAAACAAAAAAAFAAQAAAACAAAAAAAGAAQAAAACAAAAAAAHAAQAAAACAAAAAAAIAAQAAAACAAAAAAAJAAQAAAACAAAAAAAKAAQAAAACAAAAAAALAAQAAAACAAAAAAAMAAQAAAACAAAAAAANAAQAAAACAAAAAAAOAAQAAAACAAAAAAAPAAQAAAACAAAAAAAQAAQAAAACAAAAAAARAAQAAAACAAAAAAASAAQAAAACAAAAAAATAAQAAAACAAAAAAAUAAQAAAACAAAAAAAVAAQAAAACAAAAAAAWAAQAAAACAAAAAAAXAAQAAAACAAAAAAAYAAQAAAACAAAAAAAZAAQAAAACAAAAAAAZAAMAAAABAAAAAAAZAAIAAAABAAAAAAAZAAEAAAABAAAAAAAZAAAAAAABAAAAAADt/wMAAAABAAAAAADt/wIAAAABAAAAAADt/wEAAAABAAAAAADt/wAAAAABAAAAAAA=")
+tile_set = SubResource("TileSet_py88r")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Floor2/TileMapLayer" index="0"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor2/TileMapLayer/StaticBody2D" index="0"]
+position = Vector2(112, 144)
+shape = SubResource("RectangleShape2D_g1dg4")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Floor2/TileMapLayer/StaticBody2D" index="1"]
+position = Vector2(-592, 64)
+shape = SubResource("RectangleShape2D_s1bpp")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Floor2/TileMapLayer/StaticBody2D" index="2"]
+position = Vector2(816, 64)
+shape = SubResource("RectangleShape2D_s1bpp")
 
 [node name="Floor3" type="Node2D" parent="." index="4"]
 position = Vector2(0, -780)
 
 [node name="Stairs_up" parent="Floor3" index="0" instance=ExtResource("2_p1d34")]
-position = Vector2(545, 421)
+position = Vector2(545, 428)
 
 [node name="Target" type="Marker2D" parent="Floor3/Stairs_up" index="2"]
 position = Vector2(90, 435)
 
-[node name="FloorTiles" type="Node2D" parent="Floor3" index="1"]
-
-[node name="Tile" parent="Floor3/FloorTiles" index="0" instance=ExtResource("3_qyb5k")]
-position = Vector2(-317, 437)
-
-[node name="Tile2" parent="Floor3/FloorTiles" index="1" instance=ExtResource("3_qyb5k")]
-position = Vector2(-285, 437)
-
-[node name="Tile3" parent="Floor3/FloorTiles" index="2" instance=ExtResource("3_qyb5k")]
-position = Vector2(-253, 437)
-
-[node name="Tile4" parent="Floor3/FloorTiles" index="3" instance=ExtResource("3_qyb5k")]
-position = Vector2(-381, 437)
-
-[node name="Tile5" parent="Floor3/FloorTiles" index="4" instance=ExtResource("3_qyb5k")]
-position = Vector2(-349, 437)
-
-[node name="Tile6" parent="Floor3/FloorTiles" index="5" instance=ExtResource("3_qyb5k")]
-position = Vector2(-157, 437)
-
-[node name="Tile7" parent="Floor3/FloorTiles" index="6" instance=ExtResource("3_qyb5k")]
-position = Vector2(-125, 437)
-
-[node name="Tile8" parent="Floor3/FloorTiles" index="7" instance=ExtResource("3_qyb5k")]
-position = Vector2(-93, 437)
-
-[node name="Tile9" parent="Floor3/FloorTiles" index="8" instance=ExtResource("3_qyb5k")]
-position = Vector2(-221, 437)
-
-[node name="Tile10" parent="Floor3/FloorTiles" index="9" instance=ExtResource("3_qyb5k")]
-position = Vector2(-189, 437)
-
-[node name="Tile11" parent="Floor3/FloorTiles" index="10" instance=ExtResource("3_qyb5k")]
-position = Vector2(3, 437)
-
-[node name="Tile12" parent="Floor3/FloorTiles" index="11" instance=ExtResource("3_qyb5k")]
-position = Vector2(35, 437)
-
-[node name="Tile13" parent="Floor3/FloorTiles" index="12" instance=ExtResource("3_qyb5k")]
-position = Vector2(67, 437)
-
-[node name="Tile14" parent="Floor3/FloorTiles" index="13" instance=ExtResource("3_qyb5k")]
-position = Vector2(-61, 437)
-
-[node name="Tile15" parent="Floor3/FloorTiles" index="14" instance=ExtResource("3_qyb5k")]
-position = Vector2(-29, 437)
-
-[node name="Tile16" parent="Floor3/FloorTiles" index="15" instance=ExtResource("3_qyb5k")]
-position = Vector2(163, 437)
-
-[node name="Tile17" parent="Floor3/FloorTiles" index="16" instance=ExtResource("3_qyb5k")]
-position = Vector2(195, 437)
-
-[node name="Tile18" parent="Floor3/FloorTiles" index="17" instance=ExtResource("3_qyb5k")]
-position = Vector2(227, 437)
-
-[node name="Tile19" parent="Floor3/FloorTiles" index="18" instance=ExtResource("3_qyb5k")]
-position = Vector2(99, 437)
-
-[node name="Tile20" parent="Floor3/FloorTiles" index="19" instance=ExtResource("3_qyb5k")]
-position = Vector2(131, 437)
-
-[node name="Tile21" parent="Floor3/FloorTiles" index="20" instance=ExtResource("3_qyb5k")]
-position = Vector2(323, 437)
-
-[node name="Tile22" parent="Floor3/FloorTiles" index="21" instance=ExtResource("3_qyb5k")]
-position = Vector2(355, 437)
-
-[node name="Tile23" parent="Floor3/FloorTiles" index="22" instance=ExtResource("3_qyb5k")]
-position = Vector2(387, 437)
-
-[node name="Tile24" parent="Floor3/FloorTiles" index="23" instance=ExtResource("3_qyb5k")]
-position = Vector2(259, 437)
-
-[node name="Tile25" parent="Floor3/FloorTiles" index="24" instance=ExtResource("3_qyb5k")]
-position = Vector2(291, 437)
-
-[node name="Tile26" parent="Floor3/FloorTiles" index="25" instance=ExtResource("3_qyb5k")]
-position = Vector2(483, 437)
-
-[node name="Tile27" parent="Floor3/FloorTiles" index="26" instance=ExtResource("3_qyb5k")]
-position = Vector2(515, 437)
-
-[node name="Tile28" parent="Floor3/FloorTiles" index="27" instance=ExtResource("3_qyb5k")]
-position = Vector2(547, 437)
-
-[node name="Tile29" parent="Floor3/FloorTiles" index="28" instance=ExtResource("3_qyb5k")]
-position = Vector2(419, 437)
-
-[node name="Tile30" parent="Floor3/FloorTiles" index="29" instance=ExtResource("3_qyb5k")]
-position = Vector2(451, 437)
-
-[node name="Tile31" parent="Floor3/FloorTiles" index="30" instance=ExtResource("3_qyb5k")]
-position = Vector2(-797, 437)
-
-[node name="Tile32" parent="Floor3/FloorTiles" index="31" instance=ExtResource("3_qyb5k")]
-position = Vector2(-765, 437)
-
-[node name="Tile33" parent="Floor3/FloorTiles" index="32" instance=ExtResource("3_qyb5k")]
-position = Vector2(-733, 437)
-
-[node name="Tile34" parent="Floor3/FloorTiles" index="33" instance=ExtResource("3_qyb5k")]
-position = Vector2(-861, 437)
-
-[node name="Tile35" parent="Floor3/FloorTiles" index="34" instance=ExtResource("3_qyb5k")]
-position = Vector2(-829, 437)
-
-[node name="Tile36" parent="Floor3/FloorTiles" index="35" instance=ExtResource("3_qyb5k")]
-position = Vector2(-637, 437)
-
-[node name="Tile37" parent="Floor3/FloorTiles" index="36" instance=ExtResource("3_qyb5k")]
-position = Vector2(-605, 437)
-
-[node name="Tile38" parent="Floor3/FloorTiles" index="37" instance=ExtResource("3_qyb5k")]
-position = Vector2(-573, 437)
-
-[node name="Tile39" parent="Floor3/FloorTiles" index="38" instance=ExtResource("3_qyb5k")]
-position = Vector2(-701, 437)
-
-[node name="Tile40" parent="Floor3/FloorTiles" index="39" instance=ExtResource("3_qyb5k")]
-position = Vector2(-669, 437)
-
-[node name="Tile41" parent="Floor3/FloorTiles" index="40" instance=ExtResource("3_qyb5k")]
-position = Vector2(-477, 437)
-
-[node name="Tile42" parent="Floor3/FloorTiles" index="41" instance=ExtResource("3_qyb5k")]
-position = Vector2(-445, 437)
-
-[node name="Tile43" parent="Floor3/FloorTiles" index="42" instance=ExtResource("3_qyb5k")]
-position = Vector2(-413, 437)
-
-[node name="Tile44" parent="Floor3/FloorTiles" index="43" instance=ExtResource("3_qyb5k")]
-position = Vector2(-541, 437)
-
-[node name="Tile45" parent="Floor3/FloorTiles" index="44" instance=ExtResource("3_qyb5k")]
-position = Vector2(-509, 437)
-
-[node name="Tile46" parent="Floor3/FloorTiles" index="45" instance=ExtResource("3_qyb5k")]
-position = Vector2(643, 437)
-
-[node name="Tile47" parent="Floor3/FloorTiles" index="46" instance=ExtResource("3_qyb5k")]
-position = Vector2(675, 437)
-
-[node name="Tile48" parent="Floor3/FloorTiles" index="47" instance=ExtResource("3_qyb5k")]
-position = Vector2(707, 437)
-
-[node name="Tile49" parent="Floor3/FloorTiles" index="48" instance=ExtResource("3_qyb5k")]
-position = Vector2(579, 437)
-
-[node name="Tile50" parent="Floor3/FloorTiles" index="49" instance=ExtResource("3_qyb5k")]
-position = Vector2(611, 437)
-
-[node name="Tile51" parent="Floor3/FloorTiles" index="50" instance=ExtResource("3_qyb5k")]
-position = Vector2(803, 437)
-
-[node name="Tile52" parent="Floor3/FloorTiles" index="51" instance=ExtResource("3_qyb5k")]
-position = Vector2(835, 437)
-
-[node name="Tile53" parent="Floor3/FloorTiles" index="52" instance=ExtResource("3_qyb5k")]
-position = Vector2(867, 437)
-
-[node name="Tile54" parent="Floor3/FloorTiles" index="53" instance=ExtResource("3_qyb5k")]
-position = Vector2(739, 437)
-
-[node name="Tile55" parent="Floor3/FloorTiles" index="54" instance=ExtResource("3_qyb5k")]
-position = Vector2(771, 437)
-
-[node name="WallTiles" type="Node2D" parent="Floor3" index="2"]
-
-[node name="Bricks1" parent="Floor3/WallTiles" index="0" instance=ExtResource("4_py88r")]
-position = Vector2(-861, 405)
-
-[node name="Bricks2" parent="Floor3/WallTiles" index="1" instance=ExtResource("4_py88r")]
-position = Vector2(-861, 373)
-
-[node name="Bricks3" parent="Floor3/WallTiles" index="2" instance=ExtResource("4_py88r")]
-position = Vector2(-861, 341)
-
-[node name="Bricks4" parent="Floor3/WallTiles" index="3" instance=ExtResource("4_py88r")]
-position = Vector2(-861, 309)
-
-[node name="Bricks5" parent="Floor3/WallTiles" index="4" instance=ExtResource("4_py88r")]
-position = Vector2(867, 405)
-
-[node name="Bricks6" parent="Floor3/WallTiles" index="5" instance=ExtResource("4_py88r")]
-position = Vector2(867, 373)
-
-[node name="Bricks7" parent="Floor3/WallTiles" index="6" instance=ExtResource("4_py88r")]
-position = Vector2(867, 341)
-
-[node name="Bricks8" parent="Floor3/WallTiles" index="7" instance=ExtResource("4_py88r")]
-position = Vector2(867, 309)
+[node name="TileMapLayer" type="TileMapLayer" parent="Floor3" index="1"]
+texture_filter = 1
+position = Vector2(0, 300)
+tile_map_data = PackedByteArray("AADt/wQAAAACAAAAAADu/wQAAAACAAAAAADv/wQAAAACAAAAAADw/wQAAAACAAAAAADx/wQAAAACAAAAAADy/wQAAAACAAAAAADz/wQAAAACAAAAAAD0/wQAAAACAAAAAAD1/wQAAAACAAAAAAD2/wQAAAACAAAAAAD3/wQAAAACAAAAAAD4/wQAAAACAAAAAAD5/wQAAAACAAAAAAD6/wQAAAACAAAAAAD7/wQAAAACAAAAAAD8/wQAAAACAAAAAAD9/wQAAAACAAAAAAD+/wQAAAACAAAAAAD//wQAAAACAAAAAAAAAAQAAAACAAAAAAABAAQAAAACAAAAAAACAAQAAAACAAAAAAADAAQAAAACAAAAAAAEAAQAAAACAAAAAAAFAAQAAAACAAAAAAAGAAQAAAACAAAAAAAHAAQAAAACAAAAAAAIAAQAAAACAAAAAAAJAAQAAAACAAAAAAAKAAQAAAACAAAAAAALAAQAAAACAAAAAAAMAAQAAAACAAAAAAANAAQAAAACAAAAAAAOAAQAAAACAAAAAAAPAAQAAAACAAAAAAAQAAQAAAACAAAAAAARAAQAAAACAAAAAAASAAQAAAACAAAAAAATAAQAAAACAAAAAAAUAAQAAAACAAAAAAAVAAQAAAACAAAAAAAWAAQAAAACAAAAAAAXAAQAAAACAAAAAAAYAAQAAAACAAAAAAAZAAQAAAACAAAAAAAZAAMAAAABAAAAAAAZAAIAAAABAAAAAAAZAAEAAAABAAAAAAAZAAAAAAABAAAAAADt/wMAAAABAAAAAADt/wIAAAABAAAAAADt/wEAAAABAAAAAADt/wAAAAABAAAAAAA=")
+tile_set = SubResource("TileSet_py88r")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Floor3/TileMapLayer" index="0"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor3/TileMapLayer/StaticBody2D" index="0"]
+position = Vector2(112, 144)
+shape = SubResource("RectangleShape2D_g1dg4")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Floor3/TileMapLayer/StaticBody2D" index="1"]
+position = Vector2(-592, 64)
+shape = SubResource("RectangleShape2D_s1bpp")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Floor3/TileMapLayer/StaticBody2D" index="2"]
+position = Vector2(816, 64)
+shape = SubResource("RectangleShape2D_s1bpp")
+
+[node name="Player" parent="." index="5"]
+position = Vector2(54, 118)
