@@ -103,7 +103,7 @@ position = Vector2(0, -48)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_0i614")
 animation = &"run"
-frame_progress = 0.15766473
+frame_progress = 0.922155
 offset = Vector2(12, 0)
 flip_h = true
 
@@ -130,3 +130,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="GunPoint" type="Marker2D" parent="."]
+position = Vector2(0, -42)

@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://d3vm4dg0841ls"]
+[gd_scene load_steps=6 format=3 uid="uid://d3vm4dg0841ls"]
 
 [ext_resource type="PackedScene" uid="uid://jo32yx1vbsco" path="res://levels/level.tscn" id="1_p1d34"]
 [ext_resource type="PackedScene" uid="uid://4rhntp45r3y4" path="res://entities/stairs.tscn" id="2_p1d34"]
+[ext_resource type="PackedScene" uid="uid://dwpy6jdqyg73s" path="res://entities/door.tscn" id="3_py88r"]
+[ext_resource type="PackedScene" uid="uid://bn4lvjes84bug" path="res://entities/npc.tscn" id="3_qyb5k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qyb5k"]
 size = Vector2(1707.5, 75)
@@ -27,6 +29,9 @@ shape = SubResource("RectangleShape2D_qyb5k")
 
 [node name="Polygon2D" type="Polygon2D" parent="Floor0/StaticBody2D" index="1"]
 polygon = PackedVector2Array(-840, 117, 859, 120, 873, 196, -839, 186)
+
+[node name="Door" parent="Floor0" index="2" instance=ExtResource("3_py88r")]
+position = Vector2(-1, 117)
 
 [node name="Floor1" type="Node2D" parent="." index="2"]
 position = Vector2(0, -271)
@@ -81,3 +86,6 @@ shape = SubResource("RectangleShape2D_qyb5k")
 
 [node name="Polygon2D" type="Polygon2D" parent="Floor3/StaticBody2D" index="1"]
 polygon = PackedVector2Array(-840, 117, 859, 120, 873, 196, -839, 186)
+
+[node name="Npc" parent="." index="7" instance=ExtResource("3_qyb5k")]
+position = Vector2(-570, 97)
