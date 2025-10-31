@@ -12,3 +12,10 @@ func set_open(open: bool):
 
 func action_use(player: Player):
     set_open(not open)
+
+func _on_spawn_timer_timeout() -> void:
+    if randf() < 0.1 and open:
+        const npc_scene = preload("res://entities/npc.tscn")
+        var npc = npc_scene.instantiate()
+        Main.the.current_level().add_child(npc)
+        npc.position = global_position
