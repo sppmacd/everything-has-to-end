@@ -88,13 +88,14 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b0kkn"]
-size = Vector2(64, 64)
+size = Vector2(32, 64)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e4p34"]
 size = Vector2(72, 72)
 
 [node name="Player" type="CharacterBody2D"]
 z_index = 4096
+collision_layer = 0
 script = ExtResource("1_b0kkn")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
