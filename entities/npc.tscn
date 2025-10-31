@@ -16,3 +16,12 @@ texture = ExtResource("1_kdwfn")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-2, -64)
 shape = SubResource("RectangleShape2D_kdwfn")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
+[node name="GunMarker" type="Marker2D" parent="."]
+position = Vector2(38, -79)
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

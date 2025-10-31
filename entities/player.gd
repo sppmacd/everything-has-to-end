@@ -61,4 +61,4 @@ func _unhandled_input(event: InputEvent) -> void:
             var shell = preload("res://entities/shell.tscn").instantiate()
             var mouse_pos = get_global_mouse_position()
             Main.the.current_level().add_child(shell)
-            shell.set_start_end(gun_point.global_position, mouse_pos)
+            shell.setup(self, gun_point.global_position, mouse_pos)
