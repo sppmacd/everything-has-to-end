@@ -13,7 +13,7 @@ func _raytrace_end(shooter: PhysicsBody2D, start: Vector2, end: Vector2):
     var q = PhysicsRayQueryParameters2D.new()
     q.from = start
     q.to = end + (end - start).normalized()*10000
-    q.collision_mask = 0x4 # "Damagea" only
+    q.collision_mask = 0x5 # "Collision", Damage"
     q.exclude = [shooter.get_rid()]
     var result = get_world_2d().direct_space_state.intersect_ray(q)
     return result
