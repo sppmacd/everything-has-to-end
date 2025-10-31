@@ -27,7 +27,7 @@ func _process(delta: float) -> void:
 
 func _unhandled_key_input(event: InputEvent) -> void:
     if event is InputEventKey:
-        if event.keycode == KEY_E and can_use_objects:
+        if event.keycode == KEY_E and event.is_pressed() and can_use_objects:
             var uo = _find_usable_objects()
             if len(uo) > 0:
                 uo[0]._action_use(self)
