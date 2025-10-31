@@ -84,7 +84,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"run",
-"speed": 5.0
+"speed": 9.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b0kkn"]
@@ -98,14 +98,21 @@ z_index = 4096
 script = ExtResource("1_b0kkn")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.5, 0.5)
+texture_filter = 1
+position = Vector2(0, -48)
+scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_0i614")
 animation = &"run"
+frame_progress = 0.15766473
+offset = Vector2(12, 0)
+flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -32)
 shape = SubResource("RectangleShape2D_b0kkn")
 
 [node name="UseArea" type="Area2D" parent="."]
+position = Vector2(0, -32)
 collision_layer = 0
 collision_mask = 2
 
@@ -115,9 +122,9 @@ shape = SubResource("RectangleShape2D_e4p34")
 
 [node name="PressEToUse" type="Label" parent="."]
 offset_left = -54.0
-offset_top = -65.0
+offset_top = -95.0
 offset_right = 53.0
-offset_bottom = -42.0
+offset_bottom = -72.0
 text = "Press E to use"
 horizontal_alignment = 1
 vertical_alignment = 1
