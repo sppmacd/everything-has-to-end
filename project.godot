@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 2d_physics/layer_1="Collision"
 2d_physics/layer_2="Use"
+2d_physics/layer_3="Damage"
 
 [rendering]
 
