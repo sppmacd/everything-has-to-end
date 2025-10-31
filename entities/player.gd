@@ -2,16 +2,21 @@ class_name Player
 extends CharacterBody2D
 
 const WALKING_SPEED: float = 5000
+const JUMP_SPEED: float = -400.0
+const GRAVITY: float = 981.0
 
 @onready var use_area: Area2D = $UseArea
 @onready var label_press_e_to_use = $PressEToUse
 @onready var gun_point = $GunPoint
 var can_use_objects: bool = true
 var moving: bool = false
+var jumping: bool = false
 var flipped: bool = false
 
 func _animation_process(delta: float) -> void:
-	if moving:
+	if jumping:
+		$Sprite2D.play("jump")
+	elif moving:
 		$Sprite2D.play("run")
 	else:
 		$Sprite2D.play("idle")
@@ -28,6 +33,16 @@ func _physics_process(delta: float) -> void:
 	if Input.is_key_pressed(KEY_D):
 		velocity.x += WALKING_SPEED * delta
 		moving = true
+	
+	if not is_on_floor():
+		velocity.y += GRAVITY * delta
+	else:
+		jumping = false
+
+	if Input.is_key_pressed(KEY_SPACE) and is_on_floor():
+		velocity.y = JUMP_SPEED
+		jumping = true
+
 	velocity.x *= 0.00001 ** delta
 	velocity.y += 981 * delta
 	move_and_slide()
