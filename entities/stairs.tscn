@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://4rhntp45r3y4"]
+
+[ext_resource type="Script" uid="uid://bxvbt6vjrmw6m" path="res://entities/stairs.gd" id="1_va38u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_va38u"]
+size = Vector2(94, 119)
+
+[node name="Stairs" type="StaticBody2D"]
+collision_layer = 2
+script = ExtResource("1_va38u")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2(0, -2)
+color = Color(0.34117648, 0.34117648, 0.34117648, 1)
+polygon = PackedVector2Array(-47, 2, -47, -117, 47, -117, 47, 2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -59.5)
+shape = SubResource("RectangleShape2D_va38u")

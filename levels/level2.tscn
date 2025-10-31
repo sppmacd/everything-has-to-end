@@ -1,0 +1,85 @@
+[gd_scene load_steps=4 format=3 uid="uid://d3vm4dg0841ls"]
+
+[ext_resource type="PackedScene" uid="uid://b0myivfh6cthu" path="res://entities/player.tscn" id="1_sjb42"]
+[ext_resource type="PackedScene" uid="uid://4rhntp45r3y4" path="res://entities/stairs.tscn" id="2_p1d34"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p1d34"]
+size = Vector2(1707.5, 75)
+
+[node name="Level2" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_sjb42")]
+position = Vector2(-5, 49)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+
+[node name="Floor0" type="Node2D" parent="."]
+
+[node name="Stairs_up" parent="Floor0" instance=ExtResource("2_p1d34")]
+position = Vector2(-287, 120)
+
+[node name="Target" type="Marker2D" parent="Floor0/Stairs_up"]
+position = Vector2(-2, -316)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Floor0"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor0/StaticBody2D"]
+position = Vector2(15.25, 158.5)
+shape = SubResource("RectangleShape2D_p1d34")
+
+[node name="Polygon2D" type="Polygon2D" parent="Floor0/StaticBody2D"]
+polygon = PackedVector2Array(-840, 117, 859, 120, 873, 196, -839, 186)
+
+[node name="Floor1" type="Node2D" parent="."]
+position = Vector2(0, -271)
+
+[node name="Stairs_up" parent="Floor1" instance=ExtResource("2_p1d34")]
+position = Vector2(554, 120)
+
+[node name="Target" type="Marker2D" parent="Floor1/Stairs_up"]
+position = Vector2(-2, -316)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Floor1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor1/StaticBody2D"]
+position = Vector2(15.25, 158.5)
+shape = SubResource("RectangleShape2D_p1d34")
+
+[node name="Polygon2D" type="Polygon2D" parent="Floor1/StaticBody2D"]
+polygon = PackedVector2Array(-840, 117, 859, 120, 873, 196, -839, 186)
+
+[node name="Floor2" type="Node2D" parent="."]
+position = Vector2(0, -533)
+
+[node name="Stairs_up" parent="Floor2" instance=ExtResource("2_p1d34")]
+position = Vector2(-287, 120)
+
+[node name="Target" type="Marker2D" parent="Floor2/Stairs_up"]
+position = Vector2(-2, -316)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Floor2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor2/StaticBody2D"]
+position = Vector2(15.25, 158.5)
+shape = SubResource("RectangleShape2D_p1d34")
+
+[node name="Polygon2D" type="Polygon2D" parent="Floor2/StaticBody2D"]
+polygon = PackedVector2Array(-840, 117, 859, 120, 873, 196, -839, 186)
+
+[node name="Floor3" type="Node2D" parent="."]
+position = Vector2(0, -780)
+
+[node name="Stairs_up" parent="Floor3" instance=ExtResource("2_p1d34")]
+position = Vector2(526, 120)
+
+[node name="Target" type="Marker2D" parent="Floor3/Stairs_up"]
+position = Vector2(-2, -316)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Floor3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor3/StaticBody2D"]
+position = Vector2(15.25, 158.5)
+shape = SubResource("RectangleShape2D_p1d34")
+
+[node name="Polygon2D" type="Polygon2D" parent="Floor3/StaticBody2D"]
+polygon = PackedVector2Array(-840, 117, 859, 120, 873, 196, -839, 186)

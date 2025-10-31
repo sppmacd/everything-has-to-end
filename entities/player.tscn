@@ -1,10 +1,38 @@
-[gd_scene load_steps=3 format=3 uid="uid://b0myivfh6cthu"]
+[gd_scene load_steps=5 format=3 uid="uid://b0myivfh6cthu"]
 
 [ext_resource type="Script" uid="uid://b2jbntfickj5g" path="res://entities/player.gd" id="1_b0kkn"]
 [ext_resource type="Texture2D" uid="uid://6eykslatvhl2" path="res://icon.svg" id="1_merdl"]
 
-[node name="Player" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b0kkn"]
+size = Vector2(64, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e4p34"]
+size = Vector2(72, 72)
+
+[node name="Player" type="CharacterBody2D"]
+z_index = 4096
 script = ExtResource("1_b0kkn")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_merdl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_b0kkn")
+
+[node name="UseArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UseArea"]
+position = Vector2(-1, -4)
+shape = SubResource("RectangleShape2D_e4p34")
+
+[node name="PressEToUse" type="Label" parent="."]
+offset_left = -54.0
+offset_top = -65.0
+offset_right = 53.0
+offset_bottom = -42.0
+text = "Press E to use"
+horizontal_alignment = 1
+vertical_alignment = 1
