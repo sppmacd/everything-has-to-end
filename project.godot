@@ -20,6 +20,10 @@ config/icon="res://icon.svg"
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
 
+[gui]
+
+theme/custom_font="uid://d1amaqv3ptq6s"
+
 [layer_names]
 
 2d_physics/layer_1="Collision"

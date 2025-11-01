@@ -18,7 +18,7 @@ script = ExtResource("1_ej4bd")
 [node name="SpeechText" type="Label" parent="."]
 z_index = 4096
 offset_top = -7.0
-offset_right = 300.0
-offset_bottom = 20.0
+offset_right = 332.0
+offset_bottom = 332.0
 label_settings = SubResource("LabelSettings_ej4bd")
 autowrap_mode = 2

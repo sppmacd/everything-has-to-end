@@ -16,7 +16,7 @@ func update_keys_ui(player: Player):
 	for key in player.keys:
 		var q = TextureRect.new()
 		q.texture = load(Keys.KEY_TEXTURES[key])
-		q.custom_minimum_size = Vector2(64, 64)
+		q.custom_minimum_size = Vector2(32, 32)
 		$Keys.add_child(q)
 
 func update_ammo_ui(player: Player):

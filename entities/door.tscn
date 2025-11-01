@@ -21,7 +21,6 @@ position = Vector2(-1, -48)
 shape = SubResource("RectangleShape2D_k4wox")
 
 [node name="SpawnTimer" type="Timer" parent="." index="2"]
-wait_time = 5.0
 autostart = true
 
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
