@@ -130,7 +130,7 @@ func _physics_process(delta: float) -> void:
 func _find_usable_objects() -> Array[Node2D]:
 	var objects = use_area.get_overlapping_bodies()
 	objects.pop_front() # player
-	return objects
+	return objects.filter(func(a): return a.action_enabled())
 
 func _label_process(_delta: float) -> void:
 	label_press_e_to_use.visible = len(_find_usable_objects()) > 0
