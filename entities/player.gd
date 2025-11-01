@@ -34,7 +34,11 @@ func add_key(key: String):
 	keys.append(key)
 	key_added.emit()
 
-func _animation_process(delta: float) -> void:
+func add_ammo(amount: int):
+	ammo += amount
+	ammo_changed.emit()
+
+func _animation_process(_delta: float) -> void:
 	if jumping:
 		$Sprite2D.play("jump")
 	elif punching:
@@ -98,7 +102,7 @@ func _find_usable_objects() -> Array[Node2D]:
 	var area = use_area.get_overlapping_bodies()
 	return area
 
-func _label_process(delta: float) -> void:
+func _label_process(_delta: float) -> void:
 	label_press_e_to_use.visible = len(_find_usable_objects()) > 0
 
 func _process(delta: float) -> void:
