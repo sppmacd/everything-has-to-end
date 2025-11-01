@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://d3vm4dg0841ls"]
+[gd_scene load_steps=11 format=4 uid="uid://d3vm4dg0841ls"]
 
 [ext_resource type="PackedScene" uid="uid://b62r6sibq6dpt" path="res://levels/level.tscn" id="1_p1d34"]
 [ext_resource type="Script" uid="uid://cjvp88y70lsmv" path="res://levels/level_2.gd" id="2_76ugp"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dskljqmgkkmyf" path="res://entities/corridor_door.tscn" id="5_g1dg4"]
 [ext_resource type="PackedScene" uid="uid://dtaoehussyag4" path="res://entities/camera.tscn" id="6_s1bpp"]
 [ext_resource type="AudioStream" uid="uid://tq455hhb777d" path="res://assets/sounds/Alarm0.wav" id="8_e8p81"]
+[ext_resource type="PackedScene" uid="uid://bn4lvjes84bug" path="res://entities/npc.tscn" id="10_crte6"]
 
 [node name="Level" instance=ExtResource("1_p1d34")]
 script = ExtResource("2_76ugp")
@@ -109,7 +110,7 @@ required_key = "lvl2_floor1_upstairs"
 [node name="Door2" parent="Floor1" index="5" instance=ExtResource("4_py88r")]
 position = Vector2(-281, 239)
 key_chances = Dictionary[String, float]({
-"lvl2_floor1_upstairs": 0.1
+"lvl2_floor1_upstairs": 0.6
 })
 required_key = "lvl2_floor0_upstairs"
 
@@ -138,3 +139,8 @@ position = Vector2(90, 435)
 
 [node name="AlarmSound" type="AudioStreamPlayer" parent="." index="7"]
 stream = ExtResource("8_e8p81")
+
+[node name="Npc" parent="." index="9" instance=ExtResource("10_crte6")]
+position = Vector2(12, 124)
+keys_inventory = Array[String](["lvl2_floor0_upstairs"])
+enable_retreat = false

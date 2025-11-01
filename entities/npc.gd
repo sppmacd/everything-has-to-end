@@ -15,7 +15,11 @@ enum State {
 var spawn_door: Door
 var state: State = State.LOOKING_AROUND
 var shooting: bool = false
+
+@export
 var keys_inventory: Array[String] = []
+@export
+var enable_retreat: bool = true
 
 func set_flipped(f: bool):
 	flipped = f
@@ -153,8 +157,8 @@ func _on_lookaround_timer_timeout() -> void:
 
 
 func _on_player_following_cooldown_timeout() -> void:
-	print("RETREATING!")
-	state = State.RETREATING
+	if enable_retreat:
+		state = State.RETREATING
 
 
 func _on_gun_timer_timeout() -> void:
