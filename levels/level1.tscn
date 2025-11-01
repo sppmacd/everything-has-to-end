@@ -1,8 +1,8 @@
-[gd_scene load_steps=29 format=4 uid="uid://crfyqoojvk126"]
+[gd_scene load_steps=31 format=4 uid="uid://dbdo6kvx58ofw"]
 
 [ext_resource type="PackedScene" uid="uid://b62r6sibq6dpt" path="res://levels/level.tscn" id="1_ua5ty"]
 [ext_resource type="Texture2D" uid="uid://dqnqxpmjx1ahj" path="res://assets/tiles.png" id="3_pdpul"]
-[ext_resource type="PackedScene" uid="uid://ciyhr0m5pm4tr" path="res://entities/biker.tscn" id="3_ua5ty"]
+[ext_resource type="PackedScene" path="res://entities/biker.tscn" id="3_ua5ty"]
 [ext_resource type="PackedScene" uid="uid://brhk1skqx3jdd" path="res://entities/scientist_captive.tscn" id="4_8hd6v"]
 [ext_resource type="Texture2D" uid="uid://cr28f18coror2" path="res://assets/bg/bg1.jpg" id="5_pdpul"]
 [ext_resource type="PackedScene" uid="uid://4rhntp45r3y4" path="res://entities/stairs.tscn" id="6_8hd6v"]
@@ -253,12 +253,24 @@ b = Vector2(0, 200)
 a = Vector2(-192, -2)
 b = Vector2(576, -2)
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_bekh1"]
+polygon = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_8bcou"]
+polygon = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_f7u7y"]
+polygon = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lbu4x"]
 texture = ExtResource("3_pdpul")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
+0:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_bekh1")
 1:0/0 = 0
+1:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_8bcou")
 2:0/0 = 0
+2:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_f7u7y")
 3:0/0 = 0
 4:0/0 = 0
 5:0/0 = 0
@@ -292,6 +304,7 @@ texture_region_size = Vector2i(32, 32)
 
 [sub_resource type="TileSet" id="TileSet_vcl05"]
 tile_size = Vector2i(32, 32)
+occlusion_layer_0/light_mask = 1
 sources/0 = SubResource("TileSetAtlasSource_lbu4x")
 
 [node name="Level3" instance=ExtResource("1_ua5ty")]
@@ -473,19 +486,16 @@ position = Vector2(912, -916)
 [node name="Door" parent="Floor1" index="23" instance=ExtResource("11_j4pg1")]
 z_index = 1
 position = Vector2(794, -736)
-key_chances = Dictionary[String, float]({})
 required_key = "lvl2_floor0_upstairs"
 
 [node name="Door2" parent="Floor1" index="24" instance=ExtResource("11_j4pg1")]
 z_index = 1
 position = Vector2(1273, -515)
-key_chances = Dictionary[String, float]({})
 required_key = "lvl2_floor0_upstairs"
 
 [node name="Door3" parent="Floor1" index="25" instance=ExtResource("11_j4pg1")]
 z_index = 1
 position = Vector2(1478, -512)
-key_chances = Dictionary[String, float]({})
 required_key = "lvl2_floor0_upstairs"
 
 [node name="Camera2" parent="Floor1" index="26" instance=ExtResource("10_kdcll")]

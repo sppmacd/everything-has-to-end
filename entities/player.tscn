@@ -390,7 +390,7 @@ script = ExtResource("1_b0kkn")
 position = Vector2(1, -51)
 scale = Vector2(2, 2)
 shadow_enabled = true
-shadow_color = Color(0, 0, 0, 0.7647059)
+shadow_color = Color(0, 0, 0, 1)
 texture = SubResource("GradientTexture2D_kdgjc")
 
 [node name="SoundGunshot" type="AudioStreamPlayer2D" parent="PointLight2D"]
