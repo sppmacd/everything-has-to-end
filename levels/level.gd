@@ -26,4 +26,6 @@ func _unhandled_key_input(event: InputEvent) -> void:
 			respawn_player()
 
 func _on_respawn_timer_timeout() -> void:
-	respawn_player()
+	var p = player()
+	if p:
+		p.damage(10000000)
