@@ -146,7 +146,7 @@ func _find_damagable_objects() -> Array:
 	var q = PhysicsShapeQueryParameters2D.new()
 	q.shape = preload("res://entities/player_use_area.tres")
 	q.transform = self.transform
-	q.collision_mask = 0x2 # "use"
+	q.collision_mask = 0x4 # "damagable"
 	q.exclude = [self]
 
 	var objects = get_world_2d().direct_space_state.intersect_shape(q).map(func(k): return k["collider"])
