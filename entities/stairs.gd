@@ -21,3 +21,7 @@ func action_use(player: Player):
 
 func action_tooltip() -> String:
 	return "Press E to go up"
+
+func action_enabled() -> bool:
+	return true
+	

@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://b0myivfh6cthu"]
+[gd_scene load_steps=55 format=3 uid="uid://b0myivfh6cthu"]
 
 [ext_resource type="Script" uid="uid://b2jbntfickj5g" path="res://entities/player.gd" id="1_b0kkn"]
 [ext_resource type="Texture2D" uid="uid://bwvvogre6j1mh" path="res://assets/players/Punk/Punk_idle.png" id="2_e4p34"]
@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://c7dokago62207" path="res://assets/players/Punk/Punk_run_attack_gun.png" id="3_6nm46"]
 [ext_resource type="Texture2D" uid="uid://dft6t722lcfd8" path="res://assets/players/Punk/Punk_jump.png" id="3_qly61"]
 [ext_resource type="Texture2D" uid="uid://cw5vuuyrvtupd" path="res://assets/players/Punk/Punk_run.png" id="3_rfe5m"]
+[ext_resource type="Texture2D" uid="uid://dnhvavf1qi6qm" path="res://assets/players/Punk/Punk_attack_punch.png" id="6_6nm46"]
+[ext_resource type="PackedScene" uid="uid://dfontxhyddd6b" path="res://entities/speech_bubble.tscn" id="8_i623q"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cgp7q"]
 atlas = ExtResource("2_qsoyl")
@@ -90,6 +92,38 @@ region = Rect2(96, 0, 48, 48)
 [sub_resource type="AtlasTexture" id="AtlasTexture_dp3pk"]
 atlas = ExtResource("3_qly61")
 region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1w6s4"]
+atlas = ExtResource("6_6nm46")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yb7tu"]
+atlas = ExtResource("6_6nm46")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b338v"]
+atlas = ExtResource("6_6nm46")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i1mej"]
+atlas = ExtResource("6_6nm46")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e45uk"]
+atlas = ExtResource("6_6nm46")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ud54e"]
+atlas = ExtResource("6_6nm46")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iudwg"]
+atlas = ExtResource("6_6nm46")
+region = Rect2(288, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rw12f"]
+atlas = ExtResource("6_6nm46")
+region = Rect2(336, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ef06p"]
 atlas = ExtResource("3_rfe5m")
@@ -244,6 +278,35 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_1w6s4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yb7tu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b338v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i1mej")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e45uk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ud54e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iudwg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rw12f")
+}],
+"loop": true,
+"name": &"punch",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_ef06p")
 }, {
 "duration": 1.0,
@@ -316,7 +379,7 @@ texture_filter = 1
 position = Vector2(0, -48)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_0i614")
-animation = &"running"
+animation = &"punch"
 offset = Vector2(12, 0)
 flip_h = true
 
@@ -342,7 +405,11 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(2.5, 2.5)
+zoom = Vector2(1.5, 1.5)
 
 [node name="GunPoint" type="Marker2D" parent="."]
 position = Vector2(0, -42)
+
+[node name="SpeechBubble" parent="." instance=ExtResource("8_i623q")]
+position = Vector2(17, -67)
+scale = Vector2(0.5, 0.5)

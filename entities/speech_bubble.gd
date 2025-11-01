@@ -1,10 +1,9 @@
 class_name SpeechBubble
 extends Node2D
-@onready var SpeechText = $Panel/SpeechText
+@onready var SpeechText = $SpeechText
 
 func _ready() -> void:
 	pass
-
 
 func _process(delta: float) -> void:
 	pass

@@ -16,6 +16,9 @@ func action_use(player: Player):
 func action_tooltip() -> String:
 	return "Press E to close"
 
+func action_enabled() -> bool:
+	return true
+
 func _on_spawn_timer_timeout() -> void:
 	if randf() < 0.1 and open:
 		const npc_scene = preload("res://entities/npc.tscn")

@@ -4,15 +4,18 @@ extends CharacterBody2D
 const WALKING_SPEED: float = 5000
 const JUMP_SPEED: float = -400.0
 const GRAVITY: float = 981.0
+const PUNCHING_DELAY_SEC: float = 0.4
 const LOADING_GUN_DELAY_SEC: float = 0.2
 const GUN_IDLE_DELAY_SEC: float = 0.5
 
 @onready var use_area: Area2D = $UseArea
 @onready var label_press_e_to_use = $PressEToUse
 @onready var gun_point = $GunPoint
+@onready var speech_bubble = $SpeechBubble
 var can_use_objects: bool = true
 var moving: bool = false
 var jumping: bool = false
+var punching: bool = false
 var flipped: bool = false
 var gun_loaded: bool = false
 var gun_loading: bool = false
@@ -30,6 +33,8 @@ func add_key(key: String):
 func _animation_process(delta: float) -> void:
 	if jumping:
 		$Sprite2D.play("jump")
+	elif punching:
+		$Sprite2D.play("punch")
 	elif moving:
 		if gun_loading:
 			$Sprite2D.play("show_gun_running")
@@ -95,8 +100,11 @@ func _label_process(delta: float) -> void:
 func _process(delta: float) -> void:
 	var uo = _find_usable_objects()
 	if len(uo) > 0:
-		label_press_e_to_use.text = uo[0].action_tooltip()
-		label_press_e_to_use.visible = true
+		if uo[0].action_enabled():
+			label_press_e_to_use.text = uo[0].action_tooltip()
+			label_press_e_to_use.visible = true
+		else:
+			label_press_e_to_use.visible = false
 	else:
 		label_press_e_to_use.visible = false
 	
@@ -108,11 +116,12 @@ func _unhandled_key_input(event: InputEvent) -> void:
 		if event.keycode == KEY_E and event.is_pressed() and can_use_objects:
 			var uo = _find_usable_objects()
 			if len(uo) > 0:
-				uo[0].action_use(self)
-				can_use_objects = false
-				
-				var timer = get_tree().create_timer(0.1)
-				timer.timeout.connect(func(): self.can_use_objects = true)
+				if uo[0].action_enabled():
+					uo[0].action_use(self)
+					can_use_objects = false
+					
+					var timer = get_tree().create_timer(0.1)
+					timer.timeout.connect(func(): self.can_use_objects = true)
 
 func _spawn_shell() -> void:
 	var shell = preload("res://entities/shell.tscn").instantiate()
@@ -142,3 +151,11 @@ func _unhandled_input(event: InputEvent) -> void:
 				timer.timeout.connect(func(): _spawn_shell())
 			else:
 				_spawn_shell()
+				
+func Punch() -> void:
+	punching = true
+	var timer = get_tree().create_timer(PUNCHING_DELAY_SEC)
+	timer.timeout.connect(func(): self.punching = false)
+
+func Speak(text: String) -> void:
+	speech_bubble.show_message(text)
