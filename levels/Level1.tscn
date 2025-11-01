@@ -1,7 +1,6 @@
-[gd_scene load_steps=11 format=4 uid="uid://b4tnls6x44lc5"]
+[gd_scene load_steps=10 format=4 uid="uid://b4tnls6x44lc5"]
 
 [ext_resource type="PackedScene" uid="uid://b62r6sibq6dpt" path="res://levels/level.tscn" id="1_ua5ty"]
-[ext_resource type="PackedScene" uid="uid://b0myivfh6cthu" path="res://entities/player.tscn" id="2_61w3m"]
 [ext_resource type="Texture2D" uid="uid://dqnqxpmjx1ahj" path="res://assets/tiles.png" id="3_pdpul"]
 [ext_resource type="PackedScene" uid="uid://brhk1skqx3jdd" path="res://entities/scientist_captive.tscn" id="4_8hd6v"]
 
@@ -107,9 +106,7 @@ distance = -206.1
 
 [node name="SpawnPoint" type="Marker2D" parent="Floor0" index="0"]
 
-[node name="Player" parent="Floor0" index="1" instance=ExtResource("2_61w3m")]
-
-[node name="Cutscene" type="Node2D" parent="Floor0" index="2"]
+[node name="Cutscene" type="Node2D" parent="Floor0" index="1"]
 
 [node name="WallCutscene" type="TileMapLayer" parent="Floor0/Cutscene" index="0"]
 texture_filter = 1
