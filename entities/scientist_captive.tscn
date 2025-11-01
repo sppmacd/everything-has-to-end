@@ -1,0 +1,57 @@
+[gd_scene load_steps=9 format=3 uid="uid://brhk1skqx3jdd"]
+
+[ext_resource type="Texture2D" uid="uid://dwhnab8yxip12" path="res://assets/players/Scientist/Scientist_captive_idle.png" id="1_0li67"]
+[ext_resource type="Script" uid="uid://bfbtgvdwm3c3q" path="res://entities/scientist_captive.gd" id="1_wvnc5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wvnc5"]
+atlas = ExtResource("1_0li67")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3807i"]
+atlas = ExtResource("1_0li67")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ff1pv"]
+atlas = ExtResource("1_0li67")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8qwwv"]
+atlas = ExtResource("1_0li67")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pp12h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wvnc5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3807i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ff1pv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8qwwv")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 3.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5s5ei"]
+size = Vector2(10, 19)
+
+[node name="ScientistCaptive" type="CharacterBody2D"]
+scale = Vector2(2.5, 2.5)
+script = ExtResource("1_wvnc5")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(19, -24)
+sprite_frames = SubResource("SpriteFrames_pp12h")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -10.5)
+shape = SubResource("RectangleShape2D_5s5ei")
