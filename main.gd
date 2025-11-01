@@ -12,6 +12,13 @@ func _ready():
 func on_player_changed():
 	$CanvasLayer/Hud.setup(current_level().player(), _current_level)
 
+# called only when player was killed NOT by the time loop
+func on_player_death():
+	$AudioStreamPlayer.play(193.0)
+
+func on_respawn():
+	$AudioStreamPlayer.play()
+
 func current_level():
 	return _current_level
 

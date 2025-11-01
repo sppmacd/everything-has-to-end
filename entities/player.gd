@@ -62,6 +62,7 @@ func damage(h: int):
 		rotation = deg_to_rad(90)
 		$Sprite2D.play("idle")
 		$Sprite2D.stop()
+		Main.the.on_player_death()
 		await get_tree().create_timer(5).timeout
 		Main.the.current_level().respawn_player()
 

@@ -19,8 +19,10 @@ func respawn_player():
 	player.name = "Player"
 	player.global_position = spawn_point.global_position
 	add_child(player)
-	
+
 	Main.the.on_player_changed()
+	Main.the.on_respawn()
+	$RespawnTimer.start()
 
 func _unhandled_key_input(event: InputEvent) -> void:
 	if event is InputEventKey:
