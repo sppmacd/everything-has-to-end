@@ -19,6 +19,14 @@ var gun_loading: bool = false
 var gun_unloading: bool = false
 var last_shot_timestamp: int = 0
 
+var keys: Array[String] = []
+
+func has_key(key: String):
+	return key in keys
+
+func add_key(key: String):
+	keys.append(key)
+
 func _animation_process(delta: float) -> void:
 	if jumping:
 		$Sprite2D.play("jump")
