@@ -21,7 +21,7 @@ var gun_loaded: bool = false
 var gun_loading: bool = false
 var gun_unloading: bool = false
 var last_shot_timestamp: int = 0
-var ammo: int = 20
+var ammo: int = 0
 var health: int = 5
 
 var keys: Array[String] = []
@@ -58,8 +58,8 @@ func damage(h: int):
 	health_changed.emit()
 	_health_anim.call_deferred()
 	if health <= 0:
-		$Sprite2D.rotate(3.14/2) # lying
-		$Sprite2D.offset = Vector2(50, 0)
+		position.y -= 20
+		rotation = deg_to_rad(90)
 		$Sprite2D.play("idle")
 		$Sprite2D.stop()
 		Main.the.current_level().respawn_player()
@@ -144,7 +144,7 @@ func action_enabled() -> bool:
 func action_use(player: Player):
 	print("USE PLAYER ", ammo)
 	player.ammo += self.ammo
-	ammo_changed.emit()
+	player.ammo_changed.emit()
 	queue_free()
 
 func _process(delta: float) -> void:
