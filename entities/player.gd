@@ -22,10 +22,12 @@ var gun_loading: bool = false
 var gun_unloading: bool = false
 var last_shot_timestamp: int = 0
 var ammo: int = 20
+var health: int = 5
 
 var keys: Array[String] = []
 signal key_added
 signal ammo_changed
+signal health_changed
 
 func has_key(key: String):
 	return key in keys
@@ -37,6 +39,24 @@ func add_key(key: String):
 func add_ammo(amount: int):
 	ammo += amount
 	ammo_changed.emit()
+
+func _ready():
+	health_changed.emit()
+
+
+func _health_anim():
+	var tween = create_tween()
+	tween.tween_callback(func(): self.modulate = Color.RED)
+	tween.tween_interval(0.2)
+	tween.tween_callback(func(): self.modulate = Color.WHITE)
+
+
+func damage(h: int):
+	health -= h
+	health_changed.emit()
+	_health_anim.call_deferred()
+	if health <= 0:
+		Main.the.current_level().respawn_player()
 
 func _animation_process(_delta: float) -> void:
 	if jumping:

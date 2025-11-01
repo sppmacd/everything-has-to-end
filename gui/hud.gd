@@ -7,6 +7,9 @@ func setup(player: Player):
 	player.ammo_changed.connect(func():
 		update_ammo_ui(player)
 	)
+	player.health_changed.connect(func():
+		update_health_ui(player)
+	)
 
 
 func update_keys_ui(player: Player):
@@ -21,3 +24,7 @@ func update_keys_ui(player: Player):
 
 func update_ammo_ui(player: Player):
 	$Ammo.text = "Ammo: " + str(player.ammo)
+	
+func update_health_ui(player: Player):
+	$Health.text = "Health: " + str(player.health)
+	

@@ -22,9 +22,10 @@ func _on_set_open(open: bool):
 
 func _on_spawn_timer_timeout() -> void:
 	print("spawn timer timeout open=", self.open)
-	var p = 0.5 if _alarm_state else 0.1
+	var p = 0.9 if _alarm_state else 0.1
+	var limit = 4 if _alarm_state else 1
 	if randf() < p and self.open:
-		if not _alarm_state and len(get_tree().get_nodes_in_group("npc")) > 0:
+		if not _alarm_state and len(get_tree().get_nodes_in_group("npc")) >= limit:
 			return
 		const npc_scene = preload("res://entities/npc.tscn")
 		var npc = npc_scene.instantiate()

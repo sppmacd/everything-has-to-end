@@ -1,9 +1,34 @@
-[gd_scene load_steps=23 format=3 uid="uid://bn4lvjes84bug"]
+[gd_scene load_steps=30 format=3 uid="uid://bn4lvjes84bug"]
 
 [ext_resource type="Script" uid="uid://c63p3n4kn5yd7" path="res://entities/npc.gd" id="1_34xg4"]
 [ext_resource type="Texture2D" uid="uid://2e8o4qcnl2xd" path="res://assets/players/Cyborg/Cyborg_death.png" id="2_0u2uj"]
 [ext_resource type="Texture2D" uid="uid://batwe2vgcthj1" path="res://assets/players/Cyborg/Cyborg_idle.png" id="2_34xg4"]
+[ext_resource type="Texture2D" uid="uid://bm8dkf6narkj4" path="res://assets/players/Cyborg/Cyborg_attack.png" id="4_eqa5y"]
 [ext_resource type="Texture2D" uid="uid://dk50m5v3upe0b" path="res://assets/players/Cyborg/Cyborg_run.png" id="4_sg5r8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_28ixn"]
+atlas = ExtResource("4_eqa5y")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sgtn7"]
+atlas = ExtResource("4_eqa5y")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rkyjk"]
+atlas = ExtResource("4_eqa5y")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iiskr"]
+atlas = ExtResource("4_eqa5y")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0057d"]
+atlas = ExtResource("4_eqa5y")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fq1jy"]
+atlas = ExtResource("4_eqa5y")
+region = Rect2(240, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5hdwl"]
 atlas = ExtResource("2_0u2uj")
@@ -71,6 +96,29 @@ region = Rect2(240, 0, 48, 48)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0u2uj"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_28ixn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sgtn7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rkyjk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iiskr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0057d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fq1jy")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 10.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_5hdwl")
@@ -146,9 +194,8 @@ script = ExtResource("1_34xg4")
 position = Vector2(0, -48)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_0u2uj")
-animation = &"death"
-frame = 5
-frame_progress = 1.0
+animation = &"attack"
+frame_progress = 0.8433018
 offset = Vector2(11, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -175,6 +222,10 @@ autostart = true
 wait_time = 10.0
 one_shot = true
 
+[node name="GunTimer" type="Timer" parent="."]
+wait_time = 2.0
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="LookaroundTimer" to="." method="_on_lookaround_timer_timeout"]
 [connection signal="timeout" from="PlayerFollowingCooldown" to="." method="_on_player_following_cooldown_timeout"]
+[connection signal="timeout" from="GunTimer" to="." method="_on_gun_timer_timeout"]

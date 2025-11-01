@@ -379,7 +379,7 @@ texture_filter = 1
 position = Vector2(0, -48)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_0i614")
-animation = &"punch"
+animation = &"show_gun_running"
 offset = Vector2(12, 0)
 flip_h = true
 
