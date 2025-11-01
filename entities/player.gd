@@ -8,7 +8,6 @@ const PUNCHING_DELAY_SEC: float = 0.4
 const LOADING_GUN_DELAY_SEC: float = 0.2
 const GUN_IDLE_DELAY_SEC: float = 0.5
 
-@onready var use_area: Area2D = $UseArea
 @onready var label_press_e_to_use = $PressEToUse
 @onready var gun_point = $GunPoint
 @onready var speech_bubble = $SpeechBubble
@@ -129,9 +128,13 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 
-func _find_usable_objects() -> Array[Node2D]:
-	var objects = use_area.get_overlapping_bodies()
-	objects.pop_front() # player
+func _find_usable_objects() -> Array:
+	var q = PhysicsShapeQueryParameters2D.new()
+	q.shape = preload("res://entities/player_use_area.tres")
+	q.transform = self.transform
+	q.collision_mask = 0x2 # "use"
+	q.exclude = [self]
+	var objects = get_world_2d().direct_space_state.intersect_shape(q).map(func(k): return k["collider"])
 	return objects.filter(func(a): return a.action_enabled())
 
 func _label_process(_delta: float) -> void:

@@ -114,9 +114,10 @@ func ai():
 				print("cooldown restart")
 				$PlayerFollowingCooldown.start()
 			walking_speed = 1.0
-			set_flipped(spawn_door.global_position.x < global_position.x)
-			if abs(spawn_door.global_position.x - global_position.x) < 20:
-				queue_free()
+			if spawn_door:
+				set_flipped(spawn_door.global_position.x < global_position.x)
+				if abs(spawn_door.global_position.x - global_position.x) < 20:
+					queue_free()
 
 func _physics_process(delta: float) -> void:
 	if dead:
