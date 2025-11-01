@@ -16,12 +16,12 @@
 [node name="Level" instance=ExtResource("1_p1d34")]
 script = ExtResource("2_76ugp")
 
-[node name="SpawnPoint" parent="." index="0"]
-position = Vector2(413, 87)
+[node name="CanvasModulate" parent="." index="0"]
+visible = false
 
 [node name="TileMapLayer2" type="TileMapLayer" parent="." index="1"]
 z_index = -10
-tile_map_data = PackedByteArray("AAD3/wAAAAAAAAAAAAD4/wAAAAAAAAAAAAD5/wAAAAAAAAAAAAD6/wAAAAAAAAAAAAD7/wAAAAAAAAAAAAD8/wAAAAAAAAAAAAD9/wAAAAAAAAAAAAD+/wAAAAAAAAAAAAD//wAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAACAAAAAAAAAAAAAAADAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAFAAAAAAAAAAAAAAAGAAAAAAAAAAAAAAAHAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAJAAAAAAAAAAAAAAAKAAAAAAAAAAAAAAALAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAAMAAEAAAAAAAAAAAALAAEAAAAAAAAAAAAKAAEAAAAAAAAAAAAJAAEAAAAAAAAAAAAIAAEAAAAAAAAAAAAHAAEAAAAAAAAAAAAGAAEAAAAAAAAAAAAFAAEAAAAAAAAAAAAEAAEAAAAAAAAAAAADAAEAAAAAAAAAAAACAAEAAAAAAAAAAAABAAEAAAAAAAAAAAAAAAEAAAAAAAAAAAD//wEAAAAAAAAAAAD+/wEAAAAAAAAAAAD9/wEAAAAAAAAAAAD8/wEAAAABAAAAAAD7/wEAAAAAAAAAAAD6/wEAAAAAAAAAAAD5/wEAAAAAAAAAAAD4/wEAAAAAAAAAAAD3/wEAAAAAAAAAAAAMAP//AAAAAAAAAAAMAP7/AAAAAAAAAAAMAP3/AAAAAAAAAAAMAPz/AAAAAAAAAAAMAPv/AAAAAAAAAAALAPv/AAAAAAAAAAAKAPv/AAAAAAAAAAAJAPv/AAAAAAAAAAAIAPv/AAAAAAAAAAAHAPv/AAAAAAAAAAAGAPv/AAAAAAAAAAAFAPv/AAAAAAAAAAAEAPv/AAAAAAAAAAADAPv/AAAAAAAAAAACAPv/AAAAAAAAAAABAPv/AAAAAAAAAAAAAPv/AAAAAAAAAAD///v/AAAAAAAAAAD+//v/AAAAAAAAAAD9//v/AAAAAAAAAAD8//v/AAAAAAAAAAD7//v/AAAAAAAAAAD6//v/AAAAAAAAAAD5//v/AAAAAAAAAAD4//v/AAAAAAAAAAD3//v/AAAAAAAAAAD3//z/AAAAAAAAAAD3//3/AAAAAAAAAAD3//7/AAAAAAAAAAD4//7/AAAAAAAAAAD4//3/AAAAAAAAAAD4//z/AAAAAAAAAAD4////AAAAAAAAAAD5//7/AAAAAAAAAAD5//3/AAAAAAAAAAD6//3/AAAAAAAAAAD5////AAAAAAAAAAD6////AAAAAAAAAAD7////AAAAAAAAAAD8////AAAAAAAAAAD9////AAAAAAAAAAD+////AAAAAAAAAAD/////AAAAAAAAAAAAAP//AAAAAAAAAAABAP//AAAAAAAAAAACAP//AAAAAAAAAAADAP//AAAAAAAAAAAEAP//AAAAAAAAAAAFAP//AAAAAAAAAAAGAP//AAAAAAAAAAAHAP//AAAAAAAAAAAIAP//AAAAAAAAAAAJAP7/AAAAAAAAAAAKAP7/AAAAAAAAAAALAP7/AAAAAAAAAAALAP3/AAAAAAAAAAALAP//AAAAAAAAAAALAPz/AAAAAAAAAAAKAPz/AAAAAAAAAAAJAPz/AAAAAAAAAAAIAPz/AAAAAAAAAAAHAPz/AAAAAAAAAAAGAPz/AAABAAAAAAAFAPz/AAAAAAAAAAAEAPz/AAAAAAAAAAADAPz/AAAAAAAAAAACAPz/AAAAAAAAAAABAPz/AAAAAAAAAAAAAPz/AAAAAAAAAAD///z/AAAAAAAAAAD+//z/AAAAAAAAAAD9//z/AAAAAAAAAAD8//z/AAAAAAAAAAD7//z/AAAAAAAAAAD6//z/AAAAAAAAAAD5//z/AAAAAAAAAAD3////AAAAAAAAAAD6//7/AAAAAAAAAAD7//7/AAAAAAAAAAD8//7/AAAAAAAAAAD9//7/AAAAAAAAAAD+//7/AAAAAAAAAAD///7/AAAAAAAAAAAAAP7/AAABAAAAAAABAP7/AAAAAAAAAAACAP7/AAAAAAAAAAADAP7/AAAAAAAAAAAEAP7/AAAAAAAAAAAFAP7/AAAAAAAAAAAGAP7/AAAAAAAAAAAHAP7/AAAAAAAAAAAIAP7/AAAAAAAAAAAKAP//AAAAAAAAAAAKAP3/AAAAAAAAAAAJAP3/AAAAAAAAAAAIAP3/AAAAAAAAAAAHAP3/AAAAAAAAAAAGAP3/AAAAAAAAAAAFAP3/AAAAAAAAAAACAP3/AAAAAAAAAAABAP3/AAAAAAAAAAAAAP3/AAAAAAAAAAD///3/AAAAAAAAAAD+//3/AAAAAAAAAAD9//3/AAAAAAAAAAD8//3/AAAAAAAAAAD7//3/AAAAAAAAAAADAP3/AAAAAAAAAAAEAP3/AAAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAD3/wAAAAAAAAAAAAD4/wAAAAAAAAAAAAD5/wAAAAAAAAAAAAD6/wAAAAAAAAAAAAD7/wAAAAAAAAAAAAD8/wAAAAAAAAAAAAD9/wAAAAAAAAAAAAD+/wAAAAAAAAAAAAD//wAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAACAAAAAAAAAAAAAAADAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAFAAAAAAAAAAAAAAAGAAAAAAAAAAAAAAAHAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAJAAAAAAAAAAAAAAAKAAAAAAAAAAAAAAALAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAAMAAEAAAAAAAAAAAALAAEAAAAAAAAAAAAKAAEAAAAAAAAAAAAJAAEAAAAAAAAAAAAIAAEAAAAAAAAAAAAHAAEAAAAAAAAAAAAGAAEAAAAAAAAAAAAFAAEAAAAAAAAAAAAEAAEAAAAAAAAAAAADAAEAAAAAAAAAAAACAAEAAAAAAAAAAAABAAEAAAAAAAAAAAAAAAEAAAAAAAAAAAD//wEAAAAAAAAAAAD+/wEAAAAAAAAAAAD9/wEAAAAAAAAAAAD8/wEAAAABAAAAAAD7/wEAAAAAAAAAAAD6/wEAAAAAAAAAAAD5/wEAAAAAAAAAAAD4/wEAAAAAAAAAAAD3/wEAAAAAAAAAAAAMAP//AAAAAAAAAAAMAP7/AAAAAAAAAAAMAP3/AAAAAAAAAAAMAPz/AAAAAAAAAAAMAPv/AAAAAAAAAAALAPv/AAAAAAAAAAAKAPv/AAAAAAAAAAAJAPv/AAAAAAAAAAAIAPv/AAAAAAAAAAAHAPv/AAAAAAAAAAAGAPv/AAAAAAAAAAAFAPv/AAAAAAAAAAAEAPv/AAAAAAAAAAADAPv/AAAAAAAAAAACAPv/AAAAAAAAAAABAPv/AAAAAAAAAAAAAPv/AAAAAAAAAAD///v/AAAAAAAAAAD+//v/AAAAAAAAAAD9//v/AAAAAAAAAAD8//v/AAAAAAAAAAD7//v/AAAAAAAAAAD6//v/AAAAAAAAAAD5//v/AAAAAAAAAAD4//v/AAAAAAAAAAD3//v/AAAAAAAAAAD3//z/AAAAAAAAAAD3//3/AAAAAAAAAAD3//7/AAAAAAAAAAD4//7/AAAAAAAAAAD4//3/AAAAAAAAAAD4//z/AAAAAAAAAAD4////AAAAAAAAAAD5//7/AAAAAAAAAAD5//3/AAAAAAAAAAD6//3/AAAAAAAAAAD5////AAAAAAAAAAD6////AAAAAAAAAAD7////AAAAAAAAAAD8////AAAAAAAAAAD9////AAAAAAAAAAD+////AAAAAAAAAAD/////AAAAAAAAAAAAAP//AAAAAAAAAAABAP//AAAAAAAAAAACAP//AAAAAAAAAAADAP//AAAAAAAAAAAEAP//AAAAAAAAAAAFAP//AAAAAAAAAAAGAP//AAAAAAAAAAAHAP//AAAAAAAAAAAIAP//AAAAAAAAAAAJAP7/AAAHAAAAAAAKAP7/AAAAAAAAAAALAP7/AAAAAAAAAAALAP3/AAAAAAAAAAALAP//AAAAAAAAAAALAPz/AAAAAAAAAAAKAPz/AAAAAAAAAAAJAPz/AAAAAAAAAAAIAPz/AAAAAAAAAAAHAPz/AAAAAAAAAAAGAPz/AAABAAAAAAAFAPz/AAAAAAAAAAAEAPz/AAAAAAAAAAADAPz/AAAAAAAAAAACAPz/AAAAAAAAAAABAPz/AAAAAAAAAAAAAPz/AAAAAAAAAAD///z/AAAAAAAAAAD+//z/AAAAAAAAAAD9//z/AAAAAAAAAAD8//z/AAAAAAAAAAD7//z/AAAAAAAAAAD6//z/AAAAAAAAAAD5//z/AAAAAAAAAAD3////AAAAAAAAAAD6//7/AAAAAAAAAAD7//7/AAAAAAAAAAD8//7/AAAAAAAAAAD9//7/AAAAAAAAAAD+//7/AAAAAAAAAAD///7/AAAAAAAAAAAAAP7/AAABAAAAAAABAP7/AAAAAAAAAAACAP7/AAAAAAAAAAADAP7/AAAAAAAAAAAEAP7/AAAAAAAAAAAFAP7/AAAAAAAAAAAGAP7/AAAAAAAAAAAHAP7/AAAAAAAAAAAIAP7/AAAAAAAAAAAKAP//AAAAAAAAAAAKAP3/AAAAAAAAAAAJAP3/AAAAAAAAAAAIAP3/AAAAAAAAAAAHAP3/AAAAAAAAAAAGAP3/AAAAAAAAAAAFAP3/AAAAAAAAAAACAP3/AAAAAAAAAAABAP3/AAAAAAAAAAAAAP3/AAAAAAAAAAD///3/AAAAAAAAAAD+//3/AAAAAAAAAAD9//3/AAAAAAAAAAD8//3/AAAAAAAAAAD7//3/AAAAAAAAAAADAP3/AAAAAAAAAAAEAP3/AAAAAAAAAAAOAP7/AAAHAAAAAAA=")
 tile_set = ExtResource("3_hq01p")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." index="2"]
@@ -37,52 +37,43 @@ position = Vector2(740, 135)
 [node name="Chest2" parent="Floor0" index="1" instance=ExtResource("3_55gdq")]
 position = Vector2(498, 135)
 
-[node name="Chest5" parent="Floor0" index="2" instance=ExtResource("3_55gdq")]
-position = Vector2(-575, -26)
-
-[node name="Chest6" parent="Floor0" index="3" instance=ExtResource("3_55gdq")]
-position = Vector2(-574, -66)
-
-[node name="Chest3" parent="Floor0" index="4" instance=ExtResource("3_55gdq")]
+[node name="Chest3" parent="Floor0" index="2" instance=ExtResource("3_55gdq")]
 position = Vector2(644, 135)
 
-[node name="Chest4" parent="Floor0" index="5" instance=ExtResource("3_55gdq")]
+[node name="Chest4" parent="Floor0" index="3" instance=ExtResource("3_55gdq")]
 position = Vector2(693, 135)
 
-[node name="Stairs_up" parent="Floor0" index="6" instance=ExtResource("2_p1d34")]
+[node name="Stairs_up" parent="Floor0" index="4" instance=ExtResource("2_p1d34")]
 position = Vector2(-492, 128)
 
 [node name="Target" type="Marker2D" parent="Floor0/Stairs_up" index="2"]
 position = Vector2(12, -176)
 
-[node name="Door" parent="Floor0" index="7" instance=ExtResource("4_py88r")]
+[node name="Door" parent="Floor0" index="5" instance=ExtResource("4_py88r")]
 position = Vector2(108, 127)
 key_chances = Dictionary[String, float]({
 "lvl2_floor0_upstairs": 0.3
 })
 required_key = "lvl2_floor0_upstairs"
 
-[node name="CorridorDoor4" parent="Floor0" index="8" instance=ExtResource("5_g1dg4")]
+[node name="CorridorDoor4" parent="Floor0" index="6" instance=ExtResource("5_g1dg4")]
 visible = false
 position = Vector2(-400, 127)
 required_key = "lvl2_floor0_upstairs"
 
-[node name="CorridorDoor3" parent="Floor0" index="9" instance=ExtResource("5_g1dg4")]
+[node name="CorridorDoor3" parent="Floor0" index="7" instance=ExtResource("5_g1dg4")]
 position = Vector2(-49, 127)
 
-[node name="CorridorDoor" parent="Floor0" index="10" instance=ExtResource("5_g1dg4")]
+[node name="CorridorDoor" parent="Floor0" index="8" instance=ExtResource("5_g1dg4")]
 position = Vector2(272, 127)
 
-[node name="CorridorDoor2" parent="Floor0" index="11" instance=ExtResource("5_g1dg4")]
+[node name="CorridorDoor2" parent="Floor0" index="9" instance=ExtResource("5_g1dg4")]
 position = Vector2(592, 127)
 
-[node name="Camera" parent="Floor0" index="12" instance=ExtResource("6_s1bpp")]
+[node name="Camera" parent="Floor0" index="10" instance=ExtResource("6_s1bpp")]
 position = Vector2(210, 16)
 
-[node name="Camera3" parent="Floor0" index="13" instance=ExtResource("6_s1bpp")]
-position = Vector2(-194, -145)
-
-[node name="Camera2" parent="Floor0" index="14" instance=ExtResource("6_s1bpp")]
+[node name="Camera2" parent="Floor0" index="11" instance=ExtResource("6_s1bpp")]
 position = Vector2(620, 15)
 scale = Vector2(-1, 1)
 
@@ -93,7 +84,7 @@ scale = Vector2(-1, 1)
 [node name="Terminal" parent="Floor0" index="16" instance=ExtResource("9_hq01p")]
 position = Vector2(440, 130)
 
-[node name="Floor1" type="Node2D" parent="." index="3"]
+[node name="Floor1" type="Node2D" parent="." index="4"]
 position = Vector2(0, -271)
 
 [node name="Stairs_up" parent="Floor1" index="0" instance=ExtResource("2_p1d34")]
@@ -119,10 +110,39 @@ required_key = "lvl2_floor1_upstairs"
 
 [node name="Door2" parent="Floor1" index="5" instance=ExtResource("4_py88r")]
 position = Vector2(-281, 239)
-key_chances = Dictionary[String, float]({
-"lvl2_floor1_upstairs": 0.6
-})
 required_key = "lvl2_floor0_upstairs"
+
+[node name="Door3" parent="Floor1" index="6" instance=ExtResource("4_py88r")]
+position = Vector2(226, 239)
+required_key = "lvl2_floor1_upstairs"
+
+[node name="Camera3" parent="Floor1" index="7" instance=ExtResource("6_s1bpp")]
+position = Vector2(-194, 126)
+
+[node name="Camera5" parent="Floor1" index="8" instance=ExtResource("6_s1bpp")]
+position = Vector2(107, 127)
+
+[node name="Camera4" parent="Floor1" index="9" instance=ExtResource("6_s1bpp")]
+position = Vector2(-369, 127)
+rotation = 3.1415927
+scale = Vector2(1, -1)
+
+[node name="Camera6" parent="Floor1" index="10" instance=ExtResource("6_s1bpp")]
+position = Vector2(143, 127)
+rotation = 3.1415927
+scale = Vector2(1, -1)
+
+[node name="Chest5" parent="Floor1" index="11" instance=ExtResource("3_55gdq")]
+position = Vector2(-575, 245)
+
+[node name="Chest6" parent="Floor1" index="12" instance=ExtResource("3_55gdq")]
+position = Vector2(-574, 205)
+
+[node name="Chest7" parent="Floor1" index="13" instance=ExtResource("3_55gdq")]
+position = Vector2(346, 245)
+
+[node name="Chest8" parent="Floor1" index="14" instance=ExtResource("3_55gdq")]
+position = Vector2(413, 245)
 
 [node name="Floor2" type="Node2D" parent="." index="5"]
 position = Vector2(0, -533)
@@ -135,7 +155,6 @@ position = Vector2(-9, -193)
 
 [node name="Door3" parent="Floor2" index="1" instance=ExtResource("4_py88r")]
 position = Vector2(623, 341)
-key_chances = Dictionary[String, float]({})
 required_key = "lvl2_floor0_upstairs"
 
 [node name="Floor3" type="Node2D" parent="." index="6"]
@@ -147,10 +166,25 @@ position = Vector2(545, 428)
 [node name="Target" type="Marker2D" parent="Floor3/Stairs_up" index="2"]
 position = Vector2(90, 435)
 
+[node name="SpawnPoint" parent="." index="7"]
+position = Vector2(430, 90)
+
 [node name="AlarmSound" type="AudioStreamPlayer" parent="." index="8"]
 stream = ExtResource("8_e8p81")
 
 [node name="Npc" parent="." index="10" instance=ExtResource("10_crte6")]
 position = Vector2(12, 124)
+collision_layer = 4
 keys_inventory = Array[String](["lvl2_floor0_upstairs"])
+enable_retreat = false
+
+[node name="Npc2" parent="." index="11" instance=ExtResource("10_crte6")]
+position = Vector2(124, -32)
+collision_layer = 4
+keys_inventory = Array[String](["lvl2_floor1_upstairs"])
+enable_retreat = false
+
+[node name="Npc3" parent="." index="12" instance=ExtResource("10_crte6")]
+position = Vector2(52, -32)
+collision_layer = 4
 enable_retreat = false
