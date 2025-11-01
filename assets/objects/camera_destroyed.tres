@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://b7ky077qogkuq"]
+
+[ext_resource type="Texture2D" uid="uid://xc1fbfex3ihh" path="res://assets/objects/camera.png" id="1_nketn"]
+
+[resource]
+atlas = ExtResource("1_nketn")
+region = Rect2(32, 0, 32, 32)

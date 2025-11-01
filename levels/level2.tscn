@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=4 uid="uid://d3vm4dg0841ls"]
+[gd_scene load_steps=12 format=4 uid="uid://d3vm4dg0841ls"]
 
 [ext_resource type="PackedScene" uid="uid://b62r6sibq6dpt" path="res://levels/level.tscn" id="1_p1d34"]
 [ext_resource type="PackedScene" uid="uid://4rhntp45r3y4" path="res://entities/stairs.tscn" id="2_p1d34"]
 [ext_resource type="Texture2D" uid="uid://dqnqxpmjx1ahj" path="res://assets/tiles.png" id="3_g1dg4"]
-[ext_resource type="PackedScene" uid="uid://dwpy6jdqyg73s" path="res://entities/door.tscn" id="4_py88r"]
+[ext_resource type="PackedScene" uid="uid://caf7s4kc4f6uv" path="res://entities/door.tscn" id="4_py88r"]
 [ext_resource type="PackedScene" uid="uid://dskljqmgkkmyf" path="res://entities/corridor_door.tscn" id="5_g1dg4"]
+[ext_resource type="PackedScene" uid="uid://dtaoehussyag4" path="res://entities/camera.tscn" id="6_s1bpp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qyb5k"]
 texture = ExtResource("3_g1dg4")
@@ -54,7 +55,7 @@ size = Vector2(5, 42)
 [node name="Level" instance=ExtResource("1_p1d34")]
 
 [node name="SpawnPoint" parent="." index="0"]
-position = Vector2(569, 63)
+position = Vector2(425, 92)
 
 [node name="Floor0" type="Node2D" parent="." index="1"]
 
@@ -101,6 +102,7 @@ shape = SubResource("RectangleShape2D_qyb5k")
 
 [node name="Door" parent="Floor0" index="2" instance=ExtResource("4_py88r")]
 position = Vector2(108, 127)
+required_key = "lvl2_floor0_upstairs"
 
 [node name="CorridorDoor4" parent="Floor0" index="3" instance=ExtResource("5_g1dg4")]
 position = Vector2(-400, 127)
@@ -114,6 +116,9 @@ position = Vector2(272, 127)
 
 [node name="CorridorDoor2" parent="Floor0" index="6" instance=ExtResource("5_g1dg4")]
 position = Vector2(592, 127)
+
+[node name="Camera" parent="Floor0" index="7" instance=ExtResource("6_s1bpp")]
+position = Vector2(210, 16)
 
 [node name="Floor1" type="Node2D" parent="." index="2"]
 position = Vector2(0, -271)

@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://dtaoehussyag4"]
+
+[ext_resource type="Script" uid="uid://d13xsluh8fpys" path="res://entities/camera.gd" id="1_ukrcf"]
+[ext_resource type="Texture2D" uid="uid://d134hhlv0wve6" path="res://assets/objects/camera.tres" id="2_ukrcf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ixxe8"]
+size = Vector2(32, 24)
+
+[node name="Camera" type="StaticBody2D"]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_ukrcf")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(-192, 125, -45, 125, 0, 0)
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+z_index = -1
+color = Color(1, 1, 1, 0.03137255)
+polygon = PackedVector2Array(-45, 125, 0, 0, -192, 125)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_ukrcf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ixxe8")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

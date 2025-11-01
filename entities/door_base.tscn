@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://b8ma73tlrga4n"]
+
+[ext_resource type="Script" uid="uid://cuuq5j3ptmdlj" path="res://entities/door_base.gd" id="1_7ay7r"]
+
+[node name="DoorBase" type="StaticBody2D"]
+collision_layer = 2
+script = ExtResource("1_7ay7r")
