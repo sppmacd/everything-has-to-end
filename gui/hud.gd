@@ -10,6 +10,9 @@ func setup(player: Player):
 	player.health_changed.connect(func():
 		update_health_ui(player)
 	)
+	update_keys_ui(player)
+	update_ammo_ui(player)
+	update_health_ui(player)
 
 
 func update_keys_ui(player: Player):
