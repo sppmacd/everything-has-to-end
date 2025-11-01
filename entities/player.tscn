@@ -371,7 +371,7 @@ size = Vector2(72, 72)
 
 [node name="Player" type="CharacterBody2D"]
 z_index = 1000
-collision_layer = 5
+collision_layer = 4
 script = ExtResource("1_b0kkn")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
@@ -379,7 +379,8 @@ texture_filter = 1
 position = Vector2(0, -48)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_0i614")
-animation = &"punch"
+animation = &"running"
+frame_progress = 0.5339358
 offset = Vector2(12, 0)
 flip_h = true
 

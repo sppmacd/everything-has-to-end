@@ -1,8 +1,9 @@
-[gd_scene load_steps=16 format=3 uid="uid://bn4lvjes84bug"]
+[gd_scene load_steps=23 format=3 uid="uid://bn4lvjes84bug"]
 
 [ext_resource type="Script" uid="uid://c63p3n4kn5yd7" path="res://entities/npc.gd" id="1_34xg4"]
 [ext_resource type="Texture2D" uid="uid://2e8o4qcnl2xd" path="res://assets/players/Cyborg/Cyborg_death.png" id="2_0u2uj"]
 [ext_resource type="Texture2D" uid="uid://batwe2vgcthj1" path="res://assets/players/Cyborg/Cyborg_idle.png" id="2_34xg4"]
+[ext_resource type="Texture2D" uid="uid://dk50m5v3upe0b" path="res://assets/players/Cyborg/Cyborg_run.png" id="4_sg5r8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5hdwl"]
 atlas = ExtResource("2_0u2uj")
@@ -43,6 +44,30 @@ region = Rect2(96, 0, 48, 48)
 [sub_resource type="AtlasTexture" id="AtlasTexture_eqa5y"]
 atlas = ExtResource("2_34xg4")
 region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0afnm"]
+atlas = ExtResource("4_sg5r8")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s66xx"]
+atlas = ExtResource("4_sg5r8")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_daeoh"]
+atlas = ExtResource("4_sg5r8")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k86ux"]
+atlas = ExtResource("4_sg5r8")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q5kfu"]
+atlas = ExtResource("4_sg5r8")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oidx6"]
+atlas = ExtResource("4_sg5r8")
+region = Rect2(240, 0, 48, 48)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0u2uj"]
 animations = [{
@@ -85,6 +110,29 @@ animations = [{
 "loop": true,
 "name": &"idle",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0afnm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s66xx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_daeoh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k86ux")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q5kfu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oidx6")
+}],
+"loop": true,
+"name": &"run",
+"speed": 9.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kdwfn"]
@@ -101,7 +149,7 @@ sprite_frames = SubResource("SpriteFrames_0u2uj")
 animation = &"death"
 frame = 5
 frame_progress = 1.0
-offset = Vector2(10.33, 0)
+offset = Vector2(11, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(2, -35)
@@ -117,5 +165,16 @@ position = Vector2(11, -44)
 [node name="RayCast2D" type="RayCast2D" parent="."]
 position = Vector2(0, -57)
 target_position = Vector2(1000, -1)
+collision_mask = 5
+
+[node name="LookaroundTimer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
+[node name="PlayerFollowingCooldown" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="LookaroundTimer" to="." method="_on_lookaround_timer_timeout"]
+[connection signal="timeout" from="PlayerFollowingCooldown" to="." method="_on_player_following_cooldown_timeout"]
