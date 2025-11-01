@@ -32,8 +32,9 @@ func has_key(key: String):
 	return key in keys
 
 func add_key(key: String):
-	keys.append(key)
-	key_added.emit()
+	if key not in keys: 
+		keys.append(key)
+		key_added.emit()
 
 func add_ammo(amount: int):
 	ammo += amount
@@ -146,7 +147,7 @@ func _find_damagable_objects() -> Array:
 	var q = PhysicsShapeQueryParameters2D.new()
 	q.shape = preload("res://entities/player_use_area.tres")
 	q.transform = self.transform
-	q.collision_mask = 0x4 # "damagable"
+	q.collision_mask = 0x4 # "damagablea"
 	q.exclude = [self]
 
 	var objects = get_world_2d().direct_space_state.intersect_shape(q).map(func(k): return k["collider"])

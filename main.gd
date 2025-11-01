@@ -6,7 +6,7 @@ var _current_level: Node2D
 
 func _ready():
 	the = self
-	switch_level(preload("res://levels/level2.tscn").instantiate())
+	switch_level(preload("res://levels/level1.tscn").instantiate())
 	_current_level.respawn_player()
 
 func on_player_changed():
@@ -32,3 +32,4 @@ func switch_level(lvl: Node2D):
 	add_child(lvl)
 	if current_level().player():
 		$CanvasLayer/Hud.setup(current_level().player(), lvl)
+		current_level().player().global_position = current_level().spawn_point().global_position

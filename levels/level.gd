@@ -1,12 +1,13 @@
 class_name GameLevel
 extends Node2D
 
-@onready var spawn_point: Marker2D = $SpawnPoint
-
 signal time_remaining_changed
 
 func player() -> Player:
 	return get_node_or_null("Player")
+
+func spawn_point() -> Marker2D:
+	return get_node_or_null("SpawnPoint")
 
 func respawn_player():
 	if player():
@@ -15,10 +16,10 @@ func respawn_player():
 		player().name = "PlayerBody"
 
 	# Spawn new player, and move it to spawn position.
-	var player = preload("res://entities/player.tscn").instantiate()
-	player.name = "Player"
-	player.global_position = spawn_point.global_position
-	add_child(player)
+	var new_player = preload("res://entities/player.tscn").instantiate()
+	new_player.name = "Player"
+	new_player.global_position = spawn_point().global_position
+	add_child(new_player)
 
 	Main.the.on_player_changed()
 	Main.the.on_respawn()

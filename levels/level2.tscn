@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://dskljqmgkkmyf" path="res://entities/corridor_door.tscn" id="5_g1dg4"]
 [ext_resource type="PackedScene" uid="uid://dtaoehussyag4" path="res://entities/camera.tscn" id="6_s1bpp"]
 [ext_resource type="AudioStream" uid="uid://tq455hhb777d" path="res://assets/sounds/Alarm0.wav" id="8_e8p81"]
+[ext_resource type="PackedScene" uid="uid://db6ko67vy1a0b" path="res://entities/terminal.tscn" id="9_hq01p"]
 [ext_resource type="PackedScene" uid="uid://bn4lvjes84bug" path="res://entities/npc.tscn" id="10_crte6"]
 
 [node name="Level" instance=ExtResource("1_p1d34")]
@@ -89,7 +90,10 @@ scale = Vector2(-1, 1)
 position = Vector2(-369, -144)
 scale = Vector2(-1, 1)
 
-[node name="Floor1" type="Node2D" parent="." index="4"]
+[node name="Terminal" parent="Floor0" index="16" instance=ExtResource("9_hq01p")]
+position = Vector2(440, 130)
+
+[node name="Floor1" type="Node2D" parent="." index="3"]
 position = Vector2(0, -271)
 
 [node name="Stairs_up" parent="Floor1" index="0" instance=ExtResource("2_p1d34")]

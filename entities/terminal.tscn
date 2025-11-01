@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://db6ko67vy1a0b"]
+
+[ext_resource type="Script" uid="uid://dv07lml8bu0v2" path="res://entities/terminal.gd" id="1_3uwtr"]
+[ext_resource type="Texture2D" uid="uid://dlw2m2ij5dsw1" path="res://assets/objects/terminal.png" id="2_qrt56"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g1ofn"]
+size = Vector2(32, 58)
+
+[node name="Terminal" type="StaticBody2D"]
+collision_layer = 2
+script = ExtResource("1_3uwtr")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -48)
+texture = ExtResource("2_qrt56")
+region_enabled = true
+region_rect = Rect2(0, 0, 48, 96)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-3, -31)
+shape = SubResource("RectangleShape2D_g1ofn")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=4 uid="uid://crfyqoojvk126"]
+[gd_scene load_steps=29 format=4 uid="uid://crfyqoojvk126"]
 
 [ext_resource type="PackedScene" uid="uid://b62r6sibq6dpt" path="res://levels/level.tscn" id="1_ua5ty"]
 [ext_resource type="Texture2D" uid="uid://dqnqxpmjx1ahj" path="res://assets/tiles.png" id="3_pdpul"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://bn4lvjes84bug" path="res://entities/npc.tscn" id="9_vcl05"]
 [ext_resource type="PackedScene" uid="uid://dtaoehussyag4" path="res://entities/camera.tscn" id="10_kdcll"]
 [ext_resource type="PackedScene" uid="uid://caf7s4kc4f6uv" path="res://entities/door.tscn" id="11_j4pg1"]
+[ext_resource type="PackedScene" uid="uid://bbihiur7a8nd7" path="res://entities/door_switch_to_lvl_2.tscn" id="12_8bcou"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_045es"]
 texture = ExtResource("3_pdpul")
@@ -466,33 +467,42 @@ scale = Vector2(-1, 1)
 position = Vector2(675, -515)
 
 [node name="Camera" parent="Floor1" index="22" instance=ExtResource("10_kdcll")]
+z_index = 2
 position = Vector2(912, -916)
 
 [node name="Door" parent="Floor1" index="23" instance=ExtResource("11_j4pg1")]
+z_index = 1
 position = Vector2(794, -736)
 key_chances = Dictionary[String, float]({})
 required_key = "lvl2_floor0_upstairs"
 
 [node name="Door2" parent="Floor1" index="24" instance=ExtResource("11_j4pg1")]
+z_index = 1
 position = Vector2(1273, -515)
 key_chances = Dictionary[String, float]({})
 required_key = "lvl2_floor0_upstairs"
 
 [node name="Door3" parent="Floor1" index="25" instance=ExtResource("11_j4pg1")]
+z_index = 1
 position = Vector2(1478, -512)
 key_chances = Dictionary[String, float]({})
 required_key = "lvl2_floor0_upstairs"
 
 [node name="Camera2" parent="Floor1" index="26" instance=ExtResource("10_kdcll")]
+z_index = 2
 position = Vector2(1552, -725)
 
 [node name="Camera3" parent="Floor1" index="27" instance=ExtResource("10_kdcll")]
+z_index = 2
 position = Vector2(1200, -725)
 scale = Vector2(-1, 1)
 
 [node name="Chest5" parent="Floor1" index="28" instance=ExtResource("7_8hd6v")]
 position = Vector2(926, -801)
 scale = Vector2(-1, 1)
+
+[node name="DoorSwitchToLvl2" parent="Floor1" index="29" instance=ExtResource("12_8bcou")]
+position = Vector2(2026, -707)
 
 [node name="BgParallax" type="Parallax2D" parent="." index="7"]
 z_index = -1
