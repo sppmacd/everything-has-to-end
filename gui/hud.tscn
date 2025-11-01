@@ -1,31 +1,66 @@
-[gd_scene load_steps=2 format=3 uid="uid://clcafl3xybofv"]
+[gd_scene load_steps=4 format=3 uid="uid://clcafl3xybofv"]
 
 [ext_resource type="Script" uid="uid://bgymuk2jsmrrm" path="res://gui/hud.gd" id="1_350da"]
+[ext_resource type="Texture2D" uid="uid://wqaualy3bycw" path="res://assets/vignette.png" id="2_u7rvv"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_350da"]
+font_size = 30
 
 [node name="Hud" type="Control"]
 layout_mode = 3
 anchors_preset = 0
+offset_right = 214.0
+offset_bottom = 27.0
 script = ExtResource("1_350da")
 
-[node name="Keys" type="HFlowContainer" parent="."]
+[node name="Vignette" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 9.0
-offset_top = 31.0
-offset_right = 679.0
-offset_bottom = 71.0
+offset_right = 1152.0
+offset_bottom = 648.0
+mouse_filter = 2
+texture = ExtResource("2_u7rvv")
+expand_mode = 1
 
-[node name="Ammo" type="Label" parent="."]
+[node name="VBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 9.0
-offset_top = 4.0
-offset_right = 69.0
+offset_left = 19.0
+offset_top = 13.0
+offset_right = 141.0
 offset_bottom = 27.0
+theme_override_constants/separation = 24
+
+[node name="Ammo" type="Label" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
 text = "Ammo: 20"
 
-[node name="Health" type="Label" parent="."]
-layout_mode = 0
-offset_left = 83.0
-offset_top = 4.0
-offset_right = 143.0
-offset_bottom = 27.0
+[node name="Health" type="Label" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
 text = "Health: 20"
+
+[node name="Keys" type="HFlowContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 15.0
+offset_top = 60.0
+offset_right = 229.0
+offset_bottom = 87.0
+
+[node name="Container" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 347.0
+offset_top = 7.0
+offset_right = 561.0
+offset_bottom = 34.0
+grow_horizontal = 2
+
+[node name="TimeRemaining" type="Label" parent="Container"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "TIME REMAINING: ???"
+label_settings = SubResource("LabelSettings_350da")
+horizontal_alignment = 1

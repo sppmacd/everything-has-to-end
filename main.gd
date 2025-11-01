@@ -10,7 +10,7 @@ func _ready():
 	_current_level.respawn_player()
 
 func on_player_changed():
-	$CanvasLayer/Hud.setup(current_level().player())
+	$CanvasLayer/Hud.setup(current_level().player(), _current_level)
 
 func current_level():
 	return _current_level
@@ -23,3 +23,5 @@ func switch_level(lvl: Node2D):
 	_current_level = lvl
 	lvl.name = "Level"
 	add_child(lvl)
+	if current_level().player():
+		$CanvasLayer/Hud.setup(current_level().player(), lvl)

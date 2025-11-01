@@ -93,7 +93,8 @@ func ai():
 				print("cooldown restart")
 				$PlayerFollowingCooldown.start()
 				var should_walk = abs(p.x - global_position.x) > 200
-				walking_speed = 2.0 if should_walk else 1.0
+				walking_speed = 2.0 if should_walk else 0.0
+				#$Debug.text = "state=%d player=%s should_walk=%s" % [state, p, should_walk]
 				if not should_walk and $GunTimer.is_stopped():
 					print("START GUN TIMER")
 					start_shooting.call_deferred()

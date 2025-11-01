@@ -62,6 +62,7 @@ func damage(h: int):
 		rotation = deg_to_rad(90)
 		$Sprite2D.play("idle")
 		$Sprite2D.stop()
+		await get_tree().create_timer(5).timeout
 		Main.the.current_level().respawn_player()
 
 func _animation_process(_delta: float) -> void:
@@ -144,7 +145,9 @@ func action_enabled() -> bool:
 func action_use(player: Player):
 	print("USE PLAYER ", ammo)
 	player.ammo += self.ammo
+	player.keys.append_array(self.keys)
 	player.ammo_changed.emit()
+	player.key_added.emit()
 	queue_free()
 
 func _process(delta: float) -> void:

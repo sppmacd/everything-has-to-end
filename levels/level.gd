@@ -3,6 +3,8 @@ extends Node2D
 
 @onready var spawn_point: Marker2D = $SpawnPoint
 
+signal time_remaining_changed
+
 func player() -> Player:
 	return get_node_or_null("Player")
 
@@ -29,3 +31,15 @@ func _on_respawn_timer_timeout() -> void:
 	var p = player()
 	if p:
 		p.damage(10000000)
+
+
+func time_remaining():
+	return $RespawnTimer.time_left
+
+
+func cycle_length():
+	return $RespawnTimer.wait_time
+
+
+func _on_update_timer_timeout() -> void:
+	time_remaining_changed.emit()

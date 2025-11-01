@@ -50,7 +50,7 @@ position = Vector2(12, -176)
 [node name="Door" parent="Floor0" index="7" instance=ExtResource("4_py88r")]
 position = Vector2(108, 127)
 key_chances = Dictionary[String, float]({
-"lvl2_floor0_upstairs": 0.7
+"lvl2_floor0_upstairs": 0.3
 })
 required_key = "lvl2_floor0_upstairs"
 

@@ -8,7 +8,11 @@ script = ExtResource("1_80vhd")
 [node name="SpawnPoint" type="Marker2D" parent="."]
 
 [node name="RespawnTimer" type="Timer" parent="."]
-wait_time = 180.0
+wait_time = 190.0
+autostart = true
+
+[node name="UpdateTimer" type="Timer" parent="."]
 autostart = true
 
 [connection signal="timeout" from="RespawnTimer" to="." method="_on_respawn_timer_timeout"]
+[connection signal="timeout" from="UpdateTimer" to="." method="_on_update_timer_timeout"]
