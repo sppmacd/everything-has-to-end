@@ -4,7 +4,7 @@ extends Node2D
 @onready var spawn_point: Marker2D = $SpawnPoint
 
 func player() -> Player:
-	return get_node("Player")
+	return get_node_or_null("Player")
 
 func respawn_player():
 	if player():
