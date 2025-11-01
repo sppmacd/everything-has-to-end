@@ -30,13 +30,12 @@ func action_tooltip() -> String:
 func action_enabled() -> bool:
 	return not discard
 
-func action_use(_player: Player):
+func action_use(player: Player):
 	if discard:
 		return
 	discard = true
 
-	var p = get_node("../Player")
-	p.Speak("Hey bro! Wassup?")
+	player.speak("Hey bro! Wassup?")
 
 	var delay := 0.0
 	for text in lines:

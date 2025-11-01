@@ -134,8 +134,27 @@ func _find_usable_objects() -> Array:
 	q.transform = self.transform
 	q.collision_mask = 0x2 # "use"
 	q.exclude = [self]
+
 	var objects = get_world_2d().direct_space_state.intersect_shape(q).map(func(k): return k["collider"])
-	return objects.filter(func(a): return a.action_enabled())
+	
+	var filtered = objects.filter(func(a): return _usable_object(a) and a.action_enabled())
+	filtered.sort_custom(func(a,b): return global_position.distance_squared_to(a.global_position) < global_position.distance_squared_to(b.global_position))
+	
+	return filtered
+
+func _find_damagable_objects() -> Array:
+	var q = PhysicsShapeQueryParameters2D.new()
+	q.shape = preload("res://entities/player_use_area.tres")
+	q.transform = self.transform
+	q.collision_mask = 0x2 # "use"
+	q.exclude = [self]
+
+	var objects = get_world_2d().direct_space_state.intersect_shape(q).map(func(k): return k["collider"])
+	
+	var filtered = objects.filter(func(a): return _damagable_object(a))
+	filtered.sort_custom(func(a,b): return global_position.distance_squared_to(a.global_position) < global_position.distance_squared_to(b.global_position))
+	
+	return filtered
 
 func _label_process(_delta: float) -> void:
 	label_press_e_to_use.visible = len(_find_usable_objects()) > 0
@@ -154,6 +173,12 @@ func action_use(player: Player):
 	player.key_added.emit()
 	queue_free()
 
+func _usable_object(node: Node2D) -> bool:
+	return node.has_method("action_enabled") and node.has_method("action_use") and node.has_method("action_tooltip")
+
+func _damagable_object(node: Node2D) -> bool:
+	return node.has_method("damage")
+
 func _process(delta: float) -> void:
 	if health <= 0:
 		label_press_e_to_use.visible = false
@@ -161,11 +186,8 @@ func _process(delta: float) -> void:
 
 	var uo = _find_usable_objects()
 	if len(uo) > 0:
-		if uo[0].action_enabled():
-			label_press_e_to_use.text = uo[0].action_tooltip()
-			label_press_e_to_use.visible = true
-		else:
-			label_press_e_to_use.visible = false
+		label_press_e_to_use.text = uo[0].action_tooltip()
+		label_press_e_to_use.visible = true
 	else:
 		label_press_e_to_use.visible = false
 
@@ -177,17 +199,12 @@ func _unhandled_key_input(event: InputEvent) -> void:
 	if event is InputEventKey:
 		if event.keycode == KEY_E and event.is_pressed() and can_use_objects:
 			var uo = _find_usable_objects()
-			uo.sort_custom(func(a,b): return global_position.distance_squared_to(a.global_position) < global_position.distance_squared_to(b.global_position))
-			for u in uo:
-				print(u, u.global_position.distance_squared_to(global_position))
-			print(uo)
 			if len(uo) > 0:
-				if uo[0].action_enabled():
-					uo[0].action_use(self)
-					can_use_objects = false
+				uo[0].action_use(self)
+				can_use_objects = false
 
-					var timer = get_tree().create_timer(0.1)
-					timer.timeout.connect(func(): self.can_use_objects = true)
+				var timer = get_tree().create_timer(0.1)
+				timer.timeout.connect(func(): self.can_use_objects = true)
 
 func _spawn_shell() -> void:
 	var shell = preload("res://entities/shell.tscn").instantiate()
@@ -211,7 +228,7 @@ func _unhandled_input(event: InputEvent) -> void:
 				return
 			if ammo == 0:
 				if not punching:
-					Punch()
+					punch()
 				return
 
 			var mouse_pos = get_global_mouse_position()
@@ -226,14 +243,19 @@ func _unhandled_input(event: InputEvent) -> void:
 			else:
 				_spawn_shell()
 
-func Punch() -> void:
+func punch() -> void:
 	if health <= 0:
 		return
 	punching = true
 	var timer = get_tree().create_timer(PUNCHING_DELAY_SEC)
 	timer.timeout.connect(func(): self.punching = false)
+	
+	var uo = _find_damagable_objects()
+	if len(uo) > 0:
+		uo[0].damage(1)
 
-func Speak(text: String) -> void:
+func speak(text: String) -> void:
 	if health <= 0:
 		return
+	
 	speech_bubble.show_message(text)

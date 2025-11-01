@@ -75,53 +75,47 @@ func _action_mode_5():
 	var timer = get_tree().create_timer(2.0)
 	timer.timeout.connect(func(): self.discard = false)
 
-func action_use(_player: Player):
+func action_use(player: Player):
 	if discard:
 		return
 	if mode == 0:
 		discard = true;
 		
-		var p = get_node("../Player")
-		p.Speak("Say everything ya'know about that damn time loop!")
+		player.speak("Say everything ya'know about that damn time loop!")
 		var timer = get_tree().create_timer(2.2)
 		timer.timeout.connect(func(): _action_mode_0())
 	elif mode == 1:
 		discard = true;
 		
-		var p = get_node("../Player")
-		p.Punch()
+		player.punch()
 		var timer = get_tree().create_timer(1)
 		timer.timeout.connect(func(): _action_mode_1())
 	elif mode == 2:
 		discard = true;
 		
-		var p = get_node("../Player")
-		p.Speak("Then talk or I'll punch u again.")
+		player.speak("Then talk or I'll punch u again.")
 		var t1 = get_tree().create_timer(2.2)
 		t1.timeout.connect(func(): _action_mode_2_1())
 		var t2 = get_tree().create_timer(4.4)
-		t1.timeout.connect(func(): _action_mode_2_2())
+		t2.timeout.connect(func(): _action_mode_2_2())
 	elif mode == 3:
 		discard = true;
 		
-		var p = get_node("../Player")
-		p.Speak("How can we deactivate that?")
+		player.speak("How can we deactivate that?")
 		var t1 = get_tree().create_timer(2.2)
 		t1.timeout.connect(func(): _action_mode_3_1())
 		var t2 = get_tree().create_timer(4.4)
-		t1.timeout.connect(func(): _action_mode_3_2())
+		t2.timeout.connect(func(): _action_mode_3_2())
 	elif mode == 4:
 		discard = true;
 		
-		var p = get_node("../Player")
-		p.Speak("Where's that source?")
+		player.speak("Where's that source?")
 		var t1 = get_tree().create_timer(2.2)
 		t1.timeout.connect(func(): _action_mode_4())
 	elif mode == 5:
 		discard = true;
 		
-		var p = get_node("../Player")
-		p.Speak("Is that all?")
+		player.speak("Is that all?")
 		var t1 = get_tree().create_timer(2.2)
 		t1.timeout.connect(func(): _action_mode_5())
 		

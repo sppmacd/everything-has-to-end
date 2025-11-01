@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=4 uid="uid://dbdo6kvx58ofw"]
+[gd_scene load_steps=28 format=4 uid="uid://crfyqoojvk126"]
 
 [ext_resource type="PackedScene" uid="uid://b62r6sibq6dpt" path="res://levels/level.tscn" id="1_ua5ty"]
 [ext_resource type="Texture2D" uid="uid://dqnqxpmjx1ahj" path="res://assets/tiles.png" id="3_pdpul"]
@@ -470,14 +470,17 @@ position = Vector2(912, -916)
 
 [node name="Door" parent="Floor1" index="23" instance=ExtResource("11_j4pg1")]
 position = Vector2(794, -736)
+key_chances = Dictionary[String, float]({})
 required_key = "lvl2_floor0_upstairs"
 
 [node name="Door2" parent="Floor1" index="24" instance=ExtResource("11_j4pg1")]
 position = Vector2(1273, -515)
+key_chances = Dictionary[String, float]({})
 required_key = "lvl2_floor0_upstairs"
 
 [node name="Door3" parent="Floor1" index="25" instance=ExtResource("11_j4pg1")]
 position = Vector2(1478, -512)
+key_chances = Dictionary[String, float]({})
 required_key = "lvl2_floor0_upstairs"
 
 [node name="Camera2" parent="Floor1" index="26" instance=ExtResource("10_kdcll")]
