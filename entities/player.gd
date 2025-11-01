@@ -21,9 +21,11 @@ var gun_loaded: bool = false
 var gun_loading: bool = false
 var gun_unloading: bool = false
 var last_shot_timestamp: int = 0
+var ammo: int = 20
 
 var keys: Array[String] = []
 signal key_added
+signal ammo_changed
 
 func has_key(key: String):
 	return key in keys
@@ -134,11 +136,17 @@ func _spawn_shell() -> void:
 	gun_unloading = false
 	gun_loaded = true
 	last_shot_timestamp = Time.get_ticks_msec()
+	ammo -= 1
+	ammo_changed.emit()
 			
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 			if jumping:
+				return
+			if ammo == 0:
+				if not punching:
+					Punch()
 				return
 			
 			var mouse_pos = get_global_mouse_position()

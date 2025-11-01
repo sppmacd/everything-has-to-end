@@ -9,7 +9,15 @@ script = ExtResource("1_350da")
 
 [node name="Keys" type="HFlowContainer" parent="."]
 layout_mode = 0
-offset_left = 7.0
-offset_top = 8.0
-offset_right = 677.0
-offset_bottom = 48.0
+offset_left = 9.0
+offset_top = 31.0
+offset_right = 679.0
+offset_bottom = 71.0
+
+[node name="Ammo" type="Label" parent="."]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 4.0
+offset_right = 69.0
+offset_bottom = 27.0
+text = "Ammo: 20"

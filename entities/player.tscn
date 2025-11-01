@@ -303,7 +303,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"punch",
-"speed": 3.0
+"speed": 20.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -379,8 +379,7 @@ texture_filter = 1
 position = Vector2(0, -48)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_0i614")
-animation = &"running"
-frame_progress = 0.5339358
+animation = &"punch"
 offset = Vector2(12, 0)
 flip_h = true
 

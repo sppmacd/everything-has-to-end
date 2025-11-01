@@ -247,7 +247,7 @@ tile_set = SubResource("TileSet_yydhl")
 position = Vector2(35, -1)
 
 [node name="Target" type="Marker2D" parent="Floor0/Stairs_up" index="2"]
-position = Vector2(-22, -564)
+position = Vector2(-9, -530)
 
 [node name="FloorBoundaries" type="StaticBody2D" parent="." index="3"]
 
@@ -270,6 +270,7 @@ position = Vector2(-232, 1)
 position = Vector2(201, -3)
 
 [node name="Floor1" type="Node2D" parent="." index="6"]
+position = Vector2(0, -1)
 
 [node name="FloorTileMap" type="TileMapLayer" parent="Floor1" index="0"]
 position = Vector2(-192, -384)
@@ -295,3 +296,9 @@ region_rect = Rect2(0, 0, 3840, 1080)
 [node name="FloorCollider" type="CollisionShape2D" parent="Floor1/FloorBoundaries" index="0"]
 position = Vector2(-72, -548)
 shape = SubResource("SegmentShape2D_pdpul")
+
+[node name="Stairs_up" parent="Floor1" index="3" instance=ExtResource("6_8hd6v")]
+position = Vector2(27, -515)
+
+[node name="Target" type="Marker2D" parent="Floor1/Stairs_up" index="2"]
+position = Vector2(23, 524)
