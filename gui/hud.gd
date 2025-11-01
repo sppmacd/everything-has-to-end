@@ -1,5 +1,6 @@
 extends Control
 
+
 func setup(player: Player, level: GameLevel):
 	player.key_added.connect(func():
 		update_keys_ui(player)
@@ -39,6 +40,9 @@ func update_health_ui(player: Player):
 func _set_time_remaining(time_remaining: float, cycle_length: float):
 	%TimeRemaining.text = "TIME REMAINING: " + str(ceil(time_remaining)) + "s"
 	$Vignette.modulate = Color8(255, 255, 255, 255 - 255 * time_remaining / cycle_length)
+	var corruption_amount = max(0, (30 - time_remaining)) / 30
+	$CorruptionShader.material.set_shader_parameter("amount", corruption_amount / 100)
+	$CorruptionShader.material.set_shader_parameter("grayscale_fac", corruption_amount)
 
 func update_time_remaining_ui(level: GameLevel):
 	_set_time_remaining(level.time_remaining(), level.cycle_length())

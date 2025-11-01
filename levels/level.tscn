@@ -9,6 +9,7 @@ script = ExtResource("1_80vhd")
 
 [node name="RespawnTimer" type="Timer" parent="."]
 wait_time = 190.0
+one_shot = true
 autostart = true
 
 [node name="UpdateTimer" type="Timer" parent="."]

@@ -24,10 +24,10 @@ func respawn_player():
 	Main.the.on_respawn()
 	$RespawnTimer.start()
 
-func _unhandled_key_input(event: InputEvent) -> void:
-	if event is InputEventKey:
-		if event.keycode == KEY_R and event.is_pressed():
-			respawn_player()
+#func _unhandled_key_input(event: InputEvent) -> void:
+	#if event is InputEventKey:
+		#if event.keycode == KEY_R and event.is_pressed():
+			#respawn_player()
 
 func _on_respawn_timer_timeout() -> void:
 	var p = player()
