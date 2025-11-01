@@ -9,6 +9,7 @@ size = Vector2(60, 96)
 
 [node name="DoorBase" instance=ExtResource("1_3fqlw")]
 script = ExtResource("2_ts0s0")
+key_chances = Dictionary[String, float]({})
 
 [node name="Sprite2D" type="Sprite2D" parent="." index="0"]
 z_index = -1

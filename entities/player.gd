@@ -201,6 +201,7 @@ func _unhandled_key_input(event: InputEvent) -> void:
 			var uo = _find_usable_objects()
 			if len(uo) > 0:
 				uo[0].action_use(self)
+				$SoundPickup.play()
 				can_use_objects = false
 
 				var timer = get_tree().create_timer(0.1)
@@ -218,6 +219,7 @@ func _spawn_shell() -> void:
 	last_shot_timestamp = Time.get_ticks_msec()
 	ammo -= 1
 	ammo_changed.emit()
+	$SoundGunshot.play()
 
 func _unhandled_input(event: InputEvent) -> void:
 	if health <= 0:
@@ -253,6 +255,7 @@ func punch() -> void:
 	var uo = _find_damagable_objects()
 	if len(uo) > 0:
 		uo[0].damage(1)
+		$SoundPunch.play()
 
 func speak(text: String) -> void:
 	if health <= 0:

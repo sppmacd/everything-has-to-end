@@ -62,6 +62,7 @@ func start_shooting():
 		return
 
 	$AnimatedSprite2D.play("attack")
+	$SoundReload.play()
 	print("shooting=true")
 	shooting = true
 	await get_tree().create_timer(0.6).timeout
@@ -75,6 +76,7 @@ func start_shooting():
 		var shell = preload("res://entities/shell.tscn").instantiate()
 		Main.the.current_level().add_child(shell)
 		shell.setup(self, $GunMarker.global_position, p - Vector2(0, 50))
+		$SoundGunshot.play()
 
 
 func ai():
