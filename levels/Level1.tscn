@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=4 uid="uid://kplr833tod52"]
+[gd_scene load_steps=11 format=4 uid="uid://kplr833tod52"]
 
 [ext_resource type="PackedScene" uid="uid://b0myivfh6cthu" path="res://entities/player.tscn" id="1_32mhh"]
 [ext_resource type="Texture2D" uid="uid://dqnqxpmjx1ahj" path="res://assets/tiles.png" id="2_ohbkr"]
+[ext_resource type="PackedScene" uid="uid://4rhntp45r3y4" path="res://entities/stairs.tscn" id="3_2j4y6"]
 [ext_resource type="PackedScene" uid="uid://brhk1skqx3jdd" path="res://entities/scientist_captive.tscn" id="3_ohbkr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2j4y6"]
@@ -135,3 +136,9 @@ shape = SubResource("WorldBoundaryShape2D_lbu4x")
 
 [node name="ScientistCaptive" parent="." instance=ExtResource("3_ohbkr")]
 position = Vector2(-232, 1)
+
+[node name="Stairs_up" parent="." instance=ExtResource("3_2j4y6")]
+position = Vector2(197, 0)
+
+[node name="Target" type="Marker2D" parent="Stairs_up"]
+position = Vector2(-11, -177)

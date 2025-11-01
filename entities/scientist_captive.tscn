@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://brhk1skqx3jdd"]
+[gd_scene load_steps=11 format=3 uid="uid://brhk1skqx3jdd"]
 
 [ext_resource type="Texture2D" uid="uid://dwhnab8yxip12" path="res://assets/players/Scientist/Scientist_captive_idle.png" id="1_0li67"]
 [ext_resource type="Script" uid="uid://bfbtgvdwm3c3q" path="res://entities/scientist_captive.gd" id="1_wvnc5"]
+[ext_resource type="PackedScene" uid="uid://dfontxhyddd6b" path="res://entities/speech_bubble.tscn" id="3_3807i"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wvnc5"]
 atlas = ExtResource("1_0li67")
@@ -42,6 +43,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5s5ei"]
 size = Vector2(10, 19)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3807i"]
+size = Vector2(34.4, 28.800003)
+
 [node name="ScientistCaptive" type="CharacterBody2D"]
 scale = Vector2(2.5, 2.5)
 script = ExtResource("1_wvnc5")
@@ -55,3 +59,16 @@ animation = &"idle"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, -10.5)
 shape = SubResource("RectangleShape2D_5s5ei")
+
+[node name="SpeechBubble" parent="." instance=ExtResource("3_3807i")]
+position = Vector2(3.1999998, -21.599998)
+
+[node name="UseArea" type="Area2D" parent="."]
+position = Vector2(-0.79999995, -31.6)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UseArea"]
+position = Vector2(3.5999987, 18.399996)
+scale = Vector2(0.99999976, 0.99999976)
+shape = SubResource("RectangleShape2D_3807i")

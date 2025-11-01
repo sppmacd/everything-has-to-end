@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://dfontxhyddd6b"]
+
+[ext_resource type="Script" uid="uid://c7tv35ywxvajj" path="res://entities/speech_bubble.gd" id="1_ej4bd"]
+
+[node name="SpeechBubble" type="Node2D"]
+visible = false
+script = ExtResource("1_ej4bd")
+
+[node name="Panel" type="Panel" parent="."]
+offset_top = -7.0
+offset_right = 47.0
+
+[node name="SpeechText" type="Label" parent="Panel"]
+layout_mode = 0
+offset_right = 47.0
+offset_bottom = 23.0

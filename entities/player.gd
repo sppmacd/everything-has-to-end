@@ -81,9 +81,17 @@ func _find_usable_objects() -> Array[Node2D]:
 	var area = use_area.get_overlapping_bodies()
 	return area
 
+func _label_process(delta: float) -> void:
+	label_press_e_to_use.visible = len(_find_usable_objects()) > 0
 
 func _process(delta: float) -> void:
-	label_press_e_to_use.visible = len(_find_usable_objects()) > 0
+	var uo = _find_usable_objects()
+	if len(uo) > 0:
+		label_press_e_to_use.text = uo[0].action_tooltip()
+		label_press_e_to_use.visible = true
+	else:
+		label_press_e_to_use.visible = false
+	
 	_animation_process(delta)
 
 
