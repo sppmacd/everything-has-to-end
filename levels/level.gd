@@ -1,13 +1,12 @@
 extends Node2D
 
-@onready var player: Player = $Player
 @onready var spawn_point: Marker2D = $SpawnPoint
 
-func _ready() -> void:
-	respawn_player()
-	
+func player() -> Player:
+	return get_node("Player")
+
 func respawn_player():
-	player.position = spawn_point.global_position
+	player().position = spawn_point.global_position
 
 func _unhandled_key_input(event: InputEvent) -> void:
 	if event is InputEventKey:
