@@ -1,11 +1,11 @@
 extends CharacterBody2D
 
-const WALKING_SPEED: float = 4000
+const WALKING_SPEED: float = 2000
 
 # flipped = facing left
 var dead = false
 var flipped = true
-var walking = false
+var walking_speed = 0.0
 
 enum State {
 	LOOKING_AROUND,
@@ -79,12 +79,19 @@ func ai():
 				state = State.FOLLOWING_PLAYER
 				print("cooldown restart")
 				$PlayerFollowingCooldown.start()
+			if randf() < 0.02 and walking_speed == 0.0:
+				(func():
+					print("random walk")
+					walking_speed = 1.0
+					await get_tree().create_timer(0.3).timeout
+					walking_speed = 0.0
+				).call_deferred()
 		State.FOLLOWING_PLAYER:
 			if p:
 				print("cooldown restart")
 				$PlayerFollowingCooldown.start()
 				var should_walk = abs(p.x - global_position.x) > 200
-				walking = should_walk
+				walking_speed = 2.0 if should_walk else 1.0
 				if not should_walk and $GunTimer.is_stopped():
 					print("START GUN TIMER")
 					start_shooting.call_deferred()
@@ -92,14 +99,16 @@ func ai():
 					print("shooting=true")
 					shooting = true
 				set_flipped(p.x < global_position.x)
+			else:
+				$GunTimer.stop()
 		State.RETREATING:
 			if p:
 				state = State.FOLLOWING_PLAYER
 				print("cooldown restart")
 				$PlayerFollowingCooldown.start()
-			walking = true
+			walking_speed = 1.0
 			set_flipped(spawn_door.global_position.x < global_position.x)
-			if abs(spawn_door.global_position.x - global_position.x) < 100:
+			if abs(spawn_door.global_position.x - global_position.x) < 20:
 				queue_free()
 
 func _physics_process(delta: float) -> void:
@@ -108,8 +117,8 @@ func _physics_process(delta: float) -> void:
 
 	ai()
 
-	if walking:
-		velocity.x += -WALKING_SPEED * delta if flipped else WALKING_SPEED * delta
+	if walking_speed > 0.0:
+		velocity.x += walking_speed * (-WALKING_SPEED * delta if flipped else WALKING_SPEED * delta)
 	velocity.x *= 0.00001 ** delta
 	move_and_slide()
 
@@ -117,7 +126,7 @@ func _physics_process(delta: float) -> void:
 func _animation_process() -> void:
 	if dead:
 		return
-	if walking:
+	if walking_speed > 0.0:
 		$AnimatedSprite2D.play("run")
 	else:
 		if not shooting:
