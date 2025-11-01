@@ -1,0 +1,61 @@
+[gd_scene load_steps=10 format=3 uid="uid://ciyhr0m5pm4tr"]
+
+[ext_resource type="Script" uid="uid://wn71efi67jfi" path="res://entities/biker.gd" id="1_isc52"]
+[ext_resource type="Texture2D" uid="uid://dvrqrgdwktrt6" path="res://assets/players/Biker/Biker_idle.png" id="2_2k2xb"]
+[ext_resource type="PackedScene" uid="uid://dfontxhyddd6b" path="res://entities/speech_bubble.tscn" id="3_2k2xb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0fmhg"]
+atlas = ExtResource("2_2k2xb")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vj3ac"]
+atlas = ExtResource("2_2k2xb")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_afj5k"]
+atlas = ExtResource("2_2k2xb")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8bnvn"]
+atlas = ExtResource("2_2k2xb")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_htuca"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0fmhg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vj3ac")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_afj5k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8bnvn")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ru0vo"]
+size = Vector2(20, 31.5)
+
+[node name="Biker" type="CharacterBody2D"]
+scale = Vector2(2, 2)
+collision_layer = 3
+script = ExtResource("1_isc52")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(19.5, -23.5)
+sprite_frames = SubResource("SpriteFrames_htuca")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(9.5, -15.25)
+shape = SubResource("RectangleShape2D_ru0vo")
+
+[node name="SpeechBubble" parent="." instance=ExtResource("3_2k2xb")]
+position = Vector2(-26, -34)

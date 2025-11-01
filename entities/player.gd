@@ -110,7 +110,6 @@ func _process(delta: float) -> void:
 	
 	_animation_process(delta)
 
-
 func _unhandled_key_input(event: InputEvent) -> void:
 	if event is InputEventKey:
 		if event.keycode == KEY_E and event.is_pressed() and can_use_objects:

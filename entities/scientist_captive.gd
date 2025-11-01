@@ -75,7 +75,7 @@ func _action_mode_5():
 	var timer = get_tree().create_timer(2.0)
 	timer.timeout.connect(func(): self.discard = false)
 
-func action_use(player: Player):
+func action_use(_player: Player):
 	if discard:
 		return
 	if mode == 0:
