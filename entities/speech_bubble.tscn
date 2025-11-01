@@ -10,12 +10,15 @@ font_size = 30
 shadow_size = 0
 
 [node name="SpeechBubble" type="Node2D"]
+z_index = 4096
 texture_filter = 1
 scale = Vector2(0.25, 0.25)
 script = ExtResource("1_ej4bd")
 
 [node name="SpeechText" type="Label" parent="."]
+z_index = 4096
 offset_top = -7.0
-offset_right = 47.0
-offset_bottom = 16.0
+offset_right = 300.0
+offset_bottom = 20.0
 label_settings = SubResource("LabelSettings_ej4bd")
+autowrap_mode = 2
