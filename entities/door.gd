@@ -5,6 +5,9 @@ const tex_closed = preload("res://assets/objects/door_closed.tres")
 
 @onready var sprite: Sprite2D = $Sprite2D
 
+@export
+var key_chances: Dictionary[String, float]
+
 var _alarm_state: bool = false
 
 func _ready():
@@ -32,3 +35,6 @@ func _on_spawn_timer_timeout() -> void:
 		Main.the.current_level().add_child(npc)
 		npc.spawn_door = self
 		npc.position = global_position
+		for k in key_chances:
+			if randf() < key_chances[k]:
+				npc.keys_inventory.append(k)

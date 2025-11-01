@@ -49,6 +49,9 @@ position = Vector2(12, -176)
 
 [node name="Door" parent="Floor0" index="7" instance=ExtResource("4_py88r")]
 position = Vector2(108, 127)
+key_chances = Dictionary[String, float]({
+"lvl2_floor0_upstairs": 0.7
+})
 required_key = "lvl2_floor0_upstairs"
 
 [node name="CorridorDoor4" parent="Floor0" index="8" instance=ExtResource("5_g1dg4")]
@@ -105,6 +108,9 @@ required_key = "lvl2_floor1_upstairs"
 
 [node name="Door2" parent="Floor1" index="5" instance=ExtResource("4_py88r")]
 position = Vector2(-281, 239)
+key_chances = Dictionary[String, float]({
+"lvl2_floor1_upstairs": 0.1
+})
 required_key = "lvl2_floor0_upstairs"
 
 [node name="Floor2" type="Node2D" parent="." index="4"]
@@ -118,6 +124,7 @@ position = Vector2(-9, -193)
 
 [node name="Door3" parent="Floor2" index="1" instance=ExtResource("4_py88r")]
 position = Vector2(623, 341)
+key_chances = Dictionary[String, float]({})
 required_key = "lvl2_floor0_upstairs"
 
 [node name="Floor3" type="Node2D" parent="." index="5"]

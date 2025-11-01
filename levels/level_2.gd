@@ -9,7 +9,7 @@ func set_alarm(a: bool):
 	alarm_state_changed.emit(a)
 	if $AlarmSound.playing != a:
 		$AlarmSound.playing = a
-	
+
 func launch_alarm():
 	print("!@!@!@! LAUNCH ALARM !@!@!@!")
 	alarm = true

@@ -15,6 +15,7 @@ enum State {
 var spawn_door: Door
 var state: State = State.LOOKING_AROUND
 var shooting: bool = false
+var keys_inventory: Array[String] = []
 
 func set_flipped(f: bool):
 	flipped = f
@@ -39,7 +40,8 @@ func damage(v: int):
 	velocity.x = 0
 	await get_tree().create_timer(0.7).timeout
 	var player: Player = Main.the.current_level().player()
-	player.add_key(Keys.lvl2_floor0_upstairs)
+	for key in keys_inventory:
+		player.add_key(key)
 	queue_free()
 
 
