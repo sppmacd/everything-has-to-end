@@ -6,8 +6,15 @@ const WALKING_SPEED: float = 4000
 var dead = false
 var flipped = true
 var walking = false
-var following_player = false
-var shooting = false
+
+enum State {
+	LOOKING_AROUND,
+	FOLLOWING_PLAYER,
+	RETREATING
+}
+var spawn_door: Door
+var state: State = State.LOOKING_AROUND
+var shooting: bool = false
 
 func set_flipped(f: bool):
 	flipped = f
@@ -18,6 +25,7 @@ func set_flipped(f: bool):
 
 func _ready() -> void:
 	$AnimatedSprite2D.play("idle")
+	$PlayerFollowingCooldown.start()
 
 
 func sight_vector() -> Vector2:
@@ -54,6 +62,8 @@ func start_shooting():
 	print("shooting=false")
 	shooting = false
 
+	if dead:
+		return
 	var p = raytrace_player()
 	if p:
 		var shell = preload("res://entities/shell.tscn").instantiate()
@@ -63,34 +73,41 @@ func start_shooting():
 
 func ai():
 	var p = raytrace_player()
-	if following_player:
-		if p:
-			$PlayerFollowingCooldown.start()
-			var should_walk = abs(p.x - global_position.x) > 200
-			walking = should_walk
-			if not should_walk and $GunTimer.is_stopped():
-				print("START GUN TIMER")
-				$GunTimer.start()
-				print("shooting=true")
-				shooting = true
-			set_flipped(p.x < global_position.x)
-		else:
-			walking = false
-	else:
-		$GunTimer.stop()
-		if p:
+	match state:
+		State.LOOKING_AROUND:
+			if p:
+				state = State.FOLLOWING_PLAYER
+				print("cooldown restart")
+				$PlayerFollowingCooldown.start()
+		State.FOLLOWING_PLAYER:
+			if p:
+				print("cooldown restart")
+				$PlayerFollowingCooldown.start()
+				var should_walk = abs(p.x - global_position.x) > 200
+				walking = should_walk
+				if not should_walk and $GunTimer.is_stopped():
+					print("START GUN TIMER")
+					start_shooting.call_deferred()
+					$GunTimer.start()
+					print("shooting=true")
+					shooting = true
+				set_flipped(p.x < global_position.x)
+		State.RETREATING:
+			if p:
+				state = State.FOLLOWING_PLAYER
+				print("cooldown restart")
+				$PlayerFollowingCooldown.start()
 			walking = true
-			following_player = true
-			$PlayerFollowingCooldown.start()
-		else:
-			walking = false
+			set_flipped(spawn_door.global_position.x < global_position.x)
+			if abs(spawn_door.global_position.x - global_position.x) < 100:
+				queue_free()
 
 func _physics_process(delta: float) -> void:
 	if dead:
 		return
 
 	ai()
-	
+
 	if walking:
 		velocity.x += -WALKING_SPEED * delta if flipped else WALKING_SPEED * delta
 	velocity.x *= 0.00001 ** delta
@@ -112,16 +129,20 @@ func _process(_delta: float) -> void:
 
 
 func _on_lookaround_timer_timeout() -> void:
-	if following_player:
-		var p = raytrace_player()
-		if not p:
+	match state:
+		State.FOLLOWING_PLAYER:
+			var p = raytrace_player()
+			if not p:
+				set_flipped(not flipped)
+		State.LOOKING_AROUND:
 			set_flipped(not flipped)
-	else:
-		set_flipped(not flipped)
+		State.RETREATING:
+			pass
 
 
 func _on_player_following_cooldown_timeout() -> void:
-	following_player = false
+	print("RETREATING!")
+	state = State.RETREATING
 
 
 func _on_gun_timer_timeout() -> void:
