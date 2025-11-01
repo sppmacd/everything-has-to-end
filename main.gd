@@ -6,7 +6,7 @@ var _current_level: Node2D
 
 func _ready():
 	the = self
-	switch_level(preload("res://levels/level2.tscn").instantiate())
+	switch_level(preload("res://levels/level1.tscn").instantiate())
 	_current_level.respawn_player()
 
 func on_player_changed():
