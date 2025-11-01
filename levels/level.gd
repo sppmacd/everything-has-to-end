@@ -7,7 +7,18 @@ func player() -> Player:
 	return get_node("Player")
 
 func respawn_player():
-	player().position = spawn_point.global_position
+	if player():
+		# Old player, if exists, remains as a body until picked up
+		player().get_node("Camera2D").queue_free()
+		player().name = "PlayerBody"
+
+	# Spawn new player, and move it to spawn position.
+	var player = preload("res://entities/player.tscn").instantiate()
+	player.name = "Player"
+	player.global_position = spawn_point.global_position
+	add_child(player)
+	
+	Main.the.on_player_changed()
 
 func _unhandled_key_input(event: InputEvent) -> void:
 	if event is InputEventKey:

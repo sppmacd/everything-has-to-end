@@ -52,10 +52,16 @@ func _health_anim():
 
 
 func damage(h: int):
+	if health <= 0:
+		return
 	health -= h
 	health_changed.emit()
 	_health_anim.call_deferred()
 	if health <= 0:
+		$Sprite2D.rotate(3.14/2) # lying
+		$Sprite2D.offset = Vector2(50, 0)
+		$Sprite2D.play("idle")
+		$Sprite2D.stop()
 		Main.the.current_level().respawn_player()
 
 func _animation_process(_delta: float) -> void:
@@ -87,6 +93,9 @@ func _animation_process(_delta: float) -> void:
 	$Sprite2D.offset.x = -12 if flipped else 12
 
 func _physics_process(delta: float) -> void:
+	if health <= 0:
+		return
+	
 	moving = false
 	if Input.is_key_pressed(KEY_A):
 		velocity.x -= WALKING_SPEED * delta
@@ -119,13 +128,30 @@ func _physics_process(delta: float) -> void:
 
 
 func _find_usable_objects() -> Array[Node2D]:
-	var area = use_area.get_overlapping_bodies()
-	return area
+	var objects = use_area.get_overlapping_bodies()
+	objects.pop_front() # player
+	return objects
 
 func _label_process(_delta: float) -> void:
 	label_press_e_to_use.visible = len(_find_usable_objects()) > 0
 
+func action_tooltip() -> String:
+	return "Press E to pickup items"
+
+func action_enabled() -> bool:
+	return health <= 0
+
+func action_use(player: Player):
+	print("USE PLAYER ", ammo)
+	player.ammo += self.ammo
+	ammo_changed.emit()
+	queue_free()
+
 func _process(delta: float) -> void:
+	if health <= 0:
+		label_press_e_to_use.visible = false
+		return
+
 	var uo = _find_usable_objects()
 	if len(uo) > 0:
 		if uo[0].action_enabled():
@@ -139,6 +165,8 @@ func _process(delta: float) -> void:
 	_animation_process(delta)
 
 func _unhandled_key_input(event: InputEvent) -> void:
+	if health <= 0:
+		return
 	if event is InputEventKey:
 		if event.keycode == KEY_E and event.is_pressed() and can_use_objects:
 			var uo = _find_usable_objects()
@@ -164,6 +192,8 @@ func _spawn_shell() -> void:
 	ammo_changed.emit()
 			
 func _unhandled_input(event: InputEvent) -> void:
+	if health <= 0:
+		return
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 			if jumping:
@@ -186,9 +216,13 @@ func _unhandled_input(event: InputEvent) -> void:
 				_spawn_shell()
 				
 func Punch() -> void:
+	if health <= 0:
+		return
 	punching = true
 	var timer = get_tree().create_timer(PUNCHING_DELAY_SEC)
 	timer.timeout.connect(func(): self.punching = false)
 
 func Speak(text: String) -> void:
+	if health <= 0:
+		return
 	speech_bubble.show_message(text)
