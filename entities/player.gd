@@ -23,12 +23,14 @@ var gun_unloading: bool = false
 var last_shot_timestamp: int = 0
 
 var keys: Array[String] = []
+signal key_added
 
 func has_key(key: String):
 	return key in keys
 
 func add_key(key: String):
 	keys.append(key)
+	key_added.emit()
 
 func _animation_process(delta: float) -> void:
 	if jumping:

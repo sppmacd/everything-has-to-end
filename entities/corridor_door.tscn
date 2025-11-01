@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dskljqmgkkmyf"]
+
+[ext_resource type="Script" uid="uid://cuuq5j3ptmdlj" path="res://entities/corridor_door.gd" id="1_hu5o5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eh3xb"]
+size = Vector2(4, 88)
+
+[node name="CorridorDoor" type="StaticBody2D"]
+collision_layer = 3
+script = ExtResource("1_hu5o5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -44)
+shape = SubResource("RectangleShape2D_eh3xb")

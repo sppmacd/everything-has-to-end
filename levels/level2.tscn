@@ -1,8 +1,10 @@
-[gd_scene load_steps=9 format=4 uid="uid://d3vm4dg0841ls"]
+[gd_scene load_steps=11 format=4 uid="uid://d3vm4dg0841ls"]
 
 [ext_resource type="PackedScene" uid="uid://b62r6sibq6dpt" path="res://levels/level.tscn" id="1_p1d34"]
 [ext_resource type="PackedScene" uid="uid://4rhntp45r3y4" path="res://entities/stairs.tscn" id="2_p1d34"]
 [ext_resource type="Texture2D" uid="uid://dqnqxpmjx1ahj" path="res://assets/tiles.png" id="3_g1dg4"]
+[ext_resource type="PackedScene" uid="uid://dwpy6jdqyg73s" path="res://entities/door.tscn" id="4_py88r"]
+[ext_resource type="PackedScene" uid="uid://dskljqmgkkmyf" path="res://entities/corridor_door.tscn" id="5_g1dg4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qyb5k"]
 texture = ExtResource("3_g1dg4")
@@ -57,7 +59,7 @@ position = Vector2(569, 63)
 [node name="Floor0" type="Node2D" parent="." index="1"]
 
 [node name="Stairs_up" parent="Floor0" index="0" instance=ExtResource("2_p1d34")]
-position = Vector2(-287, 128)
+position = Vector2(-492, 128)
 
 [node name="Target" type="Marker2D" parent="Floor0/Stairs_up" index="2"]
 position = Vector2(-11, -177)
@@ -96,6 +98,22 @@ shape = SubResource("RectangleShape2D_qyb5k")
 [node name="CollisionShape2D7" type="CollisionShape2D" parent="Floor0/TileMapLayer/StaticBody2D" index="6"]
 position = Vector2(-400.5, 21)
 shape = SubResource("RectangleShape2D_qyb5k")
+
+[node name="Door" parent="Floor0" index="2" instance=ExtResource("4_py88r")]
+position = Vector2(108, 127)
+
+[node name="CorridorDoor4" parent="Floor0" index="3" instance=ExtResource("5_g1dg4")]
+position = Vector2(-400, 127)
+required_key = "lvl2_floor0_upstairs"
+
+[node name="CorridorDoor3" parent="Floor0" index="4" instance=ExtResource("5_g1dg4")]
+position = Vector2(-49, 127)
+
+[node name="CorridorDoor" parent="Floor0" index="5" instance=ExtResource("5_g1dg4")]
+position = Vector2(272, 127)
+
+[node name="CorridorDoor2" parent="Floor0" index="6" instance=ExtResource("5_g1dg4")]
+position = Vector2(592, 127)
 
 [node name="Floor1" type="Node2D" parent="." index="2"]
 position = Vector2(0, -271)
@@ -183,6 +201,3 @@ shape = SubResource("RectangleShape2D_s1bpp")
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Floor3/TileMapLayer/StaticBody2D" index="2"]
 position = Vector2(816, 64)
 shape = SubResource("RectangleShape2D_s1bpp")
-
-[node name="Player" parent="." index="5"]
-position = Vector2(54, 118)

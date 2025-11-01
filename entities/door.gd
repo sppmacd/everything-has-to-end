@@ -20,7 +20,9 @@ func action_enabled() -> bool:
 	return true
 
 func _on_spawn_timer_timeout() -> void:
-	if randf() < 0.1 and open:
+	if randf() < 0.9 and open:
+		if len(get_tree().get_nodes_in_group("npc")) > 0:
+			return
 		const npc_scene = preload("res://entities/npc.tscn")
 		var npc = npc_scene.instantiate()
 		Main.the.current_level().add_child(npc)

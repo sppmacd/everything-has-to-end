@@ -1,12 +1,15 @@
-[gd_scene format=3 uid="uid://clcafl3xybofv"]
+[gd_scene load_steps=2 format=3 uid="uid://clcafl3xybofv"]
+
+[ext_resource type="Script" uid="uid://bgymuk2jsmrrm" path="res://gui/hud.gd" id="1_350da"]
 
 [node name="Hud" type="Control"]
 layout_mode = 3
 anchors_preset = 0
+script = ExtResource("1_350da")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="Keys" type="HFlowContainer" parent="."]
 layout_mode = 0
-offset_left = 10.0
-offset_top = 6.0
-offset_right = 143.0
-offset_bottom = 49.0
+offset_left = 7.0
+offset_top = 8.0
+offset_right = 677.0
+offset_bottom = 48.0
