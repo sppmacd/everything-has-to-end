@@ -367,7 +367,7 @@ animations = [{
 size = Vector2(32, 64)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e4p34"]
-size = Vector2(72, 72)
+size = Vector2(72, 85)
 
 [node name="Player" type="CharacterBody2D"]
 z_index = 1000
@@ -392,7 +392,7 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="UseArea"]
-position = Vector2(-1, -4)
+position = Vector2(-1, 2.5)
 shape = SubResource("RectangleShape2D_e4p34")
 
 [node name="PressEToUse" type="RichTextLabel" parent="."]
