@@ -4,11 +4,11 @@
 [ext_resource type="Script" uid="uid://cv2jybq343doc" path="res://entities/corridor_door.gd" id="2_40rqu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hu5o5"]
-size = Vector2(20, 157)
+size = Vector2(20, 124)
 
 [node name="DoorBase" instance=ExtResource("1_hu5o5")]
 script = ExtResource("2_40rqu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
-position = Vector2(0, -80.5)
+position = Vector2(0, -64)
 shape = SubResource("RectangleShape2D_hu5o5")
