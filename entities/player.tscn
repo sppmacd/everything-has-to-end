@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=3 uid="uid://b0myivfh6cthu"]
+[gd_scene load_steps=60 format=3 uid="uid://b0myivfh6cthu"]
 
 [ext_resource type="Script" uid="uid://b2jbntfickj5g" path="res://entities/player.gd" id="1_b0kkn"]
 [ext_resource type="Texture2D" uid="uid://bwvvogre6j1mh" path="res://assets/players/Punk/Punk_idle.png" id="2_e4p34"]
@@ -12,6 +12,17 @@
 [ext_resource type="AudioStream" uid="uid://dmxbe78sfw6m5" path="res://assets/sounds/player_hurt.mp3" id="10_kdgjc"]
 [ext_resource type="AudioStream" uid="uid://cch4ttk1ikv1t" path="res://assets/sounds/gunshot.mp3" id="11_q0i8f"]
 [ext_resource type="AudioStream" uid="uid://bl5pjynv0om86" path="res://assets/sounds/pickup.mp3" id="12_0i614"]
+
+[sub_resource type="Gradient" id="Gradient_dchgp"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_kdgjc"]
+gradient = SubResource("Gradient_dchgp")
+width = 512
+height = 512
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cgp7q"]
 atlas = ExtResource("2_qsoyl")
@@ -374,6 +385,16 @@ size = Vector2(32, 64)
 z_index = 1000
 collision_layer = 6
 script = ExtResource("1_b0kkn")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(1, -51)
+scale = Vector2(2, 2)
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 0.7647059)
+texture = SubResource("GradientTexture2D_kdgjc")
+
+[node name="SoundGunshot" type="AudioStreamPlayer2D" parent="PointLight2D"]
+stream = ExtResource("11_q0i8f")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1

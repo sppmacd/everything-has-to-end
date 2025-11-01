@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://dskljqmgkkmyf"]
+[gd_scene load_steps=6 format=3 uid="uid://dskljqmgkkmyf"]
 
 [ext_resource type="PackedScene" uid="uid://b8ma73tlrga4n" path="res://entities/door_base.tscn" id="1_hu5o5"]
 [ext_resource type="Script" uid="uid://cv2jybq343doc" path="res://entities/corridor_door.gd" id="2_40rqu"]
@@ -6,9 +6,22 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hu5o5"]
 size = Vector2(20, 124)
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_gnas6"]
+polygon = PackedVector2Array(-4, -126, 4, -126, 4, -54, -4, -54)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_40rqu"]
+polygon = PackedVector2Array(-4, -113, 4, -113, 4, -68, -4, -68)
+
 [node name="DoorBase" instance=ExtResource("1_hu5o5")]
 script = ExtResource("2_40rqu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
 position = Vector2(0, -64)
 shape = SubResource("RectangleShape2D_hu5o5")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="." index="1"]
+occluder = SubResource("OccluderPolygon2D_gnas6")
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="." index="2"]
+position = Vector2(0, 66)
+occluder = SubResource("OccluderPolygon2D_40rqu")

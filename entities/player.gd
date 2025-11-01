@@ -212,7 +212,7 @@ func _spawn_shell() -> void:
 	var mouse_pos = get_global_mouse_position()
 	Main.the.current_level().add_child(shell)
 	shell.setup(self, gun_point.global_position, mouse_pos)
-	
+
 	gun_loading = false
 	gun_unloading = false
 	gun_loaded = true
