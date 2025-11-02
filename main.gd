@@ -13,7 +13,7 @@ func _ready():
 	_checkpoint_level.respawn_player()
 
 func end_game():
-	pass
+	$AudioStreamPlayer.play(193.0) # Synced to music (only the beep)
 
 func on_player_changed():
 	hud().setup(current_level().player(), _current_level)

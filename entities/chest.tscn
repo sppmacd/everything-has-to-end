@@ -1,21 +1,22 @@
 [gd_scene load_steps=4 format=3 uid="uid://dw2wddf85cc36"]
 
-[ext_resource type="Script" uid="uid://cw4ckhvba8epl" path="res://entities/chest.gd" id="1_hbcot"]
+[ext_resource type="Script" path="res://entities/chest.gd" id="1_hbcot"]
 [ext_resource type="Texture2D" uid="uid://d3ky8jsu0fch4" path="res://assets/objects/chest.png" id="2_a1ux3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_no8un"]
-size = Vector2(42, 36)
+size = Vector2(31, 34)
 
 [node name="Chest" type="StaticBody2D"]
 collision_layer = 3
 script = ExtResource("1_hbcot")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(24, -24)
+position = Vector2(21, -26)
+scale = Vector2(0.82470036, 0.82470036)
 texture = ExtResource("2_a1ux3")
 region_enabled = true
 region_rect = Rect2(0, 0, 48, 48)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(21, -25)
+position = Vector2(20.5, -24)
 shape = SubResource("RectangleShape2D_no8un")
