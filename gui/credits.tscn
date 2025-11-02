@@ -43,12 +43,15 @@ theme_override_font_sizes/normal_font_size = 24
 bbcode_enabled = true
 text = "[color=#8cd5f7][center][font_size=50]Stucked[/font_size][/center][/color]
 
-Game made in 2 days by sppmacd & Adam2004yt
+Game made in 2 days by sppmacd & cub9
 
-Game design, programming:	sppmacd, Adam2004yt
-Graphics:	sppmacd, Adam2004yt, PumpkinCell, (Assets?)
+Game design, programming:	sppmacd, cub9
+Graphics:	sppmacd, cub9
 Sounds:	sppmacd, Pixabay
 Music:	sppmacd
+Special thanks to:
+- PumpkinCell for chest graphics
+- Craftpix for main character graphics (https://free-game-assets.itch.io/free-3-cyberpunk-sprites-pixel-art)
 "
 scroll_active = false
 vertical_alignment = 1
