@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://d3vm4dg0841ls"]
+[gd_scene load_steps=17 format=4 uid="uid://d3vm4dg0841ls"]
 
 [ext_resource type="PackedScene" uid="uid://b62r6sibq6dpt" path="res://levels/level.tscn" id="1_p1d34"]
 [ext_resource type="Script" uid="uid://cjvp88y70lsmv" path="res://levels/level_2.gd" id="2_76ugp"]
@@ -9,7 +9,6 @@
 [ext_resource type="TileSet" uid="uid://ctancdmpoyxao" path="res://assets/tileset_small.tres" id="5_55gdq"]
 [ext_resource type="PackedScene" uid="uid://dskljqmgkkmyf" path="res://entities/corridor_door.tscn" id="5_g1dg4"]
 [ext_resource type="PackedScene" uid="uid://dtaoehussyag4" path="res://entities/camera.tscn" id="6_s1bpp"]
-[ext_resource type="AudioStream" uid="uid://tq455hhb777d" path="res://assets/sounds/Alarm0.wav" id="8_e8p81"]
 [ext_resource type="PackedScene" uid="uid://db6ko67vy1a0b" path="res://entities/terminal.tscn" id="9_hq01p"]
 [ext_resource type="PackedScene" uid="uid://bn4lvjes84bug" path="res://entities/npc.tscn" id="10_crte6"]
 [ext_resource type="PackedScene" uid="uid://by1hp6uyfrnjs" path="res://entities/cartridge.tscn" id="11_6mfmt"]
@@ -208,27 +207,24 @@ position = Vector2(185, 150)
 [node name="SpawnPoint" parent="." index="7"]
 position = Vector2(442, 123)
 
-[node name="AlarmSound" type="AudioStreamPlayer" parent="." index="8"]
-stream = ExtResource("8_e8p81")
-
-[node name="Npc" parent="." index="10" instance=ExtResource("10_crte6")]
+[node name="Npc" parent="." index="9" instance=ExtResource("10_crte6")]
 position = Vector2(12, 124)
 collision_layer = 4
 keys_inventory = Array[String](["lvl2_floor0_upstairs"])
 enable_retreat = false
 
-[node name="Npc2" parent="." index="11" instance=ExtResource("10_crte6")]
+[node name="Npc2" parent="." index="10" instance=ExtResource("10_crte6")]
 position = Vector2(124, -32)
 collision_layer = 4
 keys_inventory = Array[String](["lvl2_floor1_upstairs"])
 enable_retreat = false
 
-[node name="Npc3" parent="." index="12" instance=ExtResource("10_crte6")]
+[node name="Npc3" parent="." index="11" instance=ExtResource("10_crte6")]
 position = Vector2(52, -32)
 collision_layer = 4
 enable_retreat = false
 
-[node name="Npc4" parent="." index="13" instance=ExtResource("10_crte6")]
+[node name="Npc4" parent="." index="12" instance=ExtResource("10_crte6")]
 position = Vector2(579, -193)
 collision_layer = 4
 keys_inventory = Array[String](["lvl2_floor2_to_lvl3"])

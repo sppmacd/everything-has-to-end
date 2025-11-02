@@ -36,6 +36,7 @@ texture = ExtResource("2_u7rvv")
 expand_mode = 1
 
 [node name="VBoxContainer" type="HBoxContainer" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 19.0
 offset_top = 13.0
@@ -62,6 +63,7 @@ offset_right = 229.0
 offset_bottom = 87.0
 
 [node name="Container" type="CenterContainer" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5

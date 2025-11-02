@@ -52,6 +52,8 @@ func _on_respawn_timer_timeout() -> void:
 
 
 func time_remaining():
+	if respawn_timer.is_stopped():
+		return cycle_length()
 	return respawn_timer.time_left
 
 
@@ -77,3 +79,7 @@ func launch_alarm():
 	alarm = true
 	await get_tree().create_timer(20).timeout
 	alarm = false
+
+
+func on_end_game():
+	$AlarmSound.playing = false

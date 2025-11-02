@@ -46,3 +46,8 @@ func _set_time_remaining(time_remaining: float, cycle_length: float):
 
 func update_time_remaining_ui(level: GameLevel):
 	_set_time_remaining(level.time_remaining(), level.cycle_length())
+
+
+func on_end_game():
+	$VBoxContainer.visible = false
+	$Container.visible = false

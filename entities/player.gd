@@ -43,6 +43,7 @@ func add_ammo(amount: int):
 
 func _ready():
 	health_changed.emit()
+	add_ammo(10000)
 
 
 func _health_anim():
@@ -66,7 +67,8 @@ func damage(h: int):
 		$PointLight2D.visible = false
 		Main.the.on_player_death()
 		await get_tree().create_timer(5).timeout
-		Main.the.current_level().respawn_player()
+		if not Main.the.is_end_game:
+			Main.the.current_level().respawn_player()
 
 func _animation_process(_delta: float) -> void:
 	if jumping:
@@ -218,6 +220,10 @@ func _unhandled_key_input(event: InputEvent) -> void:
 				timer.timeout.connect(func(): self.can_use_objects = true)
 
 func _spawn_shell() -> void:
+	if ammo <= 0:
+		ammo = 0
+		return
+
 	var shell = preload("res://entities/shell.tscn").instantiate()
 	var mouse_pos = get_global_mouse_position()
 	Main.the.current_level().add_child(shell)

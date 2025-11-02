@@ -5,15 +5,19 @@ static var the: Main
 var _current_level: Node2D
 var _checkpoint_level: Node2D
 signal checkpoint_set
+var is_end_game: bool = false
 
 func _ready():
 	the = self
-	switch_level(preload("res://levels/level1.tscn").instantiate())
+	switch_level(preload("res://levels/level3.tscn").instantiate())
 	set_new_checkpoint()
 	_checkpoint_level.respawn_player()
 
 func end_game():
-	$AudioStreamPlayer.play(193.0) # Synced to music (only the beep)
+	is_end_game = true
+	hud().on_end_game()
+	current_level().on_end_game()
+	add_ui(preload("res://gui/credits.tscn").instantiate())
 
 func on_player_changed():
 	hud().setup(current_level().player(), _current_level)
