@@ -312,9 +312,6 @@ sources/0 = SubResource("TileSetAtlasSource_lbu4x")
 
 [node name="Level3" instance=ExtResource("1_ua5ty")]
 
-[node name="CanvasModulate" parent="." index="0"]
-visible = false
-
 [node name="Floor0" type="Node2D" parent="." index="2"]
 
 [node name="WallCutscene" type="TileMapLayer" parent="Floor0" index="0"]
