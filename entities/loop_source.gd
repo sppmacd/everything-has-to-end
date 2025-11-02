@@ -1,7 +1,7 @@
 extends StaticBody2D
 
 var destroyed: bool = false
-var health: int = 200
+var health: int = 25
 
 signal source_destroyed
 
