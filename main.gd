@@ -8,7 +8,7 @@ signal checkpoint_set
 
 func _ready():
 	the = self
-	switch_level(preload("res://levels/level3.tscn").instantiate())
+	switch_level(preload("res://levels/level2.tscn").instantiate())
 	set_new_checkpoint()
 	_checkpoint_level.respawn_player()
 
@@ -16,11 +16,11 @@ func end_game():
 	pass
 
 func on_player_changed():
-	$CanvasLayer/Hud.setup(current_level().player(), _current_level)
+	hud().setup(current_level().player(), _current_level)
 
 # called only when player was killed NOT by the time loop
 func on_player_death():
-	$AudioStreamPlayer.play(193.0)
+	$AudioStreamPlayer.play(193.0) # Synced to music (only the beep)
 
 func on_respawn():
 	$AudioStreamPlayer.play()
@@ -44,8 +44,11 @@ func switch_level(lvl: Node2D):
 	lvl.name = "Level"
 	add_child(lvl)
 	if current_level().player():
-		$CanvasLayer/Hud.setup(current_level().player(), lvl)
+		hud().setup(current_level().player(), lvl)
 		current_level().player().global_position = current_level().spawn_point().global_position
 
 func add_ui(node: Node):
 	$CanvasLayer.add_child(node)
+
+func hud():
+	return $CanvasLayer/Hud

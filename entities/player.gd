@@ -8,7 +8,7 @@ const PUNCHING_DELAY_SEC: float = 0.4
 const LOADING_GUN_DELAY_SEC: float = 0.2
 const GUN_IDLE_DELAY_SEC: float = 0.5
 
-@onready var label_press_e_to_use = $PressEToUse
+#@onready var label_press_e_to_use = $PressEToUse
 @onready var gun_point = $GunPoint
 @onready var speech_bubble = $SpeechBubble
 var can_use_objects: bool = true
@@ -186,6 +186,9 @@ func _damagable_object(node: Node2D) -> bool:
 	return node.has_method("damage")
 
 func _process(delta: float) -> void:
+	# FIXME: ugly code
+	var label_press_e_to_use = Main.the.hud().get_node("PressEToUse")
+
 	if health <= 0:
 		label_press_e_to_use.visible = false
 		return
