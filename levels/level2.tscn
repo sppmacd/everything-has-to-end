@@ -95,7 +95,7 @@ position = Vector2(0, -271)
 position = Vector2(622, 239)
 
 [node name="Target" type="Marker2D" parent="Floor1/Stairs_up" index="2"]
-position = Vector2(97, -186)
+position = Vector2(-183, -177)
 
 [node name="CorridorDoor5" parent="Floor1" index="1" instance=ExtResource("5_g1dg4")]
 position = Vector2(-400, 241)
@@ -177,11 +177,12 @@ required_key = "lvl2_floor0_upstairs"
 [node name="keydoor" parent="Floor2" index="1" instance=ExtResource("11_bcewn")]
 position = Vector2(272, 340)
 correct_key = "2983"
+hint = "corridor"
 
 [node name="keydoor2" parent="Floor2" index="2" instance=ExtResource("11_bcewn")]
 position = Vector2(497, 341)
 correct_key = "five"
-hint = "these vandals left R's everywhere, count them"
+hint = "these vandals left R's everywhere, count them (answer is one word)"
 
 [node name="DoorSwitchToLvl2" parent="Floor2" index="3" instance=ExtResource("14_jai45")]
 position = Vector2(-480, 341)
@@ -205,10 +206,10 @@ position = Vector2(0, -780)
 position = Vector2(440, 588)
 
 [node name="Target" type="Marker2D" parent="Floor3/Stairs_up" index="2"]
-position = Vector2(279, 156)
+position = Vector2(185, 150)
 
 [node name="SpawnPoint" parent="." index="7"]
-position = Vector2(384, -195)
+position = Vector2(442, 123)
 
 [node name="AlarmSound" type="AudioStreamPlayer" parent="." index="8"]
 stream = ExtResource("8_e8p81")

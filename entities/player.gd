@@ -7,6 +7,7 @@ const GRAVITY: float = 981.0
 const PUNCHING_DELAY_SEC: float = 0.4
 const LOADING_GUN_DELAY_SEC: float = 0.2
 const GUN_IDLE_DELAY_SEC: float = 0.5
+const PLAYER_MAX_HEALTH: int = 8
 
 #@onready var label_press_e_to_use = $PressEToUse
 @onready var gun_point = $GunPoint
@@ -21,7 +22,7 @@ var gun_loading: bool = false
 var gun_unloading: bool = false
 var last_shot_timestamp: int = 0
 var ammo: int = 0
-var health: int = 500
+var health: int = PLAYER_MAX_HEALTH
 
 var keys: Array[String] = []
 signal key_added
@@ -42,7 +43,6 @@ func add_ammo(amount: int):
 
 func _ready():
 	health_changed.emit()
-	add_ammo(19999999)
 
 
 func _health_anim():
@@ -169,7 +169,7 @@ func action_enabled() -> bool:
 	return health <= 0
 
 func heal() -> void:
-	health = 5
+	health = PLAYER_MAX_HEALTH
 	health_changed.emit()
 
 func action_use(player: Player):
