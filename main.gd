@@ -46,6 +46,11 @@ func switch_level(lvl: Node2D):
 	if current_level().player():
 		hud().setup(current_level().player(), lvl)
 		current_level().player().global_position = current_level().spawn_point().global_position
+	
+	# Enable alarm only NOW, so that player being briefly at (0,0) doesn't trigger cameras at
+	# that point
+	await get_tree().create_timer(0.1).timeout
+	current_level().alarm_enabled = true
 
 func add_ui(node: Node):
 	$CanvasLayer.add_child(node)

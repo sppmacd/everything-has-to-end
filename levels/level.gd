@@ -2,7 +2,12 @@ class_name GameLevel
 extends Node2D
 @onready var respawn_timer = $RespawnTimer
 
+var alarm_enabled: bool = false
+var alarm: bool = false: set = set_alarm
+
+signal alarm_state_changed(state: bool)
 signal time_remaining_changed
+
 
 func _ready():
 	Main.the.checkpoint_set.connect(func(): self.respawn_timer.start())
@@ -51,18 +56,17 @@ func cycle_length():
 func _on_update_timer_timeout() -> void:
 	time_remaining_changed.emit()
 
-
-var alarm: bool = false: set = set_alarm
-
-signal alarm_state_changed(state: bool)
-
 func set_alarm(a: bool):
+	if not alarm_enabled:
+		return
 	alarm = a
 	alarm_state_changed.emit(a)
 	if $AlarmSound.playing != a:
 		$AlarmSound.playing = a
 
 func launch_alarm():
+	if not alarm_enabled:
+		return
 	print("!@!@!@! LAUNCH ALARM !@!@!@!")
 	alarm = true
 	await get_tree().create_timer(20).timeout
