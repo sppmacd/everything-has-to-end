@@ -198,18 +198,20 @@ scale = Vector2(-1, 1)
 position = Vector2(111, -244)
 scale = Vector2(-1, 1)
 
-[node name="Camera2" parent="Floor1" index="9" instance=ExtResource("9_tq58f")]
-position = Vector2(-369, -244)
-scale = Vector2(-1, 1)
+[node name="CollisionPolygon2D" parent="Floor1/Camera/Area2D" index="0"]
+polygon = PackedVector2Array(-168, 126, -45, 125, 0, 0)
 
-[node name="Camera3" parent="Floor1" index="10" instance=ExtResource("9_tq58f")]
-position = Vector2(-45, -248)
+[node name="Polygon2D" parent="Floor1/Camera" index="1"]
+polygon = PackedVector2Array(-45, 125, 0, 0, -169, 127)
 
-[node name="DoorBase3" parent="Floor1" index="11" instance=ExtResource("10_mf7v1")]
+[node name="Camera3" parent="Floor1" index="9" instance=ExtResource("9_tq58f")]
+position = Vector2(-24, -248)
+
+[node name="DoorBase3" parent="Floor1" index="10" instance=ExtResource("10_mf7v1")]
 position = Vector2(-205, -125)
 required_key = "lvl3_floor1_upstairs"
 
-[node name="Chest" parent="Floor1" index="12" instance=ExtResource("7_nq7ub")]
+[node name="Chest" parent="Floor1" index="11" instance=ExtResource("7_nq7ub")]
 position = Vector2(-384, -118)
 
 [node name="Floor2" type="Node2D" parent="." index="6"]
@@ -296,10 +298,7 @@ position = Vector2(-400, -288)
 correct_key = "7410"
 hint = "storage"
 
-[node name="Terminal" parent="Floor2" index="18" instance=ExtResource("5_7trqu")]
-position = Vector2(-231, -286)
-
-[node name="Aidkit" parent="Floor2" index="19" instance=ExtResource("6_o0ax4")]
+[node name="Aidkit" parent="Floor2" index="18" instance=ExtResource("6_o0ax4")]
 position = Vector2(-375, -290)
 
 [node name="Walls" type="StaticBody2D" parent="." index="7"]
@@ -316,4 +315,5 @@ position = Vector2(-608, -285)
 [editable path="Floor1/Stairs_up"]
 [editable path="Floor1/Stairs_up2"]
 [editable path="Floor1/Stairs_up3"]
+[editable path="Floor1/Camera"]
 [editable path="Floor2/Stairs_up3"]

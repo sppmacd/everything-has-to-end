@@ -131,7 +131,7 @@ position = Vector2(-194, 126)
 position = Vector2(107, 127)
 
 [node name="Camera6" parent="Floor1" index="9" instance=ExtResource("6_s1bpp")]
-position = Vector2(143, 127)
+position = Vector2(135, 127)
 rotation = 3.1415927
 scale = Vector2(1, -1)
 

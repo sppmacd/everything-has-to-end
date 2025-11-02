@@ -610,19 +610,7 @@ polygon = PackedVector2Array(-232, 151, -55, 150, 0, 0)
 [node name="Polygon2D" parent="Floor1/Camera5" index="1"]
 polygon = PackedVector2Array(-56, 153, 0, 0, -232, 151)
 
-[node name="Camera6" parent="Floor1" index="38" instance=ExtResource("10_kdcll")]
-z_index = 2
-position = Vector2(2576.9998, -854.99994)
-rotation = 0.25830874
-scale = Vector2(-1, 1)
-
-[node name="CollisionPolygon2D" parent="Floor1/Camera6/Area2D" index="0"]
-polygon = PackedVector2Array(-171.28296, 111.96094, -51.141113, 142.66943, 0, 0)
-
-[node name="Polygon2D" parent="Floor1/Camera6" index="1"]
-polygon = PackedVector2Array(-50.885742, 141.70264, 0, 0, -169.80518, 110.282715)
-
-[node name="Chest9" parent="Floor1" index="39" instance=ExtResource("7_8hd6v")]
+[node name="Chest9" parent="Floor1" index="38" instance=ExtResource("7_8hd6v")]
 position = Vector2(2104, -698)
 
 [node name="BgParallax" type="Parallax2D" parent="." index="7"]
@@ -650,4 +638,3 @@ region_rect = Rect2(0, 0, 3840, 1080)
 [editable path="Floor1/Camera3"]
 [editable path="Floor1/Camera4"]
 [editable path="Floor1/Camera5"]
-[editable path="Floor1/Camera6"]
