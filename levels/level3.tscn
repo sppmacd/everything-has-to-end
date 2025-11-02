@@ -1,0 +1,471 @@
+[gd_scene load_steps=28 format=4 uid="uid://hbe85bqp0yxx"]
+
+[ext_resource type="PackedScene" uid="uid://b62r6sibq6dpt" path="res://levels/level.tscn" id="1_r8unp"]
+[ext_resource type="Texture2D" uid="uid://dqnqxpmjx1ahj" path="res://assets/tiles.png" id="2_kkm8t"]
+[ext_resource type="PackedScene" uid="uid://4rhntp45r3y4" path="res://entities/stairs.tscn" id="3_cpuyl"]
+[ext_resource type="PackedScene" uid="uid://caf7s4kc4f6uv" path="res://entities/door.tscn" id="4_mf7v1"]
+[ext_resource type="PackedScene" uid="uid://db6ko67vy1a0b" path="res://entities/terminal.tscn" id="5_7trqu"]
+[ext_resource type="PackedScene" uid="uid://bhnce2saaydqa" path="res://entities/aidkit.tscn" id="6_o0ax4"]
+[ext_resource type="PackedScene" uid="uid://dw2wddf85cc36" path="res://entities/chest.tscn" id="7_nq7ub"]
+[ext_resource type="PackedScene" uid="uid://bn4lvjes84bug" path="res://entities/npc.tscn" id="8_7ej46"]
+[ext_resource type="PackedScene" uid="uid://dtaoehussyag4" path="res://entities/camera.tscn" id="9_tq58f"]
+[ext_resource type="PackedScene" uid="uid://by1hp6uyfrnjs" path="res://entities/cartridge.tscn" id="10_k34hm"]
+[ext_resource type="PackedScene" uid="uid://dskljqmgkkmyf" path="res://entities/corridor_door.tscn" id="10_mf7v1"]
+[ext_resource type="PackedScene" uid="uid://brmah4arn2fpx" path="res://entities/keypad_door.tscn" id="12_7trqu"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c750c"]
+texture = ExtResource("2_kkm8t")
+margins = Vector2i(0, 32)
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_283cd"]
+tile_size = Vector2i(64, 64)
+sources/0 = SubResource("TileSetAtlasSource_c750c")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ulrxl"]
+texture = ExtResource("2_kkm8t")
+margins = Vector2i(0, 32)
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_4lmri"]
+tile_size = Vector2i(64, 64)
+sources/0 = SubResource("TileSetAtlasSource_ulrxl")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i3cyh"]
+texture = ExtResource("2_kkm8t")
+margins = Vector2i(0, 32)
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_x6jsp"]
+tile_size = Vector2i(64, 64)
+sources/0 = SubResource("TileSetAtlasSource_i3cyh")
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_rg68n"]
+a = Vector2(100, 22)
+b = Vector2(-669, 23)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g38f6"]
+texture = ExtResource("2_kkm8t")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+11:0/0 = 0
+12:0/0 = 0
+13:0/0 = 0
+14:0/0 = 0
+15:0/0 = 0
+16:0/0 = 0
+17:0/0 = 0
+18:0/0 = 0
+19:0/0 = 0
+20:0/0 = 0
+21:0/0 = 0
+22:0/0 = 0
+23:0/0 = 0
+24:0/0 = 0
+25:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+10:1/0 = 0
+11:1/0 = 0
+12:1/0 = 0
+13:1/0 = 0
+14:1/0 = 0
+15:1/0 = 0
+16:1/0 = 0
+17:1/0 = 0
+18:1/0 = 0
+19:1/0 = 0
+20:1/0 = 0
+21:1/0 = 0
+22:1/0 = 0
+23:1/0 = 0
+24:1/0 = 0
+25:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+9:2/0 = 0
+10:2/0 = 0
+11:2/0 = 0
+12:2/0 = 0
+13:2/0 = 0
+14:2/0 = 0
+15:2/0 = 0
+16:2/0 = 0
+17:2/0 = 0
+18:2/0 = 0
+19:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+9:3/0 = 0
+10:3/0 = 0
+11:3/0 = 0
+12:3/0 = 0
+13:3/0 = 0
+14:3/0 = 0
+15:3/0 = 0
+16:3/0 = 0
+17:3/0 = 0
+18:3/0 = 0
+19:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+10:4/0 = 0
+11:4/0 = 0
+12:4/0 = 0
+13:4/0 = 0
+14:4/0 = 0
+15:4/0 = 0
+16:4/0 = 0
+17:4/0 = 0
+18:4/0 = 0
+19:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+10:5/0 = 0
+11:5/0 = 0
+12:5/0 = 0
+13:5/0 = 0
+14:5/0 = 0
+15:5/0 = 0
+16:5/0 = 0
+17:5/0 = 0
+18:5/0 = 0
+19:5/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_u3me6"]
+tile_size = Vector2i(32, 32)
+sources/0 = SubResource("TileSetAtlasSource_g38f6")
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_4sv2i"]
+a = Vector2(383, -128)
+b = Vector2(-384, -128)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_6slt7"]
+a = Vector2(384, -287)
+b = Vector2(-768, -287)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_43cms"]
+size = Vector2(32, 127)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_5peto"]
+a = Vector2(1, -279)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_sv5e8"]
+a = Vector2(0, -278)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_vnxxs"]
+a = Vector2(0, -249)
+
+[node name="Level" instance=ExtResource("1_r8unp")]
+
+[node name="Floor0" type="Node2D" parent="." index="4"]
+
+[node name="BgTileMap" type="TileMapLayer" parent="Floor0" index="0"]
+z_index = -1
+position = Vector2(0, 32)
+tile_map_data = PackedByteArray("AAD6////AAAAAAAAAAD7////AAAAAAAAAAD8////AAAAAAAAAAD9////AAAAAAAAAAD+////AAAAAAAAAAD/////AAAAAAAAAAAAAP//AAAAAAAAAAABAP//AAAAAAAAAAACAP//AAAAAAAAAAADAP//AAAAAAAAAAADAP7/AAAAAAAAAAAEAP7/AAAAAAAAAAAEAP//AAAAAAAAAAAFAP//AAAAAAAAAAAFAP7/AAAAAAAAAAACAP7/AAAAAAAAAAABAP7/AAAAAAAAAAAAAP7/AAAAAAAAAAD///7/AAAAAAAAAAD+//7/AAAAAAAAAAD9//7/AAAAAAAAAAD8//7/AAAAAAAAAAD7//7/AAAAAAAAAAD6//7/AAAAAAAAAAA=")
+tile_set = SubResource("TileSet_283cd")
+
+[node name="Stairs_up" parent="Floor0" index="1" instance=ExtResource("3_cpuyl")]
+position = Vector2(-285, 31)
+
+[node name="Target" type="Marker2D" parent="Floor0/Stairs_up" index="2"]
+position = Vector2(-51, -171)
+
+[node name="Stairs_up2" parent="Floor0" index="2" instance=ExtResource("3_cpuyl")]
+position = Vector2(320, 37)
+
+[node name="Target" type="Marker2D" parent="Floor0/Stairs_up2" index="2"]
+position = Vector2(-4, -172)
+
+[node name="DoorBase" parent="Floor0" index="3" instance=ExtResource("4_mf7v1")]
+position = Vector2(-179, 34)
+key_chances = Dictionary[String, float]({
+"lvl3_floor1_upstairs": 0.5
+})
+
+[node name="Terminal" parent="Floor0" index="4" instance=ExtResource("5_7trqu")]
+position = Vector2(5, 34)
+
+[node name="Aidkit" parent="Floor0" index="5" instance=ExtResource("6_o0ax4")]
+position = Vector2(-49, 31)
+
+[node name="Chest" parent="Floor0" index="6" instance=ExtResource("7_nq7ub")]
+position = Vector2(81, 40)
+scale = Vector2(-1, 1)
+
+[node name="Chest2" parent="Floor0" index="7" instance=ExtResource("7_nq7ub")]
+position = Vector2(178, 37)
+scale = Vector2(-1, 1)
+
+[node name="Chest3" parent="Floor0" index="8" instance=ExtResource("7_nq7ub")]
+position = Vector2(262, 37)
+scale = Vector2(-1, 1)
+
+[node name="Chest4" parent="Floor0" index="9" instance=ExtResource("7_nq7ub")]
+position = Vector2(178, 37)
+
+[node name="Npc" parent="Floor0" index="10" instance=ExtResource("8_7ej46")]
+position = Vector2(-82, 31)
+
+[node name="Npc2" parent="Floor0" index="11" instance=ExtResource("8_7ej46")]
+position = Vector2(-82, 31)
+
+[node name="Camera" parent="Floor0" index="12" instance=ExtResource("9_tq58f")]
+position = Vector2(-129, -85)
+
+[node name="Camera2" parent="Floor0" index="13" instance=ExtResource("9_tq58f")]
+position = Vector2(320, -90)
+
+[node name="DoorBase2" parent="Floor0" index="14" instance=ExtResource("10_mf7v1")]
+position = Vector2(-112, 35)
+
+[node name="DoorBase3" parent="Floor0" index="15" instance=ExtResource("10_mf7v1")]
+position = Vector2(114, 33)
+
+[node name="Floor1" type="Node2D" parent="." index="5"]
+
+[node name="BgTileMap" type="TileMapLayer" parent="Floor1" index="0"]
+z_index = -1
+tile_map_data = PackedByteArray("AAD6//3/AAAAAAAAAAD7//3/AAAAAAAAAAD9//3/AAAAAAAAAAD+//3/AAAAAAAAAAD8//3/AAAAAAAAAAD///3/AAAAAAAAAAAAAP3/AAAAAAAAAAABAP3/AAAAAAAAAAACAP3/AAAAAAAAAAADAP3/AAAAAAAAAAAEAP3/AAAAAAAAAAAFAP3/AAAAAAAAAAAFAPz/AAAAAAAAAAAEAPz/AAAAAAAAAAADAPz/AAAAAAAAAAACAPz/AAAAAAAAAAABAPz/AAAAAAAAAAAAAPz/AAAAAAAAAAD///z/AAAAAAAAAAD+//z/AAAAAAAAAAD9//z/AAAAAAAAAAD8//z/AAAAAAAAAAD7//z/AAAAAAAAAAD6//z/AAAAAAAAAAA=")
+tile_set = SubResource("TileSet_4lmri")
+
+[node name="Stairs_up" parent="Floor1" index="1" instance=ExtResource("3_cpuyl")]
+position = Vector2(-317, -127)
+
+[node name="Target" type="Marker2D" parent="Floor1/Stairs_up" index="2"]
+position = Vector2(34, 146)
+
+[node name="Stairs_up2" parent="Floor1" index="2" instance=ExtResource("3_cpuyl")]
+position = Vector2(308, -128)
+
+[node name="Target" type="Marker2D" parent="Floor1/Stairs_up2" index="2"]
+position = Vector2(34, 146)
+
+[node name="Stairs_up3" parent="Floor1" index="3" instance=ExtResource("3_cpuyl")]
+position = Vector2(15, -123)
+
+[node name="Target" type="Marker2D" parent="Floor1/Stairs_up3" index="2"]
+position = Vector2(3, -175)
+
+[node name="DoorBase" parent="Floor1" index="4" instance=ExtResource("4_mf7v1")]
+position = Vector2(129, -129)
+
+[node name="DoorBase2" parent="Floor1" index="5" instance=ExtResource("4_mf7v1")]
+position = Vector2(-167, -129)
+
+[node name="Cartridge" parent="Floor1" index="6" instance=ExtResource("10_k34hm")]
+position = Vector2(178, -129)
+key_to_display = "3174"
+
+[node name="Chest2" parent="Floor1" index="7" instance=ExtResource("7_nq7ub")]
+position = Vector2(-66, -122)
+scale = Vector2(-1, 1)
+
+[node name="Camera" parent="Floor1" index="8" instance=ExtResource("9_tq58f")]
+position = Vector2(111, -244)
+scale = Vector2(-1, 1)
+
+[node name="Camera2" parent="Floor1" index="9" instance=ExtResource("9_tq58f")]
+position = Vector2(-369, -244)
+scale = Vector2(-1, 1)
+
+[node name="Camera3" parent="Floor1" index="10" instance=ExtResource("9_tq58f")]
+position = Vector2(-45, -248)
+
+[node name="DoorBase3" parent="Floor1" index="11" instance=ExtResource("10_mf7v1")]
+position = Vector2(-205, -125)
+required_key = "lvl3_floor1_upstairs"
+
+[node name="Floor2" type="Node2D" parent="." index="6"]
+
+[node name="BgTileMap" type="TileMapLayer" parent="Floor2" index="0"]
+z_index = -1
+position = Vector2(0, 32)
+tile_map_data = PackedByteArray("AAAFAPr/AAAAAAAAAAAFAPn/AAAAAAAAAAAEAPn/AAAAAAAAAAAEAPr/AAAAAAAAAAADAPr/AAAAAAAAAAADAPn/AAAAAAAAAAACAPn/AAAAAAAAAAACAPr/AAAAAAAAAAABAPr/AAAAAAAAAAABAPn/AAAAAAAAAAAAAPn/AAAAAAAAAAD///n/AAAAAAAAAAD///r/AAAAAAAAAAAAAPr/AAAAAAAAAAD+//r/AAAAAAAAAAD+//n/AAAAAAAAAAD9//n/AAAAAAAAAAD8//n/AAAAAAAAAAD8//r/AAAAAAAAAAD9//r/AAAAAAAAAAD7//r/AAAAAAAAAAD7//n/AAAAAAAAAAD6//n/AAAAAAAAAAD6//r/AAAAAAAAAAD5//r/AAAAAAAAAAD4//r/AAAAAAAAAAD4//n/AAAAAAAAAAD5//n/AAAAAAAAAAD4//j/AAAAAAAAAAD4//f/AAAAAAAAAAD3//f/AAAAAAAAAAD2//f/AAAAAAAAAAD1//f/AAAAAAAAAAD0//f/AAAAAAAAAAD0//j/AAAAAAAAAAD0//n/AAAAAAAAAAD0//r/AAAAAAAAAAD1//r/AAAAAAAAAAD1//n/AAAAAAAAAAD1//j/AAAAAAAAAAD2//j/AAAAAAAAAAD2//n/AAAAAAAAAAD2//r/AAAAAAAAAAD3//r/AAAAAAAAAAD3//n/AAAAAAAAAAD3//j/AAAAAAAAAAA=")
+tile_set = SubResource("TileSet_x6jsp")
+
+[node name="Stairs_up3" parent="Floor2" index="1" instance=ExtResource("3_cpuyl")]
+position = Vector2(22, -289)
+
+[node name="Target" type="Marker2D" parent="Floor2/Stairs_up3" index="2"]
+position = Vector2(-4, 152)
+
+[node name="DoorBase" parent="Floor2" index="2" instance=ExtResource("4_mf7v1")]
+position = Vector2(-357, -286)
+
+[node name="DoorBase2" parent="Floor2" index="3" instance=ExtResource("4_mf7v1")]
+position = Vector2(212, -287)
+
+[node name="Cartridge" parent="Floor2" index="4" instance=ExtResource("10_k34hm")]
+position = Vector2(317, -323)
+key_to_display = "7410"
+
+[node name="Chest" parent="Floor2" index="5" instance=ExtResource("7_nq7ub")]
+position = Vector2(321, -281)
+scale = Vector2(-1, 1)
+
+[node name="Chest2" parent="Floor2" index="6" instance=ExtResource("7_nq7ub")]
+position = Vector2(321, -281)
+
+[node name="DoorBase3" parent="Floor2" index="7" instance=ExtResource("4_mf7v1")]
+position = Vector2(-138, -287)
+key_chances = Dictionary[String, float]({
+"lvl3_floor2_storage": 0.4
+})
+
+[node name="DoorBase4" parent="Floor2" index="8" instance=ExtResource("4_mf7v1")]
+position = Vector2(-716, -288)
+
+[node name="DoorBase5" parent="Floor2" index="9" instance=ExtResource("4_mf7v1")]
+position = Vector2(-509, -288)
+
+[node name="Camera" parent="Floor2" index="10" instance=ExtResource("9_tq58f")]
+position = Vector2(311, -409)
+
+[node name="Camera2" parent="Floor2" index="11" instance=ExtResource("9_tq58f")]
+position = Vector2(-383, -403)
+scale = Vector2(-1, 1)
+
+[node name="Camera3" parent="Floor2" index="12" instance=ExtResource("9_tq58f")]
+position = Vector2(-755, -408)
+scale = Vector2(-1, 1)
+
+[node name="Camera4" parent="Floor2" index="13" instance=ExtResource("9_tq58f")]
+position = Vector2(-462, -407)
+
+[node name="Camera5" parent="Floor2" index="14" instance=ExtResource("9_tq58f")]
+position = Vector2(69, -408)
+
+[node name="DoorBase6" parent="Floor2" index="15" instance=ExtResource("10_mf7v1")]
+position = Vector2(83, -286)
+required_key = "lvl3_floor2_storage"
+
+[node name="KeypadDoor" parent="Floor2" index="16" instance=ExtResource("12_7trqu")]
+z_index = 1
+position = Vector2(-176, -287)
+correct_key = "3174"
+hint = "1st floor"
+
+[node name="KeypadDoor2" parent="Floor2" index="17" instance=ExtResource("12_7trqu")]
+z_index = 1
+position = Vector2(-400, -287)
+correct_key = "7410"
+hint = "storage"
+
+[node name="Walls" type="StaticBody2D" parent="." index="7"]
+
+[node name="FloorCollider1" type="CollisionShape2D" parent="Walls" index="0"]
+position = Vector2(285, 9)
+shape = SubResource("SegmentShape2D_rg68n")
+
+[node name="FloorTilemap" type="TileMapLayer" parent="Walls" index="1"]
+tile_map_data = PackedByteArray("AAD8/wEAAAACAAAAAAD9/wEAAAACAAAAAAD+/wEAAAACAAAAAAD//wEAAAACAAAAAAAAAAEAAAACAAAAAAABAAEAAAACAAAAAAACAAEAAAACAAAAAAADAAEAAAACAAAAAAAEAAEAAAACAAAAAAAFAAEAAAACAAAAAAAGAAEAAAACAAAAAAD7/wEAAAACAAAAAAD6/wEAAAACAAAAAAD5/wEAAAACAAAAAAD4/wEAAAACAAAAAAAHAAEAAAACAAAAAAD3/wEAAAACAAAAAAD2/wEAAAACAAAAAAD1/wEAAAACAAAAAAD0/wEAAAACAAAAAAAIAAEAAAACAAAAAAAJAAEAAAACAAAAAAAKAAEAAAACAAAAAAALAAEAAAACAAAAAAADAAAAAAAGAAAAABD8/wAAAAAGAAAAAAD8////AAAEAAAAAAD8//7/AAAFAAAAAAADAP//AAAEAAAAABADAP7/AAAFAAAAABDz/wEAAAAAAAAAAADz/wAAAAAAAAAAAADz////AAAAAAAAAADz//7/AAAAAAAAAADz//3/AAAAAAAAAADz//z/AAAAAAAAAAD8//3/AAADAAAAAAADAP3/AAADAAAAABD0//z/AAACAAAAAAD1//z/AAACAAAAAAD2//z/AAACAAAAAAD3//z/AAACAAAAAAD4//z/AAACAAAAAAD5//z/AAACAAAAAAD6//z/AAACAAAAAAD7//z/AAACAAAAAAD8//z/AAACAAAAAAD9//z/AAACAAAAAAD+//z/AAACAAAAAAD///z/AAACAAAAAAAAAPz/AAACAAAAAAABAPz/AAACAAAAAAACAPz/AAACAAAAAAADAPz/AAACAAAAAAAEAPz/AAACAAAAAAAFAPz/AAACAAAAAAAGAPz/AAACAAAAAAAHAPz/AAACAAAAAAAIAPz/AAACAAAAAAAJAPz/AAACAAAAAAAKAPz/AAACAAAAAAALAPz/AAACAAAAAAAMAAEAAAAAAAAAAAAMAAAAAAAAAAAAAAAMAP//AAAAAAAAAAAMAP7/AAAAAAAAAAAMAP3/AAAAAAAAAAAMAPz/AAAAAAAAAAD0//3/AAAJAAAAAAD1//3/AAAJAAAAABD0//7/AAAIAAAAAAD0////AAAIAAAAAAD1//7/AAAIAAAAAAD1////AAAIAAAAAAD1/wAAAAAIAAAAAAD0/wAAAAAKAAAAADALAP3/AAAKAAAAAGACAPv/AAAAAAAAAAACAPr/AAAAAAAAAAACAPn/AAAAAAAAAAACAPj/AAAAAAAAAAAMAPv/AAAAAAAAAAAMAPr/AAAAAAAAAAAMAPn/AAAAAAAAAAAMAPj/AAAAAAAAAAACAPf/AAACAAAAAAADAPf/AAACAAAAAAAEAPf/AAACAAAAAAAFAPf/AAACAAAAAAAGAPf/AAACAAAAAAAHAPf/AAACAAAAAAAIAPf/AAACAAAAAAAJAPf/AAACAAAAAAAKAPf/AAACAAAAAAALAPf/AAACAAAAAAAMAPf/AAAAAAAAAAD5//r/AAAEAAAAABD5//n/AAAFAAAAABD5//v/AAAGAAAAABAHAPv/AAAMAAAAAAAHAPr/AAAMAAAAAAAHAPn/AAAMAAAAAAAHAPj/AAAMAAAAAADz//v/AAAAAAAAAADz//r/AAAAAAAAAADz//n/AAAAAAAAAADz//j/AAAAAAAAAADz//f/AAACAAAAAAD0//f/AAACAAAAAAD1//f/AAACAAAAAAD2//f/AAACAAAAAAD3//f/AAACAAAAAAD4//f/AAACAAAAAAD5//f/AAACAAAAAAD6//f/AAACAAAAAAD7//f/AAACAAAAAAD8//f/AAACAAAAAAD9//f/AAACAAAAAAD+//f/AAACAAAAAAD///f/AAACAAAAAAAAAPf/AAACAAAAAAABAPf/AAACAAAAAAD5//j/AAADAAAAABD0//v/AAAJAAAAABD0//r/AAAIAAAAAAD0//n/AAAKAAAAABDy//f/AAACAAAAAADx//f/AAACAAAAAADw//f/AAACAAAAAADv//f/AAACAAAAAADu//f/AAACAAAAAAAMAPb/AAAAAAAAAAAMAPX/AAAAAAAAAAAMAPT/AAAAAAAAAAAMAPP/AAAAAAAAAAACAPX/AAAEAAAAABACAPT/AAAFAAAAABACAPb/AAAGAAAAABACAPP/AAADAAAAABALAPL/AAACAAAAAAAKAPL/AAACAAAAAAAJAPL/AAACAAAAAAAIAPL/AAACAAAAAAAHAPL/AAACAAAAAAAGAPL/AAACAAAAAAAFAPL/AAACAAAAAAAEAPL/AAACAAAAAAADAPL/AAACAAAAAAACAPL/AAACAAAAAAAMAPL/AAAAAAAAAAD6//X/AAAEAAAAAAD6//T/AAAFAAAAAAD6//b/AAAGAAAAAAD6//P/AAADAAAAAAABAPL/AAACAAAAAAAAAPL/AAACAAAAAAD///L/AAACAAAAAAD+//L/AAACAAAAAAD9//L/AAACAAAAAAD8//L/AAACAAAAAAD7//L/AAACAAAAAAD6//L/AAACAAAAAADz//X/AAAEAAAAAADz//T/AAAFAAAAAADz//b/AAAGAAAAAADz//P/AAADAAAAAAD5//L/AAACAAAAAAD4//L/AAACAAAAAAD3//L/AAACAAAAAAD2//L/AAACAAAAAAD1//L/AAACAAAAAAD0//L/AAACAAAAAADz//L/AAACAAAAAADt//f/AAACAAAAAADs//f/AAACAAAAAADr//f/AAACAAAAAADq//f/AAACAAAAAADp//f/AAACAAAAAADo//f/AAACAAAAAADn//f/AAAAAAAAAADn//b/AAAAAAAAAADn//X/AAAAAAAAAADn//T/AAAAAAAAAADn//P/AAAAAAAAAADn//L/AAAAAAAAAADn//H/AAAAAAAAAADn//D/AAAAAAAAAADn/+//AAAAAAAAAADy/+//AAAAAAAAAAALAPv/AAAIAAAAAAALAPr/AAAJAAAAAAALAPn/AAAIAAAAAAALAPj/AAAIAAAAAAALAPb/AAAIAAAAAAALAPX/AAAIAAAAAAALAPT/AAAIAAAAAAALAPP/AAAKAAAAABAKAPP/AAAKAAAAAGDy//H/AAAAAAAAAADy//D/AAAAAAAAAADx/+7/AAACAAAAAADw/+7/AAACAAAAAADv/+7/AAACAAAAAADu/+7/AAACAAAAAADt/+7/AAACAAAAAADs/+7/AAACAAAAAADr/+7/AAACAAAAAADq/+7/AAACAAAAAADp/+7/AAACAAAAAADo/+7/AAACAAAAAADn/+7/AAAAAAAAAADy/+7/AAAAAAAAAADy//L/AAACAAAAAAA=")
+tile_set = SubResource("TileSet_u3me6")
+
+[node name="FloorCollider2" type="CollisionShape2D" parent="Walls" index="2"]
+shape = SubResource("SegmentShape2D_4sv2i")
+
+[node name="FloorCollider3" type="CollisionShape2D" parent="Walls" index="3"]
+shape = SubResource("SegmentShape2D_6slt7")
+
+[node name="WallCollider1" type="CollisionShape2D" parent="Walls" index="4"]
+position = Vector2(80, -192.5)
+shape = SubResource("RectangleShape2D_43cms")
+
+[node name="WallCollider2" type="CollisionShape2D" parent="Walls" index="5"]
+position = Vector2(385, 22)
+shape = SubResource("SegmentShape2D_5peto")
+
+[node name="WallCollider3" type="CollisionShape2D" parent="Walls" index="6"]
+position = Vector2(-385, 22)
+shape = SubResource("SegmentShape2D_sv5e8")
+
+[node name="WallCollider4" type="CollisionShape2D" parent="Walls" index="7"]
+position = Vector2(-769, -295)
+shape = SubResource("SegmentShape2D_vnxxs")
+one_way_collision = true

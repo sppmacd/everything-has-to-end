@@ -8,7 +8,7 @@ signal checkpoint_set
 
 func _ready():
 	the = self
-	switch_level(preload("res://levels/level1.tscn").instantiate())
+	switch_level(preload("res://levels/level3.tscn").instantiate())
 	set_new_checkpoint()
 	_checkpoint_level.respawn_player()
 
