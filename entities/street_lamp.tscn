@@ -1,17 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://ctigklxvi1j5h"]
+[gd_scene load_steps=2 format=3 uid="uid://ctigklxvi1j5h"]
 
 [ext_resource type="Texture2D" uid="uid://biwp1m8xjk6qb" path="res://assets/objects/lamp.png" id="1_j3blp"]
-
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_ht7yx"]
-b = Vector2(0, 0)
 
 [node name="StreetLamp" type="StaticBody2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_j3blp")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("SegmentShape2D_ht7yx")
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
 position = Vector2(-1, -37)
