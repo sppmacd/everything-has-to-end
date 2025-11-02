@@ -64,6 +64,9 @@ sources/0 = SubResource("TileSetAtlasSource_i3cyh")
 [node name="Level" instance=ExtResource("1_r8unp")]
 script = ExtResource("2_7trqu")
 
+[node name="CanvasModulate" parent="." index="0"]
+visible = false
+
 [node name="SpawnPoint" parent="." index="1"]
 position = Vector2(-22, 28)
 
@@ -280,7 +283,13 @@ scale = Vector2(-1, 1)
 position = Vector2(-462, -407)
 
 [node name="Camera5" parent="Floor2" index="14" instance=ExtResource("9_tq58f")]
-position = Vector2(69, -408)
+position = Vector2(-19, -405)
+
+[node name="CollisionPolygon2D" parent="Floor2/Camera5/Area2D" index="0"]
+polygon = PackedVector2Array(-148, 119, -43, 119, 0, 0)
+
+[node name="Polygon2D" parent="Floor2/Camera5" index="1"]
+polygon = PackedVector2Array(-45, 124, 0, 0, -152, 122)
 
 [node name="DoorBase6" parent="Floor2" index="15" instance=ExtResource("10_mf7v1")]
 position = Vector2(83, -286)
@@ -317,3 +326,4 @@ position = Vector2(-608, -285)
 [editable path="Floor1/Stairs_up3"]
 [editable path="Floor1/Camera"]
 [editable path="Floor2/Stairs_up3"]
+[editable path="Floor2/Camera5"]
