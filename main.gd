@@ -29,6 +29,9 @@ func on_player_death():
 func on_respawn():
 	$AudioStreamPlayer.play()
 
+func on_time_loop_restart():
+	$AudioStreamPlayer.play()
+
 func current_level():
 	return _current_level
 

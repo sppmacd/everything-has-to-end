@@ -8,14 +8,19 @@ var alarm: bool = false: set = set_alarm
 signal alarm_state_changed(state: bool)
 signal time_remaining_changed
 
+func restart_time_loop():
+	self.respawn_timer.start()
+	Main.the.on_time_loop_restart()
+
 
 func _ready():
+	restart_time_loop()
 	Main.the.checkpoint_set.connect(func():
 		# The bare minimum for checkpoints to make sense.
 		print("SET CHECKPOINT")
 		if player():
 			$SpawnPoint.global_position = player().global_position
-		self.respawn_timer.start()
+		restart_time_loop()
 	)
 
 func player() -> Player:
@@ -38,7 +43,7 @@ func respawn_player():
 
 	Main.the.on_player_changed()
 	Main.the.on_respawn()
-	respawn_timer.start()
+	restart_time_loop()
 
 #func _unhandled_key_input(event: InputEvent) -> void:
 	#if event is InputEventKey:
