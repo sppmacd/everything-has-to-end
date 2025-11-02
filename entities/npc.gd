@@ -90,7 +90,6 @@ func ai():
 				$PlayerFollowingCooldown.start()
 			if randf() < 0.02 and walking_speed == 0.0:
 				(func():
-					print("random walk")
 					walking_speed = 1.0
 					await get_tree().create_timer(0.3).timeout
 					walking_speed = 0.0

@@ -24,7 +24,6 @@ func _on_set_open(open: bool):
 	sprite.texture = tex_open if open else tex_closed
 
 func _on_spawn_timer_timeout() -> void:
-	print("spawn timer timeout open=", self.open)
 	var p = 0.9 if _alarm_state else 0.1
 	var limit = 10 if _alarm_state else 4
 	if randf() < p and self.open:

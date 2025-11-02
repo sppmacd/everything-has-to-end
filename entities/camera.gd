@@ -11,7 +11,6 @@ func damage(_v: int):
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if destroyed:
 		return
-	print("camera ", self, " body ", body, " entered camera area")
 	var cr = Main.the.current_level()
 	if body == cr.player() and cr.has_method(&"launch_alarm"):
 		cr.launch_alarm()
