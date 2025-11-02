@@ -3,11 +3,14 @@ extends Node2D
 
 static var the: Main
 var _current_level: Node2D
+var _checkpoint_level: Node2D
+signal checkpoint_set
 
 func _ready():
 	the = self
 	switch_level(preload("res://levels/level1.tscn").instantiate())
-	_current_level.respawn_player()
+	set_new_checkpoint()
+	_checkpoint_level.respawn_player()
 
 func on_player_changed():
 	$CanvasLayer/Hud.setup(current_level().player(), _current_level)
@@ -21,6 +24,13 @@ func on_respawn():
 
 func current_level():
 	return _current_level
+
+func checkpoint_level():
+	return _checkpoint_level
+	
+func set_new_checkpoint():
+	_checkpoint_level = _current_level
+	checkpoint_set.emit()
 
 func switch_level(lvl: Node2D):
 	if has_node("Level"):

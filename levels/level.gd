@@ -1,7 +1,11 @@
 class_name GameLevel
 extends Node2D
+@onready var respawn_timer = $RespawnTimer
 
 signal time_remaining_changed
+
+func _ready():
+	Main.the.checkpoint_set.connect(func(): self.respawn_timer.start())
 
 func player() -> Player:
 	return get_node_or_null("Player")
@@ -18,12 +22,12 @@ func respawn_player():
 	# Spawn new player, and move it to spawn position.
 	var new_player = preload("res://entities/player.tscn").instantiate()
 	new_player.name = "Player"
-	new_player.global_position = spawn_point().global_position
 	add_child(new_player)
+	Main.the.switch_level(Main.the.checkpoint_level())
 
 	Main.the.on_player_changed()
 	Main.the.on_respawn()
-	$RespawnTimer.start()
+	respawn_timer.start()
 
 #func _unhandled_key_input(event: InputEvent) -> void:
 	#if event is InputEventKey:
@@ -37,11 +41,11 @@ func _on_respawn_timer_timeout() -> void:
 
 
 func time_remaining():
-	return $RespawnTimer.time_left
+	return respawn_timer.time_left
 
 
 func cycle_length():
-	return $RespawnTimer.wait_time
+	return respawn_timer.wait_time
 
 
 func _on_update_timer_timeout() -> void:
