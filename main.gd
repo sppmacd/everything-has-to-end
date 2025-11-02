@@ -12,6 +12,9 @@ func _ready():
 	set_new_checkpoint()
 	_checkpoint_level.respawn_player()
 
+func end_game():
+	pass
+
 func on_player_changed():
 	$CanvasLayer/Hud.setup(current_level().player(), _current_level)
 

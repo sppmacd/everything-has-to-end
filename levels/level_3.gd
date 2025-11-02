@@ -4,6 +4,9 @@ var alarm: bool = false: set = set_alarm
 
 signal alarm_state_changed(state: bool)
 
+func _ready():
+	$LoopSource.source_destroyed.connect(func(): self.respawn_timer.stop())
+
 func set_alarm(a: bool):
 	alarm = a
 	alarm_state_changed.emit(a)
