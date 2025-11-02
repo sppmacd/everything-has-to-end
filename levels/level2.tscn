@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://dskljqmgkkmyf" path="res://entities/corridor_door.tscn" id="5_g1dg4"]
 [ext_resource type="PackedScene" uid="uid://dtaoehussyag4" path="res://entities/camera.tscn" id="6_s1bpp"]
 [ext_resource type="AudioStream" uid="uid://tq455hhb777d" path="res://assets/sounds/Alarm0.wav" id="8_e8p81"]
-[ext_resource type="PackedScene" path="res://entities/terminal.tscn" id="9_hq01p"]
+[ext_resource type="PackedScene" uid="uid://db6ko67vy1a0b" path="res://entities/terminal.tscn" id="9_hq01p"]
 [ext_resource type="PackedScene" uid="uid://bn4lvjes84bug" path="res://entities/npc.tscn" id="10_crte6"]
 [ext_resource type="PackedScene" uid="uid://brmah4arn2fpx" path="res://entities/keypad_door.tscn" id="11_bcewn"]
 
