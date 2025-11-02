@@ -299,6 +299,9 @@ hint = "storage"
 [node name="Terminal" parent="Floor2" index="18" instance=ExtResource("5_7trqu")]
 position = Vector2(-231, -286)
 
+[node name="Aidkit" parent="Floor2" index="19" instance=ExtResource("6_o0ax4")]
+position = Vector2(-375, -290)
+
 [node name="Walls" type="StaticBody2D" parent="." index="7"]
 
 [node name="FloorTilemap" type="TileMapLayer" parent="Walls" index="0"]
