@@ -312,6 +312,9 @@ sources/0 = SubResource("TileSetAtlasSource_lbu4x")
 
 [node name="Level3" instance=ExtResource("1_ua5ty")]
 
+[node name="CanvasModulate" parent="." index="0"]
+visible = false
+
 [node name="Floor0" type="Node2D" parent="." index="2"]
 
 [node name="WallCutscene" type="TileMapLayer" parent="Floor0" index="0"]
@@ -538,6 +541,7 @@ scale = Vector2(-1, 1)
 [node name="DoorSwitchToLvl2" parent="Floor1" index="27" instance=ExtResource("12_8bcou")]
 position = Vector2(2026, -704)
 level = ExtResource("13_jq2cn")
+description = "Press E to enter ministry of order"
 
 [node name="Chest2" parent="Floor1" index="28" instance=ExtResource("7_8hd6v")]
 position = Vector2(-255, -541)

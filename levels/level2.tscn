@@ -197,6 +197,7 @@ hint = "these vandals left R's everywhere, count them (answer is one word)"
 [node name="DoorSwitchToLvl2" parent="Floor2" index="3" instance=ExtResource("14_jai45")]
 position = Vector2(-480, 341)
 level = ExtResource("15_jj0ry")
+description = "Press E to enter time manipulation faculty"
 
 [node name="DoorBase" parent="Floor2" index="4" instance=ExtResource("5_g1dg4")]
 position = Vector2(-81, 342)
