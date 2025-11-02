@@ -43,7 +43,6 @@ func add_ammo(amount: int):
 
 func _ready():
 	health_changed.emit()
-	add_ammo(10000)
 
 
 func _health_anim():
