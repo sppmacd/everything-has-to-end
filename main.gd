@@ -43,3 +43,6 @@ func switch_level(lvl: Node2D):
 	if current_level().player():
 		$CanvasLayer/Hud.setup(current_level().player(), lvl)
 		current_level().player().global_position = current_level().spawn_point().global_position
+
+func add_ui(node: Node):
+	$CanvasLayer.add_child(node)

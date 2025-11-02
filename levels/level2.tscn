@@ -170,7 +170,7 @@ position = Vector2(545, 428)
 position = Vector2(90, 435)
 
 [node name="SpawnPoint" parent="." index="7"]
-position = Vector2(384, -200)
+position = Vector2(378, 124)
 
 [node name="AlarmSound" type="AudioStreamPlayer" parent="." index="8"]
 stream = ExtResource("8_e8p81")
