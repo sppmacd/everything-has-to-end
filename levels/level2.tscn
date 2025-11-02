@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://d3vm4dg0841ls"]
+[gd_scene load_steps=19 format=4 uid="uid://d3vm4dg0841ls"]
 
 [ext_resource type="PackedScene" uid="uid://b62r6sibq6dpt" path="res://levels/level.tscn" id="1_p1d34"]
 [ext_resource type="Script" uid="uid://cjvp88y70lsmv" path="res://levels/level_2.gd" id="2_76ugp"]
@@ -9,16 +9,21 @@
 [ext_resource type="TileSet" uid="uid://ctancdmpoyxao" path="res://assets/tileset_small.tres" id="5_55gdq"]
 [ext_resource type="PackedScene" uid="uid://dskljqmgkkmyf" path="res://entities/corridor_door.tscn" id="5_g1dg4"]
 [ext_resource type="PackedScene" uid="uid://dtaoehussyag4" path="res://entities/camera.tscn" id="6_s1bpp"]
+[ext_resource type="Texture2D" uid="uid://b0vmk5v04jk10" path="res://assets/objects/stairs_up.tres" id="7_jj0ry"]
 [ext_resource type="PackedScene" uid="uid://db6ko67vy1a0b" path="res://entities/terminal.tscn" id="9_hq01p"]
 [ext_resource type="PackedScene" uid="uid://bn4lvjes84bug" path="res://entities/npc.tscn" id="10_crte6"]
 [ext_resource type="PackedScene" uid="uid://by1hp6uyfrnjs" path="res://entities/cartridge.tscn" id="11_6mfmt"]
 [ext_resource type="PackedScene" uid="uid://brmah4arn2fpx" path="res://entities/keypad_door.tscn" id="11_bcewn"]
 [ext_resource type="PackedScene" uid="uid://bhnce2saaydqa" path="res://entities/aidkit.tscn" id="11_qegch"]
+[ext_resource type="Texture2D" uid="uid://bf65y0d46h6sq" path="res://assets/objects/stairs_down.tres" id="13_w8ofq"]
 [ext_resource type="PackedScene" uid="uid://bbihiur7a8nd7" path="res://entities/door_switch_to_lvl_2.tscn" id="14_jai45"]
 [ext_resource type="PackedScene" uid="uid://hbe85bqp0yxx" path="res://levels/level3.tscn" id="15_jj0ry"]
 
 [node name="Level" instance=ExtResource("1_p1d34")]
 script = ExtResource("2_76ugp")
+
+[node name="CanvasModulate" parent="." index="0"]
+visible = false
 
 [node name="TileMapLayer2" type="TileMapLayer" parent="." index="1"]
 z_index = -10
@@ -46,6 +51,9 @@ position = Vector2(693, 135)
 
 [node name="Stairs_up" parent="Floor0" index="4" instance=ExtResource("2_p1d34")]
 position = Vector2(-492, 128)
+
+[node name="Sprite2D" parent="Floor0/Stairs_up" index="1"]
+texture = ExtResource("7_jj0ry")
 
 [node name="Target" type="Marker2D" parent="Floor0/Stairs_up" index="2"]
 position = Vector2(12, -176)
@@ -89,6 +97,9 @@ position = Vector2(0, -271)
 
 [node name="Stairs_up" parent="Floor1" index="0" instance=ExtResource("2_p1d34")]
 position = Vector2(622, 239)
+
+[node name="Sprite2D" parent="Floor1/Stairs_up" index="1"]
+texture = ExtResource("7_jj0ry")
 
 [node name="Target" type="Marker2D" parent="Floor1/Stairs_up" index="2"]
 position = Vector2(-183, -177)
@@ -151,6 +162,9 @@ position = Vector2(653, 85)
 [node name="Stairs_up2" parent="Floor1" index="17" instance=ExtResource("2_p1d34")]
 position = Vector2(-477, 239)
 
+[node name="Sprite2D" parent="Floor1/Stairs_up2" index="1"]
+texture = ExtResource("13_w8ofq")
+
 [node name="Target" type="Marker2D" parent="Floor1/Stairs_up2" index="2"]
 position = Vector2(-11, 149)
 
@@ -201,6 +215,9 @@ position = Vector2(0, -780)
 [node name="Stairs_up" parent="Floor3" index="0" instance=ExtResource("2_p1d34")]
 position = Vector2(440, 588)
 
+[node name="Sprite2D" parent="Floor3/Stairs_up" index="1"]
+texture = ExtResource("13_w8ofq")
+
 [node name="Target" type="Marker2D" parent="Floor3/Stairs_up" index="2"]
 position = Vector2(185, 150)
 
@@ -229,3 +246,8 @@ position = Vector2(579, -193)
 collision_layer = 4
 keys_inventory = Array[String](["lvl2_floor2_to_lvl3"])
 enable_retreat = false
+
+[editable path="Floor0/Stairs_up"]
+[editable path="Floor1/Stairs_up"]
+[editable path="Floor1/Stairs_up2"]
+[editable path="Floor3/Stairs_up"]

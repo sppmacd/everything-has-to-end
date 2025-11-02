@@ -20,8 +20,7 @@ func action_use(player: Player):
 	use.emit(player)
 
 func action_tooltip() -> String:
-	return "Press E to go up"
+	return "Press E to go through"
 
 func action_enabled() -> bool:
 	return true
-	

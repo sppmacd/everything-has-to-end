@@ -1,12 +1,14 @@
-[gd_scene load_steps=33 format=4 uid="uid://dbdo6kvx58ofw"]
+[gd_scene load_steps=35 format=4 uid="uid://dbdo6kvx58ofw"]
 
 [ext_resource type="PackedScene" uid="uid://b62r6sibq6dpt" path="res://levels/level.tscn" id="1_ua5ty"]
 [ext_resource type="Texture2D" uid="uid://dqnqxpmjx1ahj" path="res://assets/tiles.png" id="3_pdpul"]
 [ext_resource type="PackedScene" uid="uid://ciyhr0m5pm4tr" path="res://entities/biker.tscn" id="3_ua5ty"]
 [ext_resource type="PackedScene" uid="uid://brhk1skqx3jdd" path="res://entities/scientist_captive.tscn" id="4_8hd6v"]
+[ext_resource type="Texture2D" uid="uid://b0vmk5v04jk10" path="res://assets/objects/stairs_up.tres" id="4_a5s8o"]
 [ext_resource type="Texture2D" uid="uid://cr28f18coror2" path="res://assets/bg/bg1.jpg" id="5_pdpul"]
 [ext_resource type="PackedScene" uid="uid://4rhntp45r3y4" path="res://entities/stairs.tscn" id="6_8hd6v"]
 [ext_resource type="PackedScene" uid="uid://ctigklxvi1j5h" path="res://entities/street_lamp.tscn" id="6_gqfrg"]
+[ext_resource type="Texture2D" uid="uid://bf65y0d46h6sq" path="res://assets/objects/stairs_down.tres" id="6_jq2cn"]
 [ext_resource type="PackedScene" uid="uid://dw2wddf85cc36" path="res://entities/chest.tscn" id="7_8hd6v"]
 [ext_resource type="PackedScene" uid="uid://dskljqmgkkmyf" path="res://entities/corridor_door.tscn" id="7_dkril"]
 [ext_resource type="PackedScene" uid="uid://bn4lvjes84bug" path="res://entities/npc.tscn" id="9_vcl05"]
@@ -324,6 +326,10 @@ tile_set = SubResource("TileSet_yydhl")
 [node name="Stairs_up" parent="Floor0" index="2" instance=ExtResource("6_8hd6v")]
 position = Vector2(35, -1)
 
+[node name="Sprite2D" parent="Floor0/Stairs_up" index="1"]
+position = Vector2(0, -62)
+texture = ExtResource("4_a5s8o")
+
 [node name="Target" type="Marker2D" parent="Floor0/Stairs_up" index="2"]
 position = Vector2(-9, -530)
 
@@ -403,6 +409,10 @@ shape = SubResource("SegmentShape2D_nn0v1")
 [node name="Stairs_up" parent="Floor1" index="2" instance=ExtResource("6_8hd6v")]
 position = Vector2(27, -515)
 
+[node name="Sprite2D" parent="Floor1/Stairs_up" index="1"]
+position = Vector2(1, -61)
+texture = ExtResource("6_jq2cn")
+
 [node name="Target" type="Marker2D" parent="Floor1/Stairs_up" index="2"]
 position = Vector2(23, 524)
 
@@ -443,11 +453,18 @@ required_key = "lvl1_ministry"
 [node name="Stairs_up2" parent="Floor1" index="13" instance=ExtResource("6_8hd6v")]
 position = Vector2(785, -512)
 
+[node name="Sprite2D" parent="Floor1/Stairs_up2" index="1"]
+position = Vector2(0, -63)
+texture = ExtResource("4_a5s8o")
+
 [node name="Target" type="Marker2D" parent="Floor1/Stairs_up2" index="2"]
 position = Vector2(-131, -234)
 
 [node name="Stairs_up3" parent="Floor1" index="14" instance=ExtResource("6_8hd6v")]
 position = Vector2(658, -736)
+
+[node name="Sprite2D" parent="Floor1/Stairs_up3" index="1"]
+texture = ExtResource("6_jq2cn")
 
 [node name="Target" type="Marker2D" parent="Floor1/Stairs_up3" index="2"]
 position = Vector2(98, 204)
@@ -455,11 +472,17 @@ position = Vector2(98, 204)
 [node name="Stairs_up4" parent="Floor1" index="15" instance=ExtResource("6_8hd6v")]
 position = Vector2(2669, -515)
 
+[node name="Sprite2D" parent="Floor1/Stairs_up4" index="1"]
+texture = ExtResource("4_a5s8o")
+
 [node name="Target" type="Marker2D" parent="Floor1/Stairs_up4" index="2"]
 position = Vector2(3, -198)
 
 [node name="Stairs_up5" parent="Floor1" index="16" instance=ExtResource("6_8hd6v")]
 position = Vector2(2669, -706)
+
+[node name="Sprite2D" parent="Floor1/Stairs_up5" index="1"]
+texture = ExtResource("6_jq2cn")
 
 [node name="Target" type="Marker2D" parent="Floor1/Stairs_up5" index="2"]
 position = Vector2(3, 184)
@@ -578,3 +601,10 @@ texture_repeat = 2
 texture = ExtResource("5_pdpul")
 region_enabled = true
 region_rect = Rect2(0, 0, 3840, 1080)
+
+[editable path="Floor0/Stairs_up"]
+[editable path="Floor1/Stairs_up"]
+[editable path="Floor1/Stairs_up2"]
+[editable path="Floor1/Stairs_up3"]
+[editable path="Floor1/Stairs_up4"]
+[editable path="Floor1/Stairs_up5"]

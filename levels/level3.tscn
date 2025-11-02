@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://hbe85bqp0yxx"]
+[gd_scene load_steps=23 format=4 uid="uid://hbe85bqp0yxx"]
 
 [ext_resource type="PackedScene" uid="uid://b62r6sibq6dpt" path="res://levels/level.tscn" id="1_r8unp"]
 [ext_resource type="Script" uid="uid://dnoftdvdqqe3h" path="res://levels/level_3.gd" id="2_7trqu"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://4rhntp45r3y4" path="res://entities/stairs.tscn" id="3_cpuyl"]
 [ext_resource type="PackedScene" uid="uid://caf7s4kc4f6uv" path="res://entities/door.tscn" id="4_mf7v1"]
 [ext_resource type="PackedScene" uid="uid://db6ko67vy1a0b" path="res://entities/terminal.tscn" id="5_7trqu"]
+[ext_resource type="Texture2D" uid="uid://b0vmk5v04jk10" path="res://assets/objects/stairs_up.tres" id="5_tq58f"]
 [ext_resource type="PackedScene" uid="uid://bhnce2saaydqa" path="res://entities/aidkit.tscn" id="6_o0ax4"]
 [ext_resource type="PackedScene" uid="uid://dw2wddf85cc36" path="res://entities/chest.tscn" id="7_nq7ub"]
 [ext_resource type="PackedScene" uid="uid://bn4lvjes84bug" path="res://entities/npc.tscn" id="8_7ej46"]
@@ -14,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://by1hp6uyfrnjs" path="res://entities/cartridge.tscn" id="10_k34hm"]
 [ext_resource type="PackedScene" uid="uid://dskljqmgkkmyf" path="res://entities/corridor_door.tscn" id="10_mf7v1"]
 [ext_resource type="PackedScene" uid="uid://brmah4arn2fpx" path="res://entities/keypad_door.tscn" id="12_7trqu"]
+[ext_resource type="Texture2D" uid="uid://bf65y0d46h6sq" path="res://assets/objects/stairs_down.tres" id="14_k34hm"]
 [ext_resource type="PackedScene" uid="uid://dgfid28mtptwl" path="res://entities/loop_source.tscn" id="15_nq7ub"]
 [ext_resource type="TileSet" uid="uid://ctancdmpoyxao" path="res://assets/tileset_small.tres" id="15_tq58f"]
 
@@ -77,13 +79,19 @@ tile_map_data = PackedByteArray("AAD6////AAAAAAAAAAD7////AAAAAAAAAAD8////AAAAAAA
 tile_set = ExtResource("3_7ej46")
 
 [node name="Stairs_up" parent="Floor0" index="1" instance=ExtResource("3_cpuyl")]
-position = Vector2(-285, 31)
+position = Vector2(-285, 32)
+
+[node name="Sprite2D" parent="Floor0/Stairs_up" index="1"]
+texture = ExtResource("5_tq58f")
 
 [node name="Target" type="Marker2D" parent="Floor0/Stairs_up" index="2"]
 position = Vector2(-51, -171)
 
 [node name="Stairs_up2" parent="Floor0" index="2" instance=ExtResource("3_cpuyl")]
 position = Vector2(320, 37)
+
+[node name="Sprite2D" parent="Floor0/Stairs_up2" index="1"]
+texture = ExtResource("5_tq58f")
 
 [node name="Target" type="Marker2D" parent="Floor0/Stairs_up2" index="2"]
 position = Vector2(-4, -172)
@@ -148,7 +156,10 @@ tile_map_data = PackedByteArray("AAD6//3/AAAAAAAAAAD7//3/AAAAAAAAAAD9//3/AAAAAAA
 tile_set = SubResource("TileSet_4lmri")
 
 [node name="Stairs_up" parent="Floor1" index="1" instance=ExtResource("3_cpuyl")]
-position = Vector2(-295, -126)
+position = Vector2(-295, -128)
+
+[node name="Sprite2D" parent="Floor1/Stairs_up" index="1"]
+texture = ExtResource("14_k34hm")
 
 [node name="Target" type="Marker2D" parent="Floor1/Stairs_up" index="2"]
 position = Vector2(10, 150)
@@ -156,11 +167,18 @@ position = Vector2(10, 150)
 [node name="Stairs_up2" parent="Floor1" index="2" instance=ExtResource("3_cpuyl")]
 position = Vector2(308, -128)
 
+[node name="Sprite2D" parent="Floor1/Stairs_up2" index="1"]
+texture = ExtResource("14_k34hm")
+
 [node name="Target" type="Marker2D" parent="Floor1/Stairs_up2" index="2"]
 position = Vector2(34, 146)
 
 [node name="Stairs_up3" parent="Floor1" index="3" instance=ExtResource("3_cpuyl")]
 position = Vector2(15, -123)
+
+[node name="Sprite2D" parent="Floor1/Stairs_up3" index="1"]
+position = Vector2(0, -69)
+texture = ExtResource("5_tq58f")
 
 [node name="Target" type="Marker2D" parent="Floor1/Stairs_up3" index="2"]
 position = Vector2(3, -175)
@@ -207,6 +225,9 @@ tile_set = SubResource("TileSet_x6jsp")
 
 [node name="Stairs_up3" parent="Floor2" index="1" instance=ExtResource("3_cpuyl")]
 position = Vector2(22, -289)
+
+[node name="Sprite2D" parent="Floor2/Stairs_up3" index="1"]
+texture = ExtResource("14_k34hm")
 
 [node name="Target" type="Marker2D" parent="Floor2/Stairs_up3" index="2"]
 position = Vector2(-4, 152)
@@ -289,3 +310,10 @@ tile_set = ExtResource("15_tq58f")
 
 [node name="LoopSource" parent="." index="8" instance=ExtResource("15_nq7ub")]
 position = Vector2(-608, -285)
+
+[editable path="Floor0/Stairs_up"]
+[editable path="Floor0/Stairs_up2"]
+[editable path="Floor1/Stairs_up"]
+[editable path="Floor1/Stairs_up2"]
+[editable path="Floor1/Stairs_up3"]
+[editable path="Floor2/Stairs_up3"]
