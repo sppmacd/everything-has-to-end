@@ -37,9 +37,6 @@ func _action_mode_1():
 
 func _action_mode_2_1():
 	SpeechText.show_message("You die every few minutes because we inserted chips inside your brains.")
-	
-	var timer = get_tree().create_timer(2.0)
-	timer.timeout.connect(func(): self.discard = false)
 
 func _action_mode_2_2():
 	SpeechText.show_message("Because of the time loop, you'll go back in time and remember every time you die.")
@@ -50,9 +47,6 @@ func _action_mode_2_2():
 
 func _action_mode_3_1():
 	SpeechText.show_message("It cannot be deactivated, but a new timestamp can be set.")
-	
-	var timer = get_tree().create_timer(2.0)
-	timer.timeout.connect(func(): self.discard = false)
 
 func _action_mode_3_2():
 	SpeechText.show_message("But that won't stop the time loop, you need to destroy its source.")
