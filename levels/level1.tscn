@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=4 uid="uid://dbdo6kvx58ofw"]
+[gd_scene load_steps=33 format=4 uid="uid://dbdo6kvx58ofw"]
 
 [ext_resource type="PackedScene" uid="uid://b62r6sibq6dpt" path="res://levels/level.tscn" id="1_ua5ty"]
 [ext_resource type="Texture2D" uid="uid://dqnqxpmjx1ahj" path="res://assets/tiles.png" id="3_pdpul"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://dtaoehussyag4" path="res://entities/camera.tscn" id="10_kdcll"]
 [ext_resource type="PackedScene" uid="uid://caf7s4kc4f6uv" path="res://entities/door.tscn" id="11_j4pg1"]
 [ext_resource type="PackedScene" uid="uid://bbihiur7a8nd7" path="res://entities/door_switch_to_lvl_2.tscn" id="12_8bcou"]
+[ext_resource type="AudioStream" uid="uid://tq455hhb777d" path="res://assets/sounds/Alarm0.wav" id="14_f7u7y"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_045es"]
 texture = ExtResource("3_pdpul")
@@ -576,3 +577,6 @@ texture_repeat = 2
 texture = ExtResource("5_pdpul")
 region_enabled = true
 region_rect = Rect2(0, 0, 3840, 1080)
+
+[node name="AlarmSound" type="AudioStreamPlayer" parent="." index="10"]
+stream = ExtResource("14_f7u7y")

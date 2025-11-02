@@ -1,6 +1,7 @@
-[gd_scene load_steps=28 format=4 uid="uid://hbe85bqp0yxx"]
+[gd_scene load_steps=30 format=4 uid="uid://hbe85bqp0yxx"]
 
 [ext_resource type="PackedScene" uid="uid://b62r6sibq6dpt" path="res://levels/level.tscn" id="1_r8unp"]
+[ext_resource type="Script" uid="uid://dnoftdvdqqe3h" path="res://levels/level_3.gd" id="2_7trqu"]
 [ext_resource type="Texture2D" uid="uid://dqnqxpmjx1ahj" path="res://assets/tiles.png" id="2_kkm8t"]
 [ext_resource type="PackedScene" uid="uid://4rhntp45r3y4" path="res://entities/stairs.tscn" id="3_cpuyl"]
 [ext_resource type="PackedScene" uid="uid://caf7s4kc4f6uv" path="res://entities/door.tscn" id="4_mf7v1"]
@@ -12,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://by1hp6uyfrnjs" path="res://entities/cartridge.tscn" id="10_k34hm"]
 [ext_resource type="PackedScene" uid="uid://dskljqmgkkmyf" path="res://entities/corridor_door.tscn" id="10_mf7v1"]
 [ext_resource type="PackedScene" uid="uid://brmah4arn2fpx" path="res://entities/keypad_door.tscn" id="12_7trqu"]
+[ext_resource type="AudioStream" uid="uid://tq455hhb777d" path="res://assets/sounds/Alarm0.wav" id="14_o0ax4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c750c"]
 texture = ExtResource("2_kkm8t")
@@ -241,6 +243,7 @@ a = Vector2(0, -278)
 a = Vector2(0, -249)
 
 [node name="Level" instance=ExtResource("1_r8unp")]
+script = ExtResource("2_7trqu")
 
 [node name="Floor0" type="Node2D" parent="." index="4"]
 
@@ -267,6 +270,7 @@ position = Vector2(-179, 34)
 key_chances = Dictionary[String, float]({
 "lvl3_floor1_upstairs": 0.5
 })
+required_key = "lvl3_floor1_upstairs"
 
 [node name="Terminal" parent="Floor0" index="4" instance=ExtResource("5_7trqu")]
 position = Vector2(5, 34)
@@ -307,6 +311,12 @@ position = Vector2(-112, 35)
 [node name="DoorBase3" parent="Floor0" index="15" instance=ExtResource("10_mf7v1")]
 position = Vector2(114, 33)
 
+[node name="Chest5" parent="Floor0" index="16" instance=ExtResource("7_nq7ub")]
+position = Vector2(-384, 39)
+
+[node name="Chest6" parent="Floor0" index="17" instance=ExtResource("7_nq7ub")]
+position = Vector2(-384, 4)
+
 [node name="Floor1" type="Node2D" parent="." index="5"]
 
 [node name="BgTileMap" type="TileMapLayer" parent="Floor1" index="0"]
@@ -315,10 +325,10 @@ tile_map_data = PackedByteArray("AAD6//3/AAAAAAAAAAD7//3/AAAAAAAAAAD9//3/AAAAAAA
 tile_set = SubResource("TileSet_4lmri")
 
 [node name="Stairs_up" parent="Floor1" index="1" instance=ExtResource("3_cpuyl")]
-position = Vector2(-317, -127)
+position = Vector2(-295, -126)
 
 [node name="Target" type="Marker2D" parent="Floor1/Stairs_up" index="2"]
-position = Vector2(34, 146)
+position = Vector2(10, 150)
 
 [node name="Stairs_up2" parent="Floor1" index="2" instance=ExtResource("3_cpuyl")]
 position = Vector2(308, -128)
@@ -361,6 +371,9 @@ position = Vector2(-45, -248)
 position = Vector2(-205, -125)
 required_key = "lvl3_floor1_upstairs"
 
+[node name="Chest" parent="Floor1" index="12" instance=ExtResource("7_nq7ub")]
+position = Vector2(-384, -118)
+
 [node name="Floor2" type="Node2D" parent="." index="6"]
 
 [node name="BgTileMap" type="TileMapLayer" parent="Floor2" index="0"]
@@ -376,7 +389,7 @@ position = Vector2(22, -289)
 position = Vector2(-4, 152)
 
 [node name="DoorBase" parent="Floor2" index="2" instance=ExtResource("4_mf7v1")]
-position = Vector2(-357, -286)
+position = Vector2(-330, -288)
 
 [node name="DoorBase2" parent="Floor2" index="3" instance=ExtResource("4_mf7v1")]
 position = Vector2(212, -287)
@@ -393,10 +406,11 @@ scale = Vector2(-1, 1)
 position = Vector2(321, -281)
 
 [node name="DoorBase3" parent="Floor2" index="7" instance=ExtResource("4_mf7v1")]
-position = Vector2(-138, -287)
+position = Vector2(-95, -287)
 key_chances = Dictionary[String, float]({
-"lvl3_floor2_storage": 0.4
+"lvl3_floor2_storage": 0.5
 })
+required_key = "lvl3_floor2_storage"
 
 [node name="DoorBase4" parent="Floor2" index="8" instance=ExtResource("4_mf7v1")]
 position = Vector2(-716, -288)
@@ -469,3 +483,6 @@ shape = SubResource("SegmentShape2D_sv5e8")
 position = Vector2(-769, -295)
 shape = SubResource("SegmentShape2D_vnxxs")
 one_way_collision = true
+
+[node name="AlarmSound" type="AudioStreamPlayer" parent="." index="8"]
+stream = ExtResource("14_o0ax4")
