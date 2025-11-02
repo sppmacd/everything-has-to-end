@@ -85,6 +85,7 @@ offset_left = 397.0
 offset_top = 123.0
 offset_right = 747.0
 offset_bottom = 211.0
+mouse_filter = 2
 bbcode_enabled = true
 text = "tsrtsrtjsjrtsjrtsjrtsjrt"
 horizontal_alignment = 1
