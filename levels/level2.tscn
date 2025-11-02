@@ -19,11 +19,8 @@
 [ext_resource type="PackedScene" uid="uid://bbihiur7a8nd7" path="res://entities/door_switch_to_lvl_2.tscn" id="14_jai45"]
 [ext_resource type="PackedScene" uid="uid://hbe85bqp0yxx" path="res://levels/level3.tscn" id="15_jj0ry"]
 
-[node name="Level" instance=ExtResource("1_p1d34")]
+[node name="Level2" instance=ExtResource("1_p1d34")]
 script = ExtResource("2_76ugp")
-
-[node name="CanvasModulate" parent="." index="0"]
-visible = false
 
 [node name="TileMapLayer2" type="TileMapLayer" parent="." index="1"]
 z_index = -10

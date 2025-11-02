@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://b62r6sibq6dpt" path="res://levels/level.tscn" id="1_ua5ty"]
 [ext_resource type="Texture2D" uid="uid://dqnqxpmjx1ahj" path="res://assets/tiles.png" id="3_pdpul"]
-[ext_resource type="PackedScene" uid="uid://ciyhr0m5pm4tr" path="res://entities/biker.tscn" id="3_ua5ty"]
+[ext_resource type="PackedScene" path="res://entities/biker.tscn" id="3_ua5ty"]
 [ext_resource type="PackedScene" uid="uid://brhk1skqx3jdd" path="res://entities/scientist_captive.tscn" id="4_8hd6v"]
 [ext_resource type="Texture2D" uid="uid://b0vmk5v04jk10" path="res://assets/objects/stairs_up.tres" id="4_a5s8o"]
 [ext_resource type="Texture2D" uid="uid://cr28f18coror2" path="res://assets/bg/bg1.jpg" id="5_pdpul"]
@@ -508,7 +508,34 @@ position = Vector2(675, -515)
 z_index = 2
 position = Vector2(912, -916)
 
-[node name="Door" parent="Floor1" index="22" instance=ExtResource("11_j4pg1")]
+[node name="CollisionPolygon2D" parent="Floor1/Camera/Area2D" index="0"]
+polygon = PackedVector2Array(-202, 180, -39, 180, 0, 0)
+
+[node name="Polygon2D" parent="Floor1/Camera" index="1"]
+polygon = PackedVector2Array(-38, 180, 0, 0, -203, 180)
+
+[node name="Camera2" parent="Floor1" index="22" instance=ExtResource("10_kdcll")]
+z_index = 2
+position = Vector2(1551, -694)
+
+[node name="CollisionPolygon2D" parent="Floor1/Camera2/Area2D" index="0"]
+polygon = PackedVector2Array(-202, 180, -39, 180, 0, 0)
+
+[node name="Polygon2D" parent="Floor1/Camera2" index="1"]
+polygon = PackedVector2Array(-38, 180, 0, 0, -203, 180)
+
+[node name="Camera3" parent="Floor1" index="23" instance=ExtResource("10_kdcll")]
+z_index = 2
+position = Vector2(1199, -693)
+scale = Vector2(-1, 1)
+
+[node name="CollisionPolygon2D" parent="Floor1/Camera3/Area2D" index="0"]
+polygon = PackedVector2Array(-202, 180, -39, 180, 0, 0)
+
+[node name="Polygon2D" parent="Floor1/Camera3" index="1"]
+polygon = PackedVector2Array(-38, 180, 0, 0, -203, 180)
+
+[node name="Door" parent="Floor1" index="24" instance=ExtResource("11_j4pg1")]
 z_index = 1
 position = Vector2(794, -736)
 key_chances = Dictionary[String, float]({
@@ -516,7 +543,7 @@ key_chances = Dictionary[String, float]({
 })
 required_key = "lvl1_garnizon"
 
-[node name="Door2" parent="Floor1" index="23" instance=ExtResource("11_j4pg1")]
+[node name="Door2" parent="Floor1" index="25" instance=ExtResource("11_j4pg1")]
 z_index = 1
 position = Vector2(1273, -515)
 key_chances = Dictionary[String, float]({
@@ -524,19 +551,10 @@ key_chances = Dictionary[String, float]({
 })
 required_key = "lvl1_ministry"
 
-[node name="Door3" parent="Floor1" index="24" instance=ExtResource("11_j4pg1")]
+[node name="Door3" parent="Floor1" index="26" instance=ExtResource("11_j4pg1")]
 z_index = 1
 position = Vector2(1478, -512)
 required_key = "lvl1_ministry"
-
-[node name="Camera2" parent="Floor1" index="25" instance=ExtResource("10_kdcll")]
-z_index = 2
-position = Vector2(1554, -682)
-
-[node name="Camera3" parent="Floor1" index="26" instance=ExtResource("10_kdcll")]
-z_index = 2
-position = Vector2(1200, -683)
-scale = Vector2(-1, 1)
 
 [node name="DoorSwitchToLvl2" parent="Floor1" index="27" instance=ExtResource("12_8bcou")]
 position = Vector2(2026, -704)
@@ -579,15 +597,33 @@ z_index = 2
 position = Vector2(2317, -661)
 scale = Vector2(-1, 1)
 
+[node name="CollisionPolygon2D" parent="Floor1/Camera4/Area2D" index="0"]
+polygon = PackedVector2Array(-229, 149, -55, 152, 0, 0)
+
+[node name="Polygon2D" parent="Floor1/Camera4" index="1"]
+polygon = PackedVector2Array(-53, 148, 0, 0, -228, 149)
+
 [node name="Camera5" parent="Floor1" index="37" instance=ExtResource("10_kdcll")]
 z_index = 2
 position = Vector2(2448, -855)
+
+[node name="CollisionPolygon2D" parent="Floor1/Camera5/Area2D" index="0"]
+polygon = PackedVector2Array(-232, 151, -55, 150, 0, 0)
+
+[node name="Polygon2D" parent="Floor1/Camera5" index="1"]
+polygon = PackedVector2Array(-56, 153, 0, 0, -232, 151)
 
 [node name="Camera6" parent="Floor1" index="38" instance=ExtResource("10_kdcll")]
 z_index = 2
 position = Vector2(2576.9998, -854.99994)
 rotation = 0.25830874
 scale = Vector2(-1, 1)
+
+[node name="CollisionPolygon2D" parent="Floor1/Camera6/Area2D" index="0"]
+polygon = PackedVector2Array(-171.28296, 111.96094, -51.141113, 142.66943, 0, 0)
+
+[node name="Polygon2D" parent="Floor1/Camera6" index="1"]
+polygon = PackedVector2Array(-50.885742, 141.70264, 0, 0, -169.80518, 110.282715)
 
 [node name="Chest9" parent="Floor1" index="39" instance=ExtResource("7_8hd6v")]
 position = Vector2(2104, -698)
@@ -612,3 +648,9 @@ region_rect = Rect2(0, 0, 3840, 1080)
 [editable path="Floor1/Stairs_up3"]
 [editable path="Floor1/Stairs_up4"]
 [editable path="Floor1/Stairs_up5"]
+[editable path="Floor1/Camera"]
+[editable path="Floor1/Camera2"]
+[editable path="Floor1/Camera3"]
+[editable path="Floor1/Camera4"]
+[editable path="Floor1/Camera5"]
+[editable path="Floor1/Camera6"]

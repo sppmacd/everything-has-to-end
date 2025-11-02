@@ -16,7 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://dskljqmgkkmyf" path="res://entities/corridor_door.tscn" id="10_mf7v1"]
 [ext_resource type="PackedScene" uid="uid://brmah4arn2fpx" path="res://entities/keypad_door.tscn" id="12_7trqu"]
 [ext_resource type="Texture2D" uid="uid://bf65y0d46h6sq" path="res://assets/objects/stairs_down.tres" id="14_k34hm"]
-[ext_resource type="PackedScene" uid="uid://dgfid28mtptwl" path="res://entities/loop_source.tscn" id="15_nq7ub"]
+[ext_resource type="PackedScene" uid="uid://b1cvhogukvihh" path="res://entities/loop_source.tscn" id="15_nq7ub"]
 [ext_resource type="TileSet" uid="uid://ctancdmpoyxao" path="res://assets/tileset_small.tres" id="15_tq58f"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ulrxl"]
