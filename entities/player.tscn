@@ -409,10 +409,10 @@ position = Vector2(0, -32)
 shape = SubResource("RectangleShape2D_b0kkn")
 
 [node name="PressEToUse" type="RichTextLabel" parent="."]
-offset_left = -93.0
-offset_top = -95.0
-offset_right = 93.0
-offset_bottom = -72.0
+offset_left = -33.0
+offset_top = -111.0
+offset_right = 34.0
+offset_bottom = -68.0
 bbcode_enabled = true
 horizontal_alignment = 1
 vertical_alignment = 1

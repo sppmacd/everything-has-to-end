@@ -62,6 +62,7 @@ func damage(h: int):
 		rotation = deg_to_rad(90)
 		$Sprite2D.play("idle")
 		$Sprite2D.stop()
+		$PointLight2D.visible = false
 		Main.the.on_player_death()
 		await get_tree().create_timer(5).timeout
 		Main.the.current_level().respawn_player()
@@ -132,7 +133,8 @@ func _physics_process(delta: float) -> void:
 func _find_usable_objects() -> Array:
 	var q = PhysicsShapeQueryParameters2D.new()
 	q.shape = preload("res://entities/player_use_area.tres")
-	q.transform = self.transform
+	var mouse_pos_limited = self.get_local_mouse_position().limit_length(MAX_USE_DISTANCE)
+	q.transform = self.transform.translated(mouse_pos_limited)
 	q.collision_mask = 0x2 # "use"
 	q.exclude = [self]
 
@@ -157,8 +159,7 @@ func _find_damagable_objects() -> Array:
 	
 	return filtered
 
-func _label_process(_delta: float) -> void:
-	label_press_e_to_use.visible = len(_find_usable_objects()) > 0
+const MAX_USE_DISTANCE: float = 60
 
 func action_tooltip() -> String:
 	return "Press E to pickup items"
