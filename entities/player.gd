@@ -167,6 +167,10 @@ func action_tooltip() -> String:
 func action_enabled() -> bool:
 	return health <= 0
 
+func heal() -> void:
+	health = 5
+	health_changed.emit()
+
 func action_use(player: Player):
 	print("USE PLAYER ", ammo)
 	player.ammo += self.ammo

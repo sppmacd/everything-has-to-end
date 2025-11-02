@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://d3vm4dg0841ls"]
+[gd_scene load_steps=16 format=4 uid="uid://d3vm4dg0841ls"]
 
 [ext_resource type="PackedScene" uid="uid://b62r6sibq6dpt" path="res://levels/level.tscn" id="1_p1d34"]
 [ext_resource type="Script" uid="uid://cjvp88y70lsmv" path="res://levels/level_2.gd" id="2_76ugp"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://bn4lvjes84bug" path="res://entities/npc.tscn" id="10_crte6"]
 [ext_resource type="PackedScene" uid="uid://by1hp6uyfrnjs" path="res://entities/cartridge.tscn" id="11_6mfmt"]
 [ext_resource type="PackedScene" uid="uid://brmah4arn2fpx" path="res://entities/keypad_door.tscn" id="11_bcewn"]
+[ext_resource type="PackedScene" uid="uid://bhnce2saaydqa" path="res://entities/aidkit.tscn" id="11_qegch"]
 
 [node name="Level" instance=ExtResource("1_p1d34")]
 script = ExtResource("2_76ugp")
@@ -78,6 +79,9 @@ scale = Vector2(-1, 1)
 
 [node name="Terminal" parent="Floor0" index="12" instance=ExtResource("9_hq01p")]
 position = Vector2(440, 130)
+
+[node name="Aidkit" parent="Floor0" index="13" instance=ExtResource("11_qegch")]
+position = Vector2(348, 128)
 
 [node name="Floor1" type="Node2D" parent="." index="4"]
 position = Vector2(0, -271)
