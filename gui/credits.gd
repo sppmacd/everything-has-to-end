@@ -25,10 +25,10 @@ func _show():
 	await get_tree().create_timer(5).timeout
 	Main.the.get_node("AudioStreamPlayer").playing = false # Hack to fix broken music.
 	await get_tree().create_timer(2).timeout
-	
+
 	# play music
 	$AudioStreamPlayer.play()
-	
+
 	# ACTUAL CREDITS
 	var TEXT_TIME = 5.5
 	await show_text("You managed to escape from the time loop.", TEXT_TIME)

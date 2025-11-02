@@ -426,7 +426,7 @@ zoom = Vector2(1.5, 1.5)
 position = Vector2(0, -42)
 
 [node name="SpeechBubble" parent="." instance=ExtResource("8_i623q")]
-position = Vector2(17, -67)
+position = Vector2(1, -72)
 scale = Vector2(0.5, 0.5)
 
 [node name="SoundPunch" type="AudioStreamPlayer2D" parent="."]

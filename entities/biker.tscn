@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://ciyhr0m5pm4tr"]
+[gd_scene load_steps=10 format=3 uid="uid://6x2nibsfmiph"]
 
 [ext_resource type="Script" uid="uid://wn71efi67jfi" path="res://entities/biker.gd" id="1_isc52"]
 [ext_resource type="Texture2D" uid="uid://dvrqrgdwktrt6" path="res://assets/players/Biker/Biker_idle.png" id="2_2k2xb"]
@@ -58,4 +58,4 @@ position = Vector2(9.5, -15.25)
 shape = SubResource("RectangleShape2D_ru0vo")
 
 [node name="SpeechBubble" parent="." instance=ExtResource("3_2k2xb")]
-position = Vector2(-26, -34)
+position = Vector2(8.5, -35)

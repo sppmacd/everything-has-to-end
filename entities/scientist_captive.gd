@@ -36,37 +36,37 @@ func _action_mode_1():
 	timer.timeout.connect(func(): self.discard = false)
 
 func _action_mode_2_1():
-	SpeechText.show_message("You die every few minutes because we inserted chips inside your brains.")
+	SpeechText.show_message("You die every few minutes because we inserted chips inside your brains.", 6.0)
 
 func _action_mode_2_2():
-	SpeechText.show_message("Because of the time loop, you'll go back in time and remember every time you die.")
+	SpeechText.show_message("Because of the time loop, you'll go back in time and remember every time you die.", 6.0)
 	mode = 3
 	
-	var timer = get_tree().create_timer(2.0)
+	var timer = get_tree().create_timer(6.0)
 	timer.timeout.connect(func(): self.discard = false)
 
 func _action_mode_3_1():
-	SpeechText.show_message("It cannot be deactivated, but a new timestamp can be set.")
+	SpeechText.show_message("It cannot be deactivated, but a new timestamp can be set.", 5.5)
 
 func _action_mode_3_2():
-	SpeechText.show_message("But that won't stop the time loop, you need to destroy its source.")
+	SpeechText.show_message("But that won't stop the time loop, you need to destroy its source.", 6.0)
 	mode = 4
 	
-	var timer = get_tree().create_timer(2.0)
+	var timer = get_tree().create_timer(6.0)
 	timer.timeout.connect(func(): self.discard = false)
 
 func _action_mode_4():
-	SpeechText.show_message("It's in the control room on the top floor of ministry of order.")
+	SpeechText.show_message("It's in the control room on the top floor of ministry of order.", 5.0)
 	mode = 5
 	
-	var timer = get_tree().create_timer(2.0)
+	var timer = get_tree().create_timer(5.0)
 	timer.timeout.connect(func(): self.discard = false)
 
 func _action_mode_5():
-	SpeechText.show_message("No, I swear that's all I know!")
+	SpeechText.show_message("No, I swear that's all I know!", 3.5)
 	mode = 2
 	
-	var timer = get_tree().create_timer(2.0)
+	var timer = get_tree().create_timer(3.5)
 	timer.timeout.connect(func(): self.discard = false)
 
 func action_use(player: Player):
@@ -90,7 +90,7 @@ func action_use(player: Player):
 		player.speak("Then talk or I'll punch u again.")
 		var t1 = get_tree().create_timer(2.2)
 		t1.timeout.connect(func(): _action_mode_2_1())
-		var t2 = get_tree().create_timer(4.4)
+		var t2 = get_tree().create_timer(8.6)
 		t2.timeout.connect(func(): _action_mode_2_2())
 	elif mode == 3:
 		discard = true;
@@ -98,7 +98,7 @@ func action_use(player: Player):
 		player.speak("How can we deactivate that?")
 		var t1 = get_tree().create_timer(2.2)
 		t1.timeout.connect(func(): _action_mode_3_1())
-		var t2 = get_tree().create_timer(4.4)
+		var t2 = get_tree().create_timer(8.1)
 		t2.timeout.connect(func(): _action_mode_3_2())
 	elif mode == 4:
 		discard = true;

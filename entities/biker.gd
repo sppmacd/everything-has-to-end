@@ -13,7 +13,7 @@ var lines: Array[String] = [
 	"If you destroy enemy's cameras, they ain't gonna see ya",
 	"Good luck, brother! We'all countin' on ya!",
 	]
-const SPEECH_LINE_DELAY: float = 2.2
+const SPEECH_LINE_DELAY: float = 5
 @onready var SpeechText = $SpeechBubble
 
 func _physics_process(delta: float) -> void:
@@ -40,12 +40,12 @@ func action_use(player: Player):
 
 	player.speak("Hey bro! Wassup?")
 
-	var delay := 0.0
+	var delay := 2.5
 	for text in lines:
-		delay += SPEECH_LINE_DELAY
 		var timer := get_tree().create_timer(delay)
+		delay += SPEECH_LINE_DELAY
 		timer.timeout.connect(func():
-			SpeechText.show_message(text)
+			SpeechText.show_message(text, SPEECH_LINE_DELAY - 0.2)
 		)
 
 	var final_timer := get_tree().create_timer(delay + SPEECH_LINE_DELAY)

@@ -22,8 +22,11 @@ script = ExtResource("1_ej4bd")
 [node name="SpeechText" type="Label" parent="."]
 z_index = 4096
 material = SubResource("CanvasItemMaterial_kvmun")
-offset_top = -71.0
-offset_right = 332.0
-offset_bottom = 268.0
+offset_left = -92.0
+offset_top = -136.0
+offset_right = 96.0
+offset_bottom = 4.0
 label_settings = SubResource("LabelSettings_ej4bd")
+horizontal_alignment = 1
+vertical_alignment = 2
 autowrap_mode = 2
