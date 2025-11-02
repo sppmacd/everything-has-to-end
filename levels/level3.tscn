@@ -1,8 +1,9 @@
-[gd_scene load_steps=31 format=4 uid="uid://hbe85bqp0yxx"]
+[gd_scene load_steps=30 format=4 uid="uid://hbe85bqp0yxx"]
 
 [ext_resource type="PackedScene" uid="uid://b62r6sibq6dpt" path="res://levels/level.tscn" id="1_r8unp"]
 [ext_resource type="Script" uid="uid://dnoftdvdqqe3h" path="res://levels/level_3.gd" id="2_7trqu"]
 [ext_resource type="Texture2D" uid="uid://dqnqxpmjx1ahj" path="res://assets/tiles.png" id="2_kkm8t"]
+[ext_resource type="TileSet" uid="uid://bkm4swk06phq3" path="res://assets/tileset_big.tres" id="3_7ej46"]
 [ext_resource type="PackedScene" uid="uid://4rhntp45r3y4" path="res://entities/stairs.tscn" id="3_cpuyl"]
 [ext_resource type="PackedScene" uid="uid://caf7s4kc4f6uv" path="res://entities/door.tscn" id="4_mf7v1"]
 [ext_resource type="PackedScene" uid="uid://db6ko67vy1a0b" path="res://entities/terminal.tscn" id="5_7trqu"]
@@ -14,28 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://dskljqmgkkmyf" path="res://entities/corridor_door.tscn" id="10_mf7v1"]
 [ext_resource type="PackedScene" uid="uid://brmah4arn2fpx" path="res://entities/keypad_door.tscn" id="12_7trqu"]
 [ext_resource type="AudioStream" uid="uid://tq455hhb777d" path="res://assets/sounds/Alarm0.wav" id="14_o0ax4"]
-[ext_resource type="PackedScene" uid="uid://b1cvhogukvihh" path="res://entities/loop_source.tscn" id="15_nq7ub"]
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c750c"]
-texture = ExtResource("2_kkm8t")
-margins = Vector2i(0, 32)
-texture_region_size = Vector2i(64, 64)
-0:0/0 = 0
-1:0/0 = 0
-2:0/0 = 0
-3:0/0 = 0
-4:0/0 = 0
-5:0/0 = 0
-6:0/0 = 0
-0:1/0 = 0
-1:1/0 = 0
-2:1/0 = 0
-3:1/0 = 0
-4:1/0 = 0
-
-[sub_resource type="TileSet" id="TileSet_283cd"]
-tile_size = Vector2i(64, 64)
-sources/0 = SubResource("TileSetAtlasSource_c750c")
+[ext_resource type="PackedScene" uid="uid://dgfid28mtptwl" path="res://entities/loop_source.tscn" id="15_nq7ub"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ulrxl"]
 texture = ExtResource("2_kkm8t")
@@ -249,13 +229,16 @@ script = ExtResource("2_7trqu")
 [node name="CanvasModulate" parent="." index="0"]
 color = Color(1, 1, 1, 1)
 
+[node name="SpawnPoint" parent="." index="1"]
+position = Vector2(-445, -312)
+
 [node name="Floor0" type="Node2D" parent="." index="4"]
 
 [node name="BgTileMap" type="TileMapLayer" parent="Floor0" index="0"]
 z_index = -1
 position = Vector2(0, 32)
 tile_map_data = PackedByteArray("AAD6////AAAAAAAAAAD7////AAAAAAAAAAD8////AAAAAAAAAAD9////AAAAAAAAAAD+////AAAAAAAAAAD/////AAAAAAAAAAAAAP//AAAAAAAAAAABAP//AAAAAAAAAAACAP//AAAAAAAAAAADAP//AAAAAAAAAAADAP7/AAAAAAAAAAAEAP7/AAAAAAAAAAAEAP//AAAAAAAAAAAFAP//AAAAAAAAAAAFAP7/AAAAAAAAAAACAP7/AAAAAAAAAAABAP7/AAAAAAAAAAAAAP7/AAAAAAAAAAD///7/AAAAAAAAAAD+//7/AAAAAAAAAAD9//7/AAAAAAAAAAD8//7/AAAAAAAAAAD7//7/AAAAAAAAAAD6//7/AAAAAAAAAAA=")
-tile_set = SubResource("TileSet_283cd")
+tile_set = ExtResource("3_7ej46")
 
 [node name="Stairs_up" parent="Floor0" index="1" instance=ExtResource("3_cpuyl")]
 position = Vector2(-285, 31)
@@ -445,15 +428,18 @@ required_key = "lvl3_floor2_storage"
 
 [node name="KeypadDoor" parent="Floor2" index="16" instance=ExtResource("12_7trqu")]
 z_index = 1
-position = Vector2(-176, -287)
+position = Vector2(-176, -286)
 correct_key = "3174"
 hint = "1st floor"
 
 [node name="KeypadDoor2" parent="Floor2" index="17" instance=ExtResource("12_7trqu")]
 z_index = 1
-position = Vector2(-400, -287)
+position = Vector2(-400, -288)
 correct_key = "7410"
 hint = "storage"
+
+[node name="Terminal" parent="Floor2" index="18" instance=ExtResource("5_7trqu")]
+position = Vector2(-231, -286)
 
 [node name="Walls" type="StaticBody2D" parent="." index="7"]
 

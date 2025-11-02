@@ -10,7 +10,13 @@ signal time_remaining_changed
 
 
 func _ready():
-	Main.the.checkpoint_set.connect(func(): self.respawn_timer.start())
+	Main.the.checkpoint_set.connect(func():
+		# The bare minimum for checkpoints to make sense.
+		print("SET CHECKPOINT")
+		if player():
+			$SpawnPoint.global_position = player().global_position
+		self.respawn_timer.start()
+	)
 
 func player() -> Player:
 	return get_node_or_null("Player")

@@ -30,6 +30,7 @@ theme/custom_font="uid://d1amaqv3ptq6s"
 2d_physics/layer_2="Use"
 2d_physics/layer_3="Damage"
 2d_physics/layer_4="Player"
+2d_physics/layer_5="DamageTransparentToNpc"
 
 [rendering]
 

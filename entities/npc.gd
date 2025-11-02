@@ -76,6 +76,7 @@ func start_shooting():
 	if p:
 		var shell = preload("res://entities/shell.tscn").instantiate()
 		Main.the.current_level().add_child(shell)
+		shell.collision_mask = 0x5 # collision, damage, but NOT collision transparent to npc
 		shell.setup(self, $GunMarker.global_position, p - Vector2(0, 50))
 		$SoundGunshot.play()
 
@@ -86,7 +87,6 @@ func ai():
 		State.LOOKING_AROUND:
 			if p:
 				state = State.FOLLOWING_PLAYER
-				print("cooldown restart")
 				$PlayerFollowingCooldown.start()
 			if randf() < 0.02 and walking_speed == 0.0:
 				(func():
@@ -96,7 +96,6 @@ func ai():
 				).call_deferred()
 		State.FOLLOWING_PLAYER:
 			if p:
-				print("cooldown restart")
 				$PlayerFollowingCooldown.start()
 				var should_walk = abs(p.x - global_position.x) > 200
 				walking_speed = 2.0 if should_walk else 0.0
@@ -113,7 +112,6 @@ func ai():
 		State.RETREATING:
 			if p:
 				state = State.FOLLOWING_PLAYER
-				print("cooldown restart")
 				$PlayerFollowingCooldown.start()
 			walking_speed = 1.0
 			if spawn_door:

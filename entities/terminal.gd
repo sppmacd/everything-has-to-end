@@ -13,5 +13,5 @@ func action_use(_player: Player):
 		return
 	checked = true
 	$Sprite2D.region_rect.position.x = 48.0
-	
+
 	Main.the.set_new_checkpoint()

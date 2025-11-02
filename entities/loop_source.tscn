@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://b1cvhogukvihh"]
+[gd_scene load_steps=4 format=3 uid="uid://dgfid28mtptwl"]
 
 [ext_resource type="Script" uid="uid://drditspyjet0e" path="res://entities/loop_source.gd" id="1_aa2pf"]
 [ext_resource type="Texture2D" uid="uid://bakuut6b6w51s" path="res://assets/objects/loop_source.png" id="2_d7as7"]
@@ -7,7 +7,7 @@
 size = Vector2(33, 64)
 
 [node name="LoopSource" type="StaticBody2D"]
-collision_layer = 12
+collision_layer = 16
 script = ExtResource("1_aa2pf")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

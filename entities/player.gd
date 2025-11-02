@@ -42,6 +42,7 @@ func add_ammo(amount: int):
 
 func _ready():
 	health_changed.emit()
+	add_ammo(19999999)
 
 
 func _health_anim():
@@ -149,7 +150,7 @@ func _find_damagable_objects() -> Array:
 	var q = PhysicsShapeQueryParameters2D.new()
 	q.shape = preload("res://entities/player_use_area.tres")
 	q.transform = self.transform
-	q.collision_mask = 0x4 # "damagablea"
+	q.collision_mask = 0x14 # "damagable" | "damageable transparent to npc"
 	q.exclude = [self]
 
 	var objects = get_world_2d().direct_space_state.intersect_shape(q).map(func(k): return k["collider"])
