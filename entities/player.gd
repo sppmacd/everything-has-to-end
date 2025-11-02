@@ -2,7 +2,7 @@ class_name Player
 extends CharacterBody2D
 
 const WALKING_SPEED: float = 5000
-const JUMP_SPEED: float = -400.0
+const JUMP_SPEED: float = -450.0
 const GRAVITY: float = 981.0
 const PUNCHING_DELAY_SEC: float = 0.4
 const LOADING_GUN_DELAY_SEC: float = 0.2
