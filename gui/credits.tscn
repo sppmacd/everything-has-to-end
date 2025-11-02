@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bas3hsxasrda4"]
+[gd_scene load_steps=3 format=3 uid="uid://bas3hsxasrda4"]
 
 [ext_resource type="Script" uid="uid://cfos00m2acf3p" path="res://gui/credits.gd" id="1_t6a7l"]
+[ext_resource type="AudioStream" uid="uid://b1a2udyyiioki" path="res://assets/sounds/stucked_v2_p.mp3" id="2_i8qro"]
 
 [node name="Credits" type="MarginContainer"]
 anchors_preset = 15
@@ -56,3 +57,6 @@ Special thanks to:
 scroll_active = false
 vertical_alignment = 1
 tab_stops = PackedFloat32Array(300)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_i8qro")

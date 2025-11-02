@@ -22,7 +22,12 @@ func _show():
 	tween.tween_property($Background, "color", Color8(255,255,255,255), 0.1)
 	tween.tween_interval(5.0)
 	tween.tween_property($Background, "color", Color8(0,0,0,255), 1.0)
-	await get_tree().create_timer(7).timeout
+	await get_tree().create_timer(5).timeout
+	Main.the.get_node("AudioStreamPlayer").playing = false # Hack to fix broken music.
+	await get_tree().create_timer(2).timeout
+	
+	# play music
+	$AudioStreamPlayer.play()
 	
 	# ACTUAL CREDITS
 	var TEXT_TIME = 5.5

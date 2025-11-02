@@ -14,6 +14,7 @@ func _ready():
 	_checkpoint_level.respawn_player()
 
 func end_game():
+	$AudioStreamPlayer.play(193.0)
 	is_end_game = true
 	hud().on_end_game()
 	current_level().on_end_game()
