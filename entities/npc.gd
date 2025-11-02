@@ -46,6 +46,7 @@ func damage(v: int):
 	var player: Player = Main.the.current_level().player()
 	for key in keys_inventory:
 		player.add_key(key)
+	player.add_ammo(randi_range(0, 5))
 	queue_free()
 
 
