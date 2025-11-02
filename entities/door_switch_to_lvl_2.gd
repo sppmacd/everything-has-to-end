@@ -4,6 +4,8 @@ signal use(player: Player)
 
 @export
 var required_key: String
+@export
+var level: PackedScene
 
 func set_required_key(rk: String):
 	required_key = rk
@@ -13,7 +15,7 @@ func action_use(player: Player):
 		print("requires key ", required_key)
 		return
 	
-	Main.the.switch_level(preload("res://levels/level2.tscn").instantiate())
+	Main.the.switch_level(level.instantiate())
 	
 	use.emit(player)
 

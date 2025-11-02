@@ -21,7 +21,7 @@ var gun_loading: bool = false
 var gun_unloading: bool = false
 var last_shot_timestamp: int = 0
 var ammo: int = 0
-var health: int = 5
+var health: int = 500
 
 var keys: Array[String] = []
 signal key_added

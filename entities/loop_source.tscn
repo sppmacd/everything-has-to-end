@@ -1,10 +1,38 @@
-[gd_scene load_steps=4 format=3 uid="uid://dgfid28mtptwl"]
+[gd_scene load_steps=8 format=3 uid="uid://dgfid28mtptwl"]
 
 [ext_resource type="Script" uid="uid://drditspyjet0e" path="res://entities/loop_source.gd" id="1_aa2pf"]
 [ext_resource type="Texture2D" uid="uid://bakuut6b6w51s" path="res://assets/objects/loop_source.png" id="2_d7as7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lxcv2"]
 size = Vector2(33, 64)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_aa2pf"]
+blend_mode = 1
+light_mode = 1
+
+[sub_resource type="Curve" id="Curve_aa2pf"]
+_limits = [0.0, 3.0, 0.0, 1.0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1.0877724), 3.4065578, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_d7as7"]
+curve = SubResource("Curve_aa2pf")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_aa2pf"]
+lifetime_randomness = 0.81
+particle_flag_disable_z = true
+direction = Vector3(0, -1, 0)
+spread = 87.235
+initial_velocity_min = 760.22
+initial_velocity_max = 784.74
+gravity = Vector3(0, 1000, 0)
+damping_min = 2000.0001
+damping_max = 3000.0002
+scale_min = 3.0
+scale_max = 3.0
+scale_over_velocity_max = 1.0
+scale_over_velocity_curve = SubResource("CurveTexture_d7as7")
+color = Color(0.92941177, 0.64705884, 0, 1)
 
 [node name="LoopSource" type="StaticBody2D"]
 collision_layer = 16
@@ -19,3 +47,13 @@ region_rect = Rect2(0, 0, 48, 96)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1.5, -32)
 shape = SubResource("RectangleShape2D_lxcv2")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+material = SubResource("CanvasItemMaterial_aa2pf")
+position = Vector2(0, -53)
+emitting = false
+amount = 64
+lifetime = 0.2
+one_shot = true
+randomness = 0.85
+process_material = SubResource("ParticleProcessMaterial_aa2pf")
