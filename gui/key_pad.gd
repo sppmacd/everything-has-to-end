@@ -17,6 +17,7 @@ func close():
 	queue_free()
 
 func on_incorrect_key():
+	%TextEdit.text = ""
 	%IncorrectKey.text = "Incorrect key!"
 	%TextEdit.editable = false
 	await get_tree().create_timer(2).timeout
