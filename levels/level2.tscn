@@ -132,7 +132,7 @@ scale = Vector2(1, -1)
 position = Vector2(-575, 245)
 
 [node name="Chest6" parent="Floor1" index="11" instance=ExtResource("3_55gdq")]
-position = Vector2(-574, 205)
+position = Vector2(-575, 208)
 
 [node name="Chest7" parent="Floor1" index="12" instance=ExtResource("3_55gdq")]
 position = Vector2(365, 246)
@@ -141,13 +141,13 @@ position = Vector2(365, 246)
 position = Vector2(406, 246)
 
 [node name="Chest9" parent="Floor1" index="14" instance=ExtResource("3_55gdq")]
-position = Vector2(748, 83)
+position = Vector2(748, 85)
 
 [node name="Chest10" parent="Floor1" index="15" instance=ExtResource("3_55gdq")]
-position = Vector2(702, 83)
+position = Vector2(702, 85)
 
 [node name="Chest11" parent="Floor1" index="16" instance=ExtResource("3_55gdq")]
-position = Vector2(653, 83)
+position = Vector2(653, 85)
 
 [node name="Stairs_up2" parent="Floor1" index="17" instance=ExtResource("2_p1d34")]
 position = Vector2(-477, 239)
