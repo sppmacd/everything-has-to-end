@@ -63,9 +63,6 @@ sources/0 = SubResource("TileSetAtlasSource_i3cyh")
 [node name="Level" instance=ExtResource("1_r8unp")]
 script = ExtResource("2_7trqu")
 
-[node name="CanvasModulate" parent="." index="0"]
-visible = false
-
 [node name="SpawnPoint" parent="." index="1"]
 position = Vector2(-26, 30)
 
